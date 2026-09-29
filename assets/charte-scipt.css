@@ -90,6 +90,37 @@ h3, h4 { font-family: 'Poppins', Arial, sans-serif; }
 .slide-mediatech-links a { background: #123D8D; }
 .gateway-card.professional { border-bottom: 4px solid #F5B800; }
 .school-slide-caption .kicker { color: #F5B800; }
+/* Laisser les appels à l'action et la Médiathèque chacun dans leur espace. */
+@media (max-width: 1399px) {
+  .homepage-hero .slide-mediatech {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: calc(100% - 32px);
+    max-width: 900px;
+    margin: 18px auto 24px;
+    padding: 18px;
+  }
+  .homepage-hero .slide-mediatech-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .homepage-hero .slide-mediatech-links a { min-width: 0; }
+  .homepage-hero .slide-mediatech-links span { min-width: 0; }
+  .homepage-hero .carousel-indicators { bottom: auto; top: 620px; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .homepage-hero .carousel-indicators { top: 550px; }
+}
+@media (max-width: 767px) {
+  .homepage-hero .school-slide-image { height: 620px; }
+  .homepage-hero .school-slide-caption { top: 47%; }
+  .homepage-hero .school-slide-caption h1,
+  .homepage-hero .school-slide-caption h2 { font-size: clamp(29px, 7vw, 40px); }
+  .homepage-hero .slide-mediatech-links { grid-template-columns: 1fr; }
+  .homepage-hero .carousel-indicators { top: 585px; }
+}
 .homepage-hero .school-slide-caption .btn-gold {
   display: inline-block;
   width: fit-content;
