@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* SCIPT INTERNATIONAL — Charte graphique officielle, édition 2025.
+   Couleurs : #071B41, #123D8D, #F5B800, #FFFFFF, #B5121B.
+   Le rouge demeure réservé aux annonces urgentes et promotions réelles. */
+:root {
+  --navy: #071B41;
+  --blue: #123D8D;
+  --gold: #F5B800;
+  --red: #B5121B;
+  --ink: #1A1A1A;
+  --muted: #071B41;
+  --sc-navy: #071B41;
+  --sc-blue: #123D8D;
+  --sc-gold: #F5B800;
+  --sc-cream: #F2F3F5;
+}
+
+body, button, input, select, textarea, .dropdown-menu {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+body { color: #1A1A1A; background: #FFFFFF; }
+h1, h2, .brand strong, .sc-feature-title, .sc-detail-hero h1,
+.about-hero h1, .about-section h2, .about-values h2, .about-cta h2 {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+}
+h3, h4 { font-family: 'Poppins', Arial, sans-serif; }
+
+.topbar, .navbar, footer { background-color: #071B41; }
+.brand em { color: #123D8D; }
+.about-hero h1 em { color: #F5B800; }
+.brand .brand-mark-center img { object-fit: contain; }
+.brand .brand-mark-ring text { fill: #071B41; font-family: 'Poppins', Arial, sans-serif; }
+.brand-ring-edge { stroke: #F5B800; }
+.brand .brand-mark::before { background: #F5B800; }
+
+/* Les menus restent blancs ou marine ; l'or marque l'état actif. */
+.navbar .nav-link:hover, .navbar .nav-link.active,
+.navbar .nav-link:focus-visible { color: #FFFFFF !important; box-shadow: inset 0 -3px #F5B800; }
+.dropdown-menu, .sc-school-menu, .sc-level-menu { background: #FFFFFF; border-color: #F5B800; }
+.dropdown-menu { border-top: 3px solid #F5B800; }
+.dropdown-item:hover, .dropdown-item:focus,
+.sc-school-entry:hover, .sc-school-entry:focus-within,
+.sc-school-entry.is-open, .sc-level-menu a:hover { background: #F2F3F5; color: #071B41; }
+.sc-school-menu .dropdown-item:first-child { color: #071B41; background: #F2F3F5; }
+.sc-school-name, .sc-level-menu a, .sc-expand { color: #071B41; }
+.sc-school-name:hover { color: #123D8D; }
+.sc-school-card, .sc-detail-panel, .about-cards article, .about-paths>a {
+  border-radius: 10px;
+}
+
+/* Les appels à l'action suivent le code or / marine. */
+.btn-gold, .slide-mediatech-all, .homepage-hero .slide-mediatech-all {
+  background: #F5B800;
+  border: 1px solid #F5B800;
+  color: #071B41;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  font-weight: 800;
+}
+.btn-gold:hover, .btn-gold:focus-visible,
+.slide-mediatech-all:hover, .slide-mediatech-all:focus-visible,
+.homepage-hero .slide-mediatech-all:hover,
+.homepage-hero .slide-mediatech-all:focus-visible {
+  background: #FFFFFF;
+  border-color: #F5B800;
+  color: #071B41;
+  box-shadow: 0 0 0 3px #F5B800;
+}
+.btn-outline-primary, .btn-outline-light { border: 2px solid #071B41; color: #071B41; background: transparent; }
+.btn-outline-primary:hover { background: #071B41; color: #FFFFFF; }
+
+.kicker, .eyebrow, .program-card .tag, .program-card a,
+.pathways-intro h2 span, .sc-kicker, .about-paths span,
+.about-text-link, .about-paths strong { color: #123D8D; }
+.hero .eyebrow, .homepage-hero .eyebrow,
+.sc-flagship .sc-kicker, .about-hero .sc-kicker,
+.sc-detail-hero .sc-kicker { color: #F5B800; }
+.sc-director .sc-kicker, .about-section .sc-kicker,
+.sc-editorial .sc-kicker { color: #123D8D; }
+
+.hero, .sc-flagship, .sc-detail-hero, .about-hero,
+.about-statement, .about-values, .sc-director-visual,
+.slide-mediatech, .mediatech-video-feature {
+  background: #071B41;
+}
+.gateway-card.university, .gateway-card.professional,
+.card-top, .card-top.red, .pathway-door,
+.slide-mediatech-links a { background: #123D8D; }
+.gateway-card.professional { border-bottom: 4px solid #F5B800; }
+.school-slide-caption .kicker { color: #F5B800; }
+.sc-school-section, .sc-detail-wrap, .sc-director,
+.about-tint, .mediatech-home, .mediatech-hub {
+  background: #F2F3F5;
+}
+.sc-director-card, .about-statement, .sc-detail-panel {
+  border-left-color: #F5B800;
+}
+.sc-detail-list a, .sc-level-pills a, .sc-level-note,
+.sc-editorial-grid article, .sc-installments li,
+.sc-topics li, .sc-approach li { background: #F2F3F5; }
+.sc-detail-list a:hover, .sc-level-pills a:hover,
+.sc-level-pills a.is-selected { background: #123D8D; color: #FFFFFF; }
+.sc-level-pills a.is-selected { text-decoration: underline #F5B800 2px; text-underline-offset: .25em; }
+.sc-school-card small, .sc-editorial-grid article>span,
+.about-cards b, .about-value-grid b, .about-statement span {
+  color: #123D8D;
+}
+.about-values .about-value-grid b, .about-statement span { color: #F5B800; }
+
+/* Les cartes professionnelles gardent le bleu institutionnel. */
+.card-top.red, .gateway-card.professional,
+.pathway-card.pathway-professional .pathway-doors span,
+.pathway-card.pathway-professional .pathway-doors span::before {
+  background: #123D8D;
+}
+.pathway-card.pathway-professional .pathway-button { background: #F5B800; color: #071B41; }
+.theme-blue, .theme-green, .theme-purple, .theme-red { --topic: #123D8D; }
+.news-ticker-label { background: #071B41; color: #F5B800; }
+.news-ticker-track span::before { color: #F5B800; }
+
+/* Logo officiel extrait du brand book, sur fond blanc, sans effet. */
+.sc-track-lockup { display: block; width: min(335px, 100%); height: auto;
+  background: #FFFFFF; margin: 1.3rem 0; padding: .35rem; border: 1px solid #F2F3F5; }
+.sc-detail-hero .sc-track-lockup { width: min(310px, 100%); }
+.university-banner .sc-track-lockup { width: min(280px, 100%); }
+.sc-track-lockup[hidden] { display: none; }
+
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+button:focus-visible, a:focus-visible { outline: 3px solid #123D8D; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .brand .brand-mark-ring, .brand .brand-mark::before { animation: none; }
+}
