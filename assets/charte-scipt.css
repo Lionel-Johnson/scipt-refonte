@@ -90,6 +90,18 @@ h3, h4 { font-family: 'Poppins', Arial, sans-serif; }
 .slide-mediatech-links a { background: #123D8D; }
 .gateway-card.professional { border-bottom: 4px solid #F5B800; }
 .school-slide-caption .kicker { color: #F5B800; }
+.homepage-hero .school-slide-caption .btn-gold {
+  display: inline-block;
+  width: fit-content;
+  max-width: min(100%, 310px);
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
+  padding-inline: clamp(14px, 2vw, 24px);
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .homepage-hero .school-slide-caption .btn-gold { max-width: min(280px, 38vw); }
+}
 .sc-school-section, .sc-detail-wrap, .sc-director,
 .about-tint, .mediatech-home, .mediatech-hub {
   background: #F2F3F5;
