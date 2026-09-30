@@ -119,10 +119,10 @@
 /* Anneau réduit et affiné ; cachet fixe, sans contact. */
 .approved-site .reference-brand-banner .approved-seal{width:132px;height:132px;flex-basis:132px}
 .approved-site .reference-brand-banner .approved-header-inner{min-height:158px}
-.approved-site .approved-seal img{content:url("logo-scipt-officiel-v2.png");width:72px;height:72px}
+.approved-site .approved-seal img{width:72px;height:72px}
 .approved-site .approved-seal::before,
 .approved-site .reference-brand-banner .approved-seal::before{
- inset:-14px;background-position:calc(50% - 1.6px) calc(50% + 2.7px);
+ inset:-14px;background:linear-gradient(135deg,#8c5713,#ffeca5 25%,#d4a036 48%,#fff2bb 70%,#a46a17);background-position:calc(50% - 1.6px) calc(50% + 2.7px);
  background-size:180px 226.92px;
  -webkit-mask:url("anneau-fin-mask.svg") calc(50% - 1.6px) calc(50% + 2.7px)/180px 226.92px no-repeat;
  mask:url("anneau-fin-mask.svg") calc(50% - 1.6px) calc(50% + 2.7px)/180px 226.92px no-repeat
