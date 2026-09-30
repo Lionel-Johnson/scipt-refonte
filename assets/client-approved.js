@@ -5,7 +5,8 @@
   const dropdown=bootstrap.Dropdown.getOrCreateInstance(button,{autoClose:'outside'});
   let openedByHover=false;
   item.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&matchMedia('(min-width:1200px)').matches){document.querySelectorAll('.approved-dropdown [aria-expanded="true"]').forEach(other=>{if(other!==button)bootstrap.Dropdown.getOrCreateInstance(other).hide()});if(button.getAttribute('aria-expanded')!=='true'){dropdown.show();openedByHover=true}}});
-  button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();if(openedByHover){dropdown.show();openedByHover=false}else dropdown.toggle()});
+  // Bootstrap traite le clic une seule fois, notamment les taps mobiles.
+  button.addEventListener('click',event=>{if(openedByHover&&matchMedia('(min-width:1200px)').matches){event.preventDefault();dropdown.show();openedByHover=false}});
   item.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse'&&matchMedia('(min-width:1200px)').matches&&!item.contains(document.activeElement))dropdown.hide()});
   item.addEventListener('focusout',()=>{setTimeout(()=>{if(!item.contains(document.activeElement))dropdown.hide()},0)});
  });

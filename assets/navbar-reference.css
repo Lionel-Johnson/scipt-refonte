@@ -144,3 +144,16 @@
  .approved-site .reference-brand-banner .approved-seal img{width:34px;height:34px}
  .approved-site .reference-brand-banner .approved-seal::before{background-size:98px 123.55px;-webkit-mask-size:98px 123.55px;mask-size:98px 123.55px}
 }
+
+/* Déroulants tactiles dans le flux du menu mobile. */
+@media(max-width:1199px){
+ .approved-site .approved-navbar-shell .navbar-collapse{width:100%;overscroll-behavior:contain}
+ .approved-site .approved-navbar-shell .approved-mega{left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;min-width:0;overflow:visible;float:none}
+ .approved-site .approved-navbar-shell .approved-mega.show{display:block!important}
+ .approved-site .approved-navbar-shell .dropdown-toggle{touch-action:manipulation;min-height:48px}
+ .approved-site .approved-navbar-shell .approved-levels a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;min-width:44px}
+}
+@media(max-width:767px){
+ .approved-site .approved-navbar-shell .approved-mega-grid{grid-template-columns:1fr}
+ .approved-site .approved-navbar-shell .approved-mega-intro{flex-wrap:wrap}
+}
