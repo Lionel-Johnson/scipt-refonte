@@ -77,7 +77,7 @@
 @media(max-width:479px){.approved-site .reference-brand-banner .approved-seal{width:68px;height:68px;flex-basis:68px;padding:7px}}
 
 /* Anneau orbital doré : le cachet reste fixe au centre. */
-.approved-site .approved-seal{overflow:visible;perspective:500px}
+.approved-site .approved-seal{overflow:visible}
 .approved-site .approved-seal::before,
 .approved-site .reference-brand-banner .approved-seal::before{
  inset:-15%;padding:7px;border-radius:50%;
