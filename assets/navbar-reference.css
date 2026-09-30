@@ -65,3 +65,13 @@
  .navbar-brand-tagline{font-size:8px;letter-spacing:.15px}
  .approved-site .reference-brand-banner .approved-header-inner{padding:13px 12px;min-height:155px}
 }
+
+/* Ajustement du cachet : fond supprimé visuellement, taille réduite, anneau indépendant. */
+.approved-site .approved-seal{background:transparent!important;isolation:auto}
+.approved-site .approved-seal img{mix-blend-mode:multiply}
+.approved-site .reference-brand-banner .approved-seal{width:112px;height:112px;flex-basis:112px;padding:11px;box-shadow:none}
+.approved-site .reference-brand-banner .approved-seal::before{padding:3px;animation:approved-gold-ring 9s linear infinite}
+.approved-site .reference-brand-banner .approved-header-inner{min-height:155px}
+@media(max-width:1199px){.approved-site .reference-brand-banner .approved-seal{width:100px;height:100px;flex-basis:100px;padding:10px}.approved-site .reference-brand-banner .approved-header-inner{min-height:145px}}
+@media(max-width:767px){.approved-site .reference-brand-banner .approved-seal{width:84px;height:84px;flex-basis:84px;padding:9px}}
+@media(max-width:479px){.approved-site .reference-brand-banner .approved-seal{width:68px;height:68px;flex-basis:68px;padding:7px}}
