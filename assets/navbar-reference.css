@@ -115,3 +115,32 @@
 
 /* Visuel du slide avec enseigne SCIPT sur la façade. */
 .approved-site .reference-hero{background-image:url('campus-scipt-logo.jpg')}
+
+/* Anneau réduit et affiné ; cachet fixe, sans contact. */
+.approved-site .reference-brand-banner .approved-seal{width:132px;height:132px;flex-basis:132px}
+.approved-site .reference-brand-banner .approved-header-inner{min-height:158px}
+.approved-site .approved-seal img{content:url("logo-scipt-officiel-v2.png");width:72px;height:72px}
+.approved-site .approved-seal::before,
+.approved-site .reference-brand-banner .approved-seal::before{
+ inset:-14px;background-position:calc(50% - 1.6px) calc(50% + 2.7px);
+ background-size:180px 226.92px;
+ -webkit-mask:url("anneau-fin-mask.svg") calc(50% - 1.6px) calc(50% + 2.7px)/180px 226.92px no-repeat;
+ mask:url("anneau-fin-mask.svg") calc(50% - 1.6px) calc(50% + 2.7px)/180px 226.92px no-repeat
+}
+.approved-footer .approved-seal img{width:48px;height:48px}
+.approved-footer .approved-seal::before{background-size:140px 176.5px;-webkit-mask-size:140px 176.5px;mask-size:140px 176.5px}
+@media(max-width:1199px){
+ .approved-site .reference-brand-banner .approved-seal{width:112px;height:112px;flex-basis:112px}
+ .approved-site .reference-brand-banner .approved-seal img{width:60px;height:60px}
+ .approved-site .reference-brand-banner .approved-seal::before{background-size:155px 195.4px;-webkit-mask-size:155px 195.4px;mask-size:155px 195.4px}
+}
+@media(max-width:767px){
+ .approved-site .reference-brand-banner .approved-seal{width:90px;height:90px;flex-basis:90px}
+ .approved-site .reference-brand-banner .approved-seal img{width:46px;height:46px}
+ .approved-site .reference-brand-banner .approved-seal::before{background-size:125px 157.6px;-webkit-mask-size:125px 157.6px;mask-size:125px 157.6px}
+}
+@media(max-width:479px){
+ .approved-site .reference-brand-banner .approved-seal{width:70px;height:70px;flex-basis:70px}
+ .approved-site .reference-brand-banner .approved-seal img{width:34px;height:34px}
+ .approved-site .reference-brand-banner .approved-seal::before{background-size:98px 123.55px;-webkit-mask-size:98px 123.55px;mask-size:98px 123.55px}
+}

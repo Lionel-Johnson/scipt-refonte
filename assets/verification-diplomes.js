@@ -2,16 +2,6 @@
  const form=document.getElementById('diploma-form');if(!form)return;
  const role=document.getElementById('diploma-role');
  const establishment=document.getElementById('diploma-establishment');
- const establishmentField=document.getElementById('diploma-establishment-field');
- function updateEstablishment(){
-  const show=role.value==='Établissement de formation';
-  establishmentField.hidden=!show;
-  establishment.disabled=!show;
-  establishment.required=show;
-  if(!show)establishment.value='';
- }
- role.addEventListener('change',updateEstablishment);
- updateEstablishment();
  form.addEventListener('submit',event=>{
   event.preventDefault();if(!form.reportValidity())return;
   const value=id=>document.getElementById(id).value.trim();
