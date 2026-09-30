@@ -80,7 +80,7 @@
 /* Fichiers officiels transparents : cachet fixe et anneau indépendant. */
 .approved-site .approved-seal{width:160px;height:160px;flex-basis:160px;padding:0;background:transparent!important;overflow:visible;isolation:auto;box-shadow:none}
 .approved-site .reference-brand-banner .approved-seal{width:160px;height:160px;flex-basis:160px;padding:0}
-.approved-site .approved-seal img{position:absolute;left:50%;top:50%;width:58px;height:58px;object-fit:contain;transform:translate(-50%,-50%);mix-blend-mode:normal;border:0;border-radius:0}
+.approved-site .approved-seal img{position:absolute;left:50%;top:50%;width:80px;height:80px;object-fit:contain;transform:translate(-50%,-50%);mix-blend-mode:normal;border:0;border-radius:0}
 .approved-site .approved-seal::before,
 .approved-site .reference-brand-banner .approved-seal::before{
  content:'';position:absolute;inset:-20px;padding:0;border:0;border-radius:0;
@@ -91,24 +91,24 @@
 .approved-site .reference-brand-banner .approved-header-inner{min-height:184px}
 .approved-site .reference-brand-banner .approved-brand{gap:24px}
 .approved-footer .approved-seal{width:110px;height:110px;flex-basis:110px}
-.approved-footer .approved-seal img{width:38px;height:38px}
+.approved-footer .approved-seal img{width:50px;height:50px}
 .approved-footer .approved-seal::before{inset:-15px;background-size:160px 201.7px}
 @keyframes scipt-supplied-ring{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @media(max-width:1199px){
  .approved-site .reference-brand-banner .approved-seal{width:130px;height:130px;flex-basis:130px}
- .approved-site .reference-brand-banner .approved-seal img{width:46px;height:46px}
+ .approved-site .reference-brand-banner .approved-seal img{width:62px;height:62px}
  .approved-site .reference-brand-banner .approved-seal::before{background-size:180px 226.92px}
  .approved-site .reference-brand-banner .approved-header-inner{min-height:156px}
 }
 @media(max-width:767px){
  .approved-site .reference-brand-banner .approved-seal{width:100px;height:100px;flex-basis:100px}
- .approved-site .reference-brand-banner .approved-seal img{width:34px;height:34px}
+ .approved-site .reference-brand-banner .approved-seal img{width:48px;height:48px}
  .approved-site .reference-brand-banner .approved-seal::before{inset:-15px;background-size:145px 182.8px}
  .approved-site .reference-brand-banner .approved-brand{gap:20px}
 }
 @media(max-width:479px){
  .approved-site .reference-brand-banner .approved-seal{width:76px;height:76px;flex-basis:76px}
- .approved-site .reference-brand-banner .approved-seal img{width:26px;height:26px}
+ .approved-site .reference-brand-banner .approved-seal img{width:36px;height:36px}
  .approved-site .reference-brand-banner .approved-seal::before{inset:-12px;background-size:110px 138.67px}
  .approved-site .reference-brand-banner .approved-brand{gap:17px}
 }
