@@ -80,7 +80,7 @@
 .approved-site .approved-seal{overflow:visible;perspective:500px}
 .approved-site .approved-seal::before,
 .approved-site .reference-brand-banner .approved-seal::before{
- inset:-23%;padding:7px;border-radius:50%;
+ inset:-15%;padding:7px;border-radius:50%;
  background:conic-gradient(from 0deg,#70410b 0deg,#e8ad29 35deg,#fff6bd 65deg,#c58915 110deg,#75440b 160deg,#ffdc70 210deg,#fff9d5 240deg,#b77b12 290deg,#70410b 360deg);
  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
  -webkit-mask-composite:xor;mask-composite:exclude;
@@ -88,7 +88,7 @@
  filter:drop-shadow(0 2px 2px #75460980) drop-shadow(0 0 4px #ffd55c99);
  z-index:2;pointer-events:none
 }
-.approved-site .approved-seal img{position:relative;z-index:1}
+.approved-site .approved-seal img{position:static;mix-blend-mode:multiply}
 .approved-site .reference-brand-banner .approved-brand{gap:38px}
 @keyframes scipt-orbital-gold{
  from{transform:rotate(-18deg) rotateX(65deg) rotateZ(0deg)}
