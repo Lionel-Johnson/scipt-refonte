@@ -39,6 +39,7 @@
       if (!visual.children.length) {const src=trustedUrl(item.image)||'assets/cours-universitaire.png';const img=make('img');img.src=src;img.alt=item.alt||item.title||'Illustration';img.loading='lazy';visual.append(img);}
       const body=make('div','mediatech-entry-body');body.append(make('span','mediatech-entry-type',item.type.toUpperCase()+' / '+(item.category||'SCIPT')));
       body.append(make('h3','',item.title||'La vie du SCIPT'));body.append(make('p','',item.text||''));
+      if (item.link && /^[a-z0-9-]+\.html(?:[?#].*)?$/.test(item.link)) {const link=make('a','sc-album-link',item.linkLabel||'En savoir plus →');link.href=item.link;body.append(link);}
       if (item.credit)body.append(make('small','mediatech-credit',item.credit));
       card.append(visual,body);root.append(card);
     });
@@ -56,3 +57,4 @@
   });
   document.getElementById('med-link')?.addEventListener('input',event=>event.currentTarget.setCustomValidity(''));
 })();
+
