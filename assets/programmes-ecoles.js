@@ -6,5 +6,5 @@ if(p&&p.type==='Universitaire'){
  const levels=p.school.includes('Doctorale')?['Doctorat']:['DUT','DTS','BTS','Licence','Master'];
  const holder=document.getElementById('program-levels');
  if(holder){holder.hidden=false;const label=document.createElement('span');label.textContent='Niveaux universitaires : ';holder.append(label);
- levels.forEach(level=>{const a=document.createElement('a');a.className='btn btn-sm btn-outline-light me-2 mb-2';a.textContent=level;a.href=p.href+'?parcours=uni&niveau='+encodeURIComponent(level)+'#universitaire';holder.append(a)})}
+ levels.forEach(level=>{const a=document.createElement('a');a.className='btn btn-sm btn-outline-light me-2 mb-2';a.textContent=level;a.style.setProperty('color','#fff','important');a.style.setProperty('border-color','#ffffff99','important');a.href=p.href+'?parcours=uni&niveau='+encodeURIComponent(level)+'#universitaire';holder.append(a)})}
 }
