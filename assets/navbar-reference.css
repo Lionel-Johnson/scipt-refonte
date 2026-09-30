@@ -1,0 +1,67 @@
+
+/* Bandeau et navigation conformes à la référence fournie. */
+.approved-site .reference-brand-banner{position:static!important;background:linear-gradient(100deg,#c8d9ed,#fff 30%,#fff)!important;box-shadow:none;border:0}
+.approved-site .reference-brand-banner .approved-header-inner{min-height:200px;max-width:1500px;gap:30px;padding:12px 30px;justify-content:space-between}
+.approved-site .reference-brand-banner .approved-brand{gap:24px}
+.approved-site .reference-brand-banner .approved-seal{width:172px;height:172px;flex-basis:172px;padding:16px;box-shadow:0 0 25px #dfb84925}
+.approved-site .reference-brand-banner .approved-seal::before{padding:5px}
+.approved-site .reference-brand-banner .approved-brand strong{font:700 38px/1.12 Georgia,serif;letter-spacing:-.5px;color:#071d49;white-space:nowrap}
+.approved-site .reference-brand-banner .approved-brand em{font-style:normal;color:#be911f}
+.approved-site .reference-brand-banner .approved-brand small{font:700 13px/1.45 Arial,sans-serif;letter-spacing:2px;margin-top:8px}
+.navbar-brand-tagline{display:block;border-top:1px solid #d0b561;padding-top:9px;margin-top:10px;font:12px Arial,sans-serif;letter-spacing:1.6px;color:#071d49}
+.navbar-insignes{display:block;width:440px;height:auto;max-width:37%;object-fit:contain}
+.approved-navbar-shell{background:#082748;z-index:1030;border-bottom:1px solid #ffffff15}
+.approved-navbar-shell>.container{max-width:1440px;position:static}
+.approved-site .approved-navbar-shell .navbar{position:static;padding:0;min-height:55px;background:transparent!important;box-shadow:none;border:0}
+.approved-navbar-shell .navbar-collapse{justify-content:space-between}
+.approved-navbar-shell .navbar-nav{display:flex;width:100%;justify-content:space-between;align-items:center;gap:6px}
+.approved-site .approved-navbar-shell .navbar .nav-link{font:500 14px/1.4 Arial,sans-serif!important;color:#fff!important;background:transparent!important;border:0;border-radius:4px;padding:18px 14px!important;white-space:nowrap;box-shadow:none}
+.approved-site .approved-navbar-shell .navbar .nav-link.active{background:linear-gradient(#f4d36a,#e4ad29)!important;color:#071d49!important}
+.approved-navbar-shell .nav-link.active::after{display:none}
+.approved-site .approved-navbar-shell .navbar .nav-link:hover,.approved-site .approved-navbar-shell .navbar .nav-link:focus-visible{background:#ffffff12!important;color:#f7d265!important}
+.approved-navbar-shell .navbar-toggler{color:#fff;border:1px solid #ffffff55;margin:9px 0 9px auto;padding:9px 14px}
+.approved-navbar-shell .approved-mega{top:100%!important}
+.approved-navbar-shell .approved-mega a{white-space:normal}
+.approved-site [id]{scroll-margin-top:75px}
+@media(min-width:1200px) and (max-width:1399px){
+ .approved-site .reference-brand-banner .approved-header-inner{min-height:190px;padding-inline:22px;gap:22px}
+ .approved-site .reference-brand-banner .approved-seal{width:150px;height:150px;flex-basis:150px}
+ .approved-site .reference-brand-banner .approved-brand{gap:20px}
+ .approved-site .reference-brand-banner .approved-brand strong{font-size:32px}
+ .approved-site .reference-brand-banner .approved-brand small{font-size:11px;letter-spacing:1.5px}
+ .navbar-insignes{width:420px;max-width:36%}
+ .approved-site .approved-navbar-shell .navbar .nav-link{font-size:13px!important}
+}
+@media(max-width:1199px){
+ .approved-site .reference-brand-banner .approved-header-inner{min-height:170px;padding-inline:24px;gap:18px}
+ .approved-site .reference-brand-banner .approved-seal{width:135px;height:135px;flex-basis:135px;padding:13px}
+ .approved-site .reference-brand-banner .approved-brand{gap:16px}
+ .approved-site .reference-brand-banner .approved-brand strong{font-size:28px}
+ .approved-site .reference-brand-banner .approved-brand small{font-size:9px;letter-spacing:1.2px}
+ .navbar-brand-tagline{font-size:10px;letter-spacing:1px}
+ .navbar-insignes{max-width:34%;width:350px}
+ .approved-navbar-shell .navbar-collapse{background:#082748;max-height:calc(100vh - 65px);overflow:auto;padding:8px 0 14px}
+ .approved-navbar-shell .navbar-nav{display:block}
+ .approved-site .approved-navbar-shell .navbar .nav-link{display:block;width:100%;text-align:left;font-size:14px!important;padding:13px 14px!important}
+ .approved-navbar-shell .approved-dropdown{position:static!important}
+ .approved-site .approved-navbar-shell .approved-mega{position:static!important;transform:none!important;width:100%;max-height:none;border-top:3px solid #d30b20;margin:0 0 12px}
+}
+@media(max-width:767px){
+ .approved-site .reference-brand-banner .approved-header-inner{min-height:150px;padding:15px 18px;flex-direction:column;gap:14px}
+ .approved-site .reference-brand-banner .approved-brand{gap:15px;align-self:center}
+ .approved-site .reference-brand-banner .approved-seal{width:106px;height:106px;flex-basis:106px;padding:11px}
+ .approved-site .reference-brand-banner .approved-seal::before{padding:3px}
+ .approved-site .reference-brand-banner .approved-brand strong{font-size:26px}
+ .approved-site .reference-brand-banner .approved-brand small{font-size:9px;letter-spacing:1px}
+ .navbar-brand-tagline{font-size:9px;letter-spacing:.5px;padding-top:7px;margin-top:7px}
+ .navbar-insignes{width:460px;max-width:95%;max-height:75px}
+ .approved-site .approved-navbar-shell .navbar{min-height:54px}
+}
+@media(max-width:479px){
+ .approved-site .reference-brand-banner .approved-seal{width:84px;height:84px;flex-basis:84px;padding:9px}
+ .approved-site .reference-brand-banner .approved-brand{gap:11px}
+ .approved-site .reference-brand-banner .approved-brand strong{font-size:21px}
+ .approved-site .reference-brand-banner .approved-brand small{font-size:7px;letter-spacing:.6px}
+ .navbar-brand-tagline{font-size:8px;letter-spacing:.15px}
+ .approved-site .reference-brand-banner .approved-header-inner{padding:13px 12px;min-height:155px}
+}
