@@ -76,26 +76,42 @@
 @media(max-width:767px){.approved-site .reference-brand-banner .approved-seal{width:84px;height:84px;flex-basis:84px;padding:9px}}
 @media(max-width:479px){.approved-site .reference-brand-banner .approved-seal{width:68px;height:68px;flex-basis:68px;padding:7px}}
 
-/* Anneau orbital doré : le cachet reste fixe au centre. */
-.approved-site .approved-seal{overflow:visible}
+
+/* Fichiers officiels transparents : cachet fixe et anneau indépendant. */
+.approved-site .approved-seal{width:160px;height:160px;flex-basis:160px;padding:0;background:transparent!important;overflow:visible;isolation:auto;box-shadow:none}
+.approved-site .reference-brand-banner .approved-seal{width:160px;height:160px;flex-basis:160px;padding:0}
+.approved-site .approved-seal img{position:absolute;left:50%;top:50%;width:58px;height:58px;object-fit:contain;transform:translate(-50%,-50%);mix-blend-mode:normal;border:0;border-radius:0}
 .approved-site .approved-seal::before,
 .approved-site .reference-brand-banner .approved-seal::before{
- inset:-15%;padding:7px;border-radius:50%;
- background:conic-gradient(from 0deg,#70410b 0deg,#e8ad29 35deg,#fff6bd 65deg,#c58915 110deg,#75440b 160deg,#ffdc70 210deg,#fff9d5 240deg,#b77b12 290deg,#70410b 360deg);
- -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
- -webkit-mask-composite:xor;mask-composite:exclude;
- transform-origin:center;animation:scipt-orbital-gold 7s linear infinite;
- filter:drop-shadow(0 2px 2px #75460980) drop-shadow(0 0 4px #ffd55c99);
- z-index:2;pointer-events:none
+ content:'';position:absolute;inset:-20px;padding:0;border:0;border-radius:0;
+ background:url("anneau-or-transparent.png") calc(50% - 2px) calc(50% + 3px)/220px 277.35px no-repeat;
+ -webkit-mask:none;mask:none;filter:none;pointer-events:none;
+ transform-origin:center;animation:scipt-supplied-ring 9s linear infinite
 }
-.approved-site .approved-seal img{position:static;mix-blend-mode:multiply}
-.approved-site .reference-brand-banner .approved-brand{gap:38px}
-@keyframes scipt-orbital-gold{
- from{transform:rotate(-18deg) rotateX(65deg) rotateZ(0deg)}
- to{transform:rotate(-18deg) rotateX(65deg) rotateZ(360deg)}
+.approved-site .reference-brand-banner .approved-header-inner{min-height:184px}
+.approved-site .reference-brand-banner .approved-brand{gap:24px}
+.approved-footer .approved-seal{width:110px;height:110px;flex-basis:110px}
+.approved-footer .approved-seal img{width:38px;height:38px}
+.approved-footer .approved-seal::before{inset:-15px;background-size:160px 201.7px}
+@keyframes scipt-supplied-ring{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media(max-width:1199px){
+ .approved-site .reference-brand-banner .approved-seal{width:130px;height:130px;flex-basis:130px}
+ .approved-site .reference-brand-banner .approved-seal img{width:46px;height:46px}
+ .approved-site .reference-brand-banner .approved-seal::before{background-size:180px 226.92px}
+ .approved-site .reference-brand-banner .approved-header-inner{min-height:156px}
 }
 @media(max-width:767px){
- .approved-site .reference-brand-banner .approved-brand{gap:25px}
- .approved-site .approved-seal::before,
- .approved-site .reference-brand-banner .approved-seal::before{padding:5px}
+ .approved-site .reference-brand-banner .approved-seal{width:100px;height:100px;flex-basis:100px}
+ .approved-site .reference-brand-banner .approved-seal img{width:34px;height:34px}
+ .approved-site .reference-brand-banner .approved-seal::before{inset:-15px;background-size:145px 182.8px}
+ .approved-site .reference-brand-banner .approved-brand{gap:20px}
 }
+@media(max-width:479px){
+ .approved-site .reference-brand-banner .approved-seal{width:76px;height:76px;flex-basis:76px}
+ .approved-site .reference-brand-banner .approved-seal img{width:26px;height:26px}
+ .approved-site .reference-brand-banner .approved-seal::before{inset:-12px;background-size:110px 138.67px}
+ .approved-site .reference-brand-banner .approved-brand{gap:17px}
+}
+
+/* Visuel du slide avec enseigne SCIPT sur la façade. */
+.approved-site .reference-hero{background-image:url('campus-scipt-logo.jpg')}
