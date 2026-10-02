@@ -1,0 +1,93 @@
+/* Ajouts alignés sur le cahier des charges 2026 — charte SCIPT : marine #071B41, bleu #123D8D, or #F5B800 */
+.skip-link{position:absolute;left:8px;top:-60px;z-index:3000;background:#F5B800;color:#071B41;padding:10px 16px;font-weight:700;border-radius:0 0 8px 8px;text-decoration:none}
+.skip-link:focus{top:0}
+:focus-visible{outline:3px solid #F5B800;outline-offset:2px}
+main:focus{outline:none}
+/* Entrées par projet (accueil) */
+.project-entries{padding:46px 0;background:#fff}
+.project-entries .container{max-width:1200px}
+.project-entries h2{font-family:Lora,Georgia,serif;color:#071B41;margin:6px 0 20px}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.project-grid a{display:flex;align-items:center;gap:12px;padding:16px 18px;border:1px solid #d7e2f3;border-left:5px solid #F5B800;border-radius:10px;background:#f6f9ff;color:#071B41;font-weight:600;text-decoration:none}
+.project-grid a:hover,.project-grid a:focus-visible{background:#123D8D;color:#fff}
+@media(max-width:900px){.project-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.project-grid{grid-template-columns:1fr}}
+/* Orientation */
+.orient-hero{background:linear-gradient(110deg,#071B41,#123D8D);color:#fff;padding:64px 0 48px}
+.orient-hero h1{font-family:Lora,Georgia,serif}
+.orient-wrap{max-width:900px;margin:0 auto;padding:36px 16px 20px}
+.orient-wrap fieldset{border:1px solid #d7e2f3;border-radius:12px;padding:18px 20px;margin-bottom:16px;background:#fff}
+.orient-wrap legend{float:none;width:auto;padding:0 8px;font-size:1.05rem;font-weight:700;color:#071B41}
+.orient-wrap label{display:block;padding:6px 0;cursor:pointer}
+.orient-wrap input[type=radio]{margin-right:8px;accent-color:#123D8D}
+.orient-privacy,.orient-rules{font-size:.92rem;color:#38486b;background:#f6f9ff;border-radius:10px;padding:12px 16px;margin:14px 0}
+#orientation-results{margin-top:28px}
+.orient-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.orient-card{border:1px solid #d7e2f3;border-top:5px solid #F5B800;border-radius:12px;padding:18px;background:#fff}
+.orient-tag{font-size:.75rem;font-weight:700;color:#123D8D;text-transform:uppercase;letter-spacing:.6px}
+.orient-school{color:#38486b;font-size:.9rem}
+.orient-link{font-weight:700;color:#123D8D}
+.orient-note{color:#38486b;margin:12px 0}
+.orient-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+/* Pages légales */
+.legal-page{max-width:860px;margin:0 auto;padding:44px 16px}
+.legal-page h2{font-family:Lora,Georgia,serif;color:#071B41;margin-top:30px}
+.legal-todo{background:#fff6d6;border-left:5px solid #F5B800;padding:8px 12px;border-radius:6px;font-size:.92rem}
+/* Fiche formation, contenus, candidature, avancement */
+.fiche-grid{display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:0;border:1px solid #d7e2f3;border-radius:10px;overflow:hidden;margin:14px 0}
+.fiche-grid dt,.fiche-grid dd{padding:10px 14px;margin:0;border-bottom:1px solid #e6eef9}
+.fiche-grid dt{background:#f6f9ff;color:#071B41;font-weight:700}
+.fiche-grid ul{margin:0;padding-left:18px}
+.fiche-tbc{display:inline-block;background:#fff6d6;color:#6b5200;border-radius:6px;padding:2px 8px;font-size:.88rem}
+@media(max-width:640px){.fiche-grid{grid-template-columns:1fr}.fiche-grid dt{border-bottom:0}}
+.content-wrap{max-width:1100px;margin:0 auto;padding:36px 16px}
+.content-wrap h2{font-family:Lora,Georgia,serif;color:#071B41;margin:28px 0 14px}
+.content-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.content-card{border:1px solid #d7e2f3;border-top:5px solid #123D8D;border-radius:12px;padding:18px;background:#fff}
+.content-card blockquote{margin:0 0 10px;font-style:italic}
+.content-empty{background:#f6f9ff;border:1px dashed #9db4d9;border-radius:10px;padding:18px;color:#38486b}
+.info-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.info-cards a{display:block;border:1px solid #d7e2f3;border-left:5px solid #F5B800;border-radius:10px;padding:16px;background:#f6f9ff;color:#071B41;text-decoration:none;font-weight:600}
+.info-cards a span{display:block;font-weight:400;font-size:.9rem;color:#38486b;margin-top:4px}
+/* Candidature */
+.apply-steps{display:flex;gap:6px;list-style:none;padding:0;margin:0 0 22px;flex-wrap:wrap}
+.apply-steps li{flex:1;min-width:110px;text-align:center;padding:8px 6px;border-radius:8px;background:#e6eef9;color:#38486b;font-size:.85rem;font-weight:600}
+.apply-steps li[aria-current=step]{background:#123D8D;color:#fff}
+.apply-steps li.done{background:#F5B800;color:#071B41}
+.apply-panel[hidden]{display:none}
+.apply-panel label.form-label{font-weight:600;margin-top:10px}
+.apply-error{color:#B5121B;font-size:.9rem;min-height:1.2em}
+.apply-actions{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+.apply-recap dt{color:#071B41}.apply-recap dd{margin:0 0 8px}
+/* Avancement */
+.prog-bar{display:flex;height:22px;border-radius:11px;overflow:hidden;background:#e6eef9;margin:10px 0}
+.prog-bar span{display:block;height:100%}
+.st{display:inline-block;border-radius:6px;padding:2px 9px;font-size:.82rem;font-weight:700;white-space:nowrap}
+.st-livre{background:#d6f5df;color:#14532d}.st-partiel{background:#fff6d6;color:#6b5200}.st-contenu{background:#e0ecff;color:#123D8D}.st-plateforme{background:#ececec;color:#444}
+.av-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.av-table th,.av-table td{border-bottom:1px solid #e6eef9;padding:9px 10px;vertical-align:top;text-align:left}
+.av-table th{background:#071B41;color:#fff}
+.av-wrap{overflow-x:auto}
+
+/* ===== Logo L'Excelentia + anneau doré tournant (toutes les pages) ===== */
+.scipt-orbit{--d:150px;--w:8px;position:relative;display:inline-block;flex:0 0 var(--d);width:var(--d);height:var(--d);border-radius:50%;isolation:isolate}
+.scipt-orbit>img{position:absolute;inset:calc(var(--w) + 4px);width:calc(100% - 2 * (var(--w) + 4px));height:calc(100% - 2 * (var(--w) + 4px));object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(7,27,65,.18)}
+/* anneau principal : reflets d'or qui défilent */
+.scipt-orbit::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:-1;
+ background:conic-gradient(from 0deg,#7a5600,#f5b800 10%,#fff3b0 18%,#f5b800 26%,#9a7200 38%,#f7d46a 52%,#fff7cf 60%,#e0a800 70%,#7a5600 84%,#f5b800 94%,#7a5600);
+ -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - var(--w)),#000 calc(100% - var(--w) + 1px));
+ mask:radial-gradient(farthest-side,transparent calc(100% - var(--w)),#000 calc(100% - var(--w) + 1px));
+ filter:drop-shadow(0 0 5px rgba(245,184,0,.6));animation:scipt-orbit-spin 9s linear infinite}
+/* filet intérieur fin, en sens inverse */
+.scipt-orbit::after{content:"";position:absolute;inset:calc(var(--w) + 1px);border-radius:50%;z-index:-1;
+ background:conic-gradient(from 90deg,#b88700,#fff3b0 15%,#d9a400 30%,#8a6400 50%,#ffe58a 65%,#d9a400 80%,#b88700);
+ -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+ mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+ animation:scipt-orbit-spin 14s linear infinite reverse}
+@keyframes scipt-orbit-spin{to{transform:rotate(360deg)}}
+.approved-header .scipt-orbit{--d:146px}
+.scipt-orbit--footer{--d:124px;--w:6px}
+@media(max-width:1199px){.approved-header .scipt-orbit{--d:112px;--w:7px}}
+@media(max-width:767px){.approved-header .scipt-orbit{--d:88px;--w:5px}.scipt-orbit--footer{--d:104px}}
+@media(max-width:479px){.approved-header .scipt-orbit{--d:72px;--w:4px}}
+@media(prefers-reduced-motion:reduce){.scipt-orbit::before,.scipt-orbit::after{animation:none}}
