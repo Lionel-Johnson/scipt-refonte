@@ -43,3 +43,5 @@ window.SCIPT_FICHES={
 "7683":{"niveau_requis":"","duree":"","modalite":"","diplome":"","reconnaissance":"","competences":[],"pratique":"","debouches":[],"rentree":"","preuves":""},
 "7684":{"niveau_requis":"","duree":"","modalite":"","diplome":"","reconnaissance":"","competences":[],"pratique":"","debouches":[],"rentree":"","preuves":""}
 };
+
+Object.entries(window.SCIPT_FICHES).forEach(([id,f])=>{Object.keys(f).forEach(k=>f[k]='en cours de chargement...');f.niveau_requis='Tous publics, niveau terminale';f.duree='3 - 24 mois';f.modalite='Présentiel ; distanciel ; hybride';f.diplome=Number(id)>=7670?'CFP · AFP · CAP · CQF':Number(id)>=7666?'Doctorat':'DUT · DTS · BTS · Licence · Master';});
