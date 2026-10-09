@@ -1,0 +1,65 @@
+[
+  {
+    "id": "video-01",
+    "title": "Témoignage : un parcours de formation au SCIPT",
+    "original": "AEV-Consulting---Partners-Ltd_20240306_19.mp4",
+    "file": "scipt-video-01.mp4",
+    "poster": "scipt-video-01.jpg"
+  },
+  {
+    "id": "video-02",
+    "title": "Transport et logistique : témoignage de Pemba",
+    "original": "AEV-Consulting---Partners-Ltd_20240306_2.mp4",
+    "file": "scipt-video-02.mp4",
+    "poster": "scipt-video-02.jpg"
+  },
+  {
+    "id": "video-03",
+    "title": "Témoignage : les premiers pas en formation",
+    "original": "AEV-Consulting---Partners-Ltd_20240306_23.mp4",
+    "file": "scipt-video-03.mp4",
+    "poster": "scipt-video-03.jpg"
+  },
+  {
+    "id": "video-04",
+    "title": "Témoignage : découvrir et rejoindre une formation",
+    "original": "AEV-Consulting---Partners-Ltd_20240306_24_2.mp4",
+    "file": "scipt-video-04.mp4",
+    "poster": "scipt-video-04.jpg"
+  },
+  {
+    "id": "video-05",
+    "title": "Témoignage : découvrir les cours du SCIPT",
+    "original": "AEV-Consulting---Partners-Ltd_20240306_26.mp4",
+    "file": "scipt-video-05.mp4",
+    "poster": "scipt-video-05.jpg"
+  },
+  {
+    "id": "video-06",
+    "title": "VAE : valoriser son expérience professionnelle",
+    "original": "CEV FINIS VALIDE.mp4",
+    "file": "scipt-video-06.mp4",
+    "poster": "scipt-video-06.jpg"
+  },
+  {
+    "id": "video-07",
+    "title": "Santé : le témoignage d’Elsa en stage",
+    "original": "Elsa. BON.mp4",
+    "file": "scipt-video-07.mp4",
+    "poster": "scipt-video-07.jpg"
+  },
+  {
+    "id": "video-08",
+    "title": "Sciences infirmières : le témoignage de Murielle",
+    "original": "Murielle bon.mp4",
+    "file": "scipt-video-08.mp4",
+    "poster": "scipt-video-08.jpg"
+  },
+  {
+    "id": "video-09",
+    "title": "Formation professionnelle : beauté et esthétique",
+    "original": "Scene.mp4",
+    "file": "scipt-video-09.mp4",
+    "poster": "scipt-video-09.jpg"
+  }
+]
