@@ -55,8 +55,8 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "poster": "assets/videos/scipt-video-08.jpg"
   },
   "sante": {
-    "title": "Découvrez nos formations en santé",
-    "url": null
+    "title": "Spot Final Santé",
+    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Spot-Final-Sante.mp4"
   },
   "gestion": {
     "title": "Transport et logistique : témoignage de Pemba",
