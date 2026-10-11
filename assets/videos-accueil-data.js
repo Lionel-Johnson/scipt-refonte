@@ -55,9 +55,8 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "poster": "assets/videos/scipt-video-08.jpg"
   },
   "sante": {
-    "title": "Santé : le témoignage d’Elsa en stage",
-    "url": "assets/videos/scipt-video-07.mp4",
-    "poster": "assets/videos/scipt-video-07.jpg"
+    "title": "Découvrez nos formations en santé",
+    "url": null
   },
   "gestion": {
     "title": "Transport et logistique : témoignage de Pemba",
