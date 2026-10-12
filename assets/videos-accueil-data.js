@@ -55,7 +55,7 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "poster": "assets/videos/scipt-video-08.jpg"
   },
   "sante": {
-    "title": "Spot Final Santé",
+    "title": "Découvrez nos formations en santé",
     "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Spot-Final-Sante.mp4"
   },
   "gestion": {
