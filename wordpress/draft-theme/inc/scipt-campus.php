@@ -27,12 +27,17 @@ add_filter('login_redirect', function ($redirect, $requested, $user) {
 }, 10, 3);
 
 function scipt_private_directory() {
-    if (!defined('SCIPT_PRIVATE_UPLOAD_DIR')) return false;
-    $dir = SCIPT_PRIVATE_UPLOAD_DIR;
+    $docroot = isset($_SERVER['DOCUMENT_ROOT']) ? realpath($_SERVER['DOCUMENT_ROOT']) : false;
+    if (defined('SCIPT_PRIVATE_UPLOAD_DIR')) {
+        $dir = SCIPT_PRIVATE_UPLOAD_DIR;
+    } elseif ($docroot && dirname($docroot) !== $docroot) {
+        $dir = dirname($docroot) . DIRECTORY_SEPARATOR . 'scipt-private-' . substr(hash('sha256', ABSPATH), 0, 12);
+    } else { return false; }
     if (!wp_mkdir_p($dir)) return false;
     $real = realpath($dir);
     $webroot = realpath(ABSPATH);
     if (!$real || !$webroot || $real === $webroot || strpos($real, $webroot . DIRECTORY_SEPARATOR) === 0) return false;
+    if ($docroot && ($real === $docroot || strpos($real, $docroot . DIRECTORY_SEPARATOR) === 0)) return false;
     return is_writable($real) ? $real : false;
 }
 
@@ -48,11 +53,7 @@ add_shortcode('scipt_proposition', function () {
       <p><label>Nom *<br><input name="scipt_name" autocomplete="name" maxlength="120" required></label></p>
       <p><label>E-mail *<br><input name="scipt_email" type="email" autocomplete="email" maxlength="254" required></label></p>
       <p><label>Votre commentaire *<br><textarea name="scipt_message" rows="5" maxlength="1200" required></textarea></label></p>
-      <?php if (scipt_private_directory()) : ?>
       <p><label>Ajouter une image ou une vidéo<br><input name="scipt_file" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm"></label><br><small>JPG, PNG, WebP, MP4 ou WebM. Maximum 20 Mo, selon la limite du serveur.</small></p>
-      <?php else : ?>
-      <p>Le téléversement sera disponible dès son activation par l’administration. Vous pouvez déjà envoyer votre commentaire.</p>
-      <?php endif; ?>
       <p><label><input type="checkbox" name="scipt_consent" value="1" required> J’autorise l’équipe à me contacter et à examiner mon fichier avant une éventuelle diffusion.</label></p>
       <p style="display:none" aria-hidden="true"><label>Site personnel<input name="scipt_website" tabindex="-1" autocomplete="off"></label></p>
       <button type="submit">Envoyer ma proposition</button>
@@ -192,3 +193,5 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('scipt-retours', get_stylesheet_directory_uri() . '/assets/scipt-retours.css', array(), '20261014');
     wp_enqueue_script('scipt-retours', get_stylesheet_directory_uri() . '/assets/scipt-retours.js', array(), '20261014', true);
 });
+
+require_once __DIR__ . '/scipt-portail.php';
