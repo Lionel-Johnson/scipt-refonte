@@ -1,0 +1,13 @@
+.scipt-discovery-hero{background:#0b224a!important}
+.scipt-discovery-layout{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:44px}
+.scipt-discovery-copy{position:relative;z-index:1}
+.scipt-discovery-hero h1{font-size:clamp(32px,3.4vw,58px)!important;text-transform:none!important;line-height:1.12!important}
+.scipt-discovery-image{display:block;width:100%;height:320px;object-fit:cover;object-position:65% center;border-radius:20px;box-shadow:0 14px 40px #0003}
+.pathway-card{isolation:isolate}
+.pathway-card .pathway-side-image{position:absolute;right:0;top:0;width:36%;height:100%;object-fit:cover;object-position:65% center;z-index:1;opacity:.85;pointer-events:none}
+.pathway-card .pathway-content{position:relative;z-index:2;width:66%;padding-right:24px;box-sizing:border-box}
+.pathway-content>strong{font-size:clamp(28px,2.5vw,44px)!important;line-height:1.13!important}
+.pathway-content>strong>span{color:#ffdb67}
+.pathway-card .pathway-doors{z-index:0}
+@media(max-width:991px){.scipt-discovery-layout{grid-template-columns:1fr;gap:24px}.scipt-discovery-image{height:240px}.pathway-card .pathway-side-image{width:30%;opacity:.45}.pathway-card .pathway-content{width:78%}}
+@media(max-width:600px){.pathway-card .pathway-side-image{width:100%;opacity:.14}.pathway-card .pathway-content{width:100%}.scipt-discovery-image{height:210px}}
