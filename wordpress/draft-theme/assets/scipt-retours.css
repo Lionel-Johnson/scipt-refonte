@@ -1,0 +1,20 @@
+.scipt-card-title{color:inherit;text-decoration:none}
+.scipt-card-title:hover,.scipt-card-title:focus-visible{text-decoration:underline}
+.scipt-about-menu{min-width:18rem;max-width:95vw;padding:.5rem}
+.scipt-about-menu .dropdown-item{white-space:normal;padding:.7rem 1rem}
+.approved-navbar-shell .navbar-nav>.approved-dropdown:has(.scipt-catalogue-link){display:flex;align-items:center;flex-wrap:wrap}
+.approved-site .approved-navbar-shell .navbar .scipt-catalogue-link{white-space:normal;max-width:14rem}
+.approved-site .approved-navbar-shell .navbar .scipt-menu-toggle{padding-left:.3rem!important;padding-right:.6rem!important;min-width:36px;min-height:44px}
+.scipt-upload-frame{width:100%;min-height:800px;border:0;background:#fff;border-radius:12px}
+@media(min-width:1200px){.approved-site .approved-navbar-shell .navbar .nav-link{font-size:11px!important;padding:14px 8px!important}.approved-navbar-shell .navbar-nav{gap:2px}}
+@media(max-width:1199px){.approved-site .approved-navbar-shell .navbar .scipt-catalogue-link{max-width:none;flex:1;width:auto}.approved-site .approved-navbar-shell .navbar .scipt-menu-toggle{width:44px;flex:0 0 44px}.approved-navbar-shell .approved-dropdown>.dropdown-menu{flex-basis:100%}.scipt-about-menu{min-width:0;position:static!important;transform:none!important;width:100%}}
+
+.scipt-functional-page{color:#103d78;font-family:Arial,sans-serif}
+.scipt-functional-page>.elementor-widget-heading,.scipt-functional-page>.elementor-widget-shortcode{width:min(1000px,calc(100% - 40px));margin:24px auto}
+.scipt-functional-page input:not([type=checkbox]),.scipt-functional-page textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid #bcc9dc;border-radius:6px}
+.scipt-functional-page button,.scipt-functional-page input[type=submit]{background:#103d78;color:white;padding:12px 20px;border:0;border-radius:6px}
+.scipt-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.scipt-blog-grid article{padding:20px;background:#f3f6fb;border-radius:10px}
+.scipt-blog-grid img{width:100%;height:180px;object-fit:cover}
+.scipt-blog-grid a{color:#103d78}
+@media(max-width:700px){.scipt-blog-grid{grid-template-columns:1fr}}

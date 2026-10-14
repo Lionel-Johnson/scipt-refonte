@@ -47,14 +47,4 @@
   buttons.forEach(button=>button.addEventListener('click',()=>{buttons.forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));});render(button.dataset.mediatechFilter);}));
   render('tous');
   if (location.hash === '#mediatech-videos') buttons.find(item=>item.dataset.mediatechFilter==='video')?.click();
-  document.getElementById('mediatech-form')?.addEventListener('submit',event=>{
-    event.preventDefault();const form=event.currentTarget;if(!form.reportValidity())return;
-    const get=id=>document.getElementById(id).value.trim();
-    if (get('med-type')!=='Texte' && !get('med-link')) {document.getElementById('med-link').setCustomValidity('Ajoutez le lien vers votre image ou votre vidéo.');document.getElementById('med-link').reportValidity();return;}
-    document.getElementById('med-link').setCustomValidity('');
-    const body=`Nom : ${get('med-name')}\nEmail : ${get('med-email')}\nContenu : ${get('med-type')}\nLien : ${get('med-link')||'Sans lien'}\n\nCommentaire :\n${get('med-message')}\n\nAccord pour être contacté : oui`;
-    location.href='mailto:info@sciptinternational.com?subject='+encodeURIComponent('Proposition pour la Médiatech SCIPT')+'&body='+encodeURIComponent(body);
-  });
-  document.getElementById('med-link')?.addEventListener('input',event=>event.currentTarget.setCustomValidity(''));
 })();
-
