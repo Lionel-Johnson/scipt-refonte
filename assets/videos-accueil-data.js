@@ -31,7 +31,7 @@ window.SCIPT_VIDEOS_ACCUEIL = {
   },
   "video-07": {
     "title": "Santé : le témoignage d’Elsa en stage",
-    "url": "assets/videos/scipt-video-07.mp4",
+    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Sante-le-temoignage-dElsa-en-stage.mp4",
     "poster": "assets/videos/scipt-video-07.jpg"
   },
   "video-08": {
