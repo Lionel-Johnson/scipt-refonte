@@ -11,3 +11,8 @@ function scipt_global_page_corrections($html) {
 }
 add_filter('elementor/widget/render_content', 'scipt_global_page_corrections', 99);
 add_filter('the_content', 'scipt_global_page_corrections', 99);
+
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('scipt-about-dialogs', get_stylesheet_directory_uri() . '/assets/about-dialogs.css', array(), '20261015');
+    wp_enqueue_script('scipt-about-dialogs', get_stylesheet_directory_uri() . '/assets/about-dialogs.js', array(), '20261015', true);
+});
