@@ -3,6 +3,24 @@
   "source": "Configuration Écoles SCIPT — synthèse fournie, pages 1 à 5",
   "schools": [
     {
+      "code": "ESSA",
+      "name": "École des Sciences de la Santé",
+      "href": "ecole-sante-developpement.html",
+      "image": "sante.jpg",
+      "domain": "sante",
+      "departments": [
+        "Médecine Générale",
+        "Sciences Infirmières et Maïeutique",
+        "Pharmacie",
+        "Sciences Biomédicales et de Laboratoire",
+        "Imagerie Médicale et Radiothérapie",
+        "Sciences Paramédicales et de Réadaptation"
+      ],
+      "description": "Former des professionnels de santé compétents, responsables et profondément humains. L’école associe enseignements théoriques structurés, pratique et ouverture internationale pour répondre aux besoins sanitaires du Gabon et de l’Afrique.",
+      "video_key": "sante",
+      "logo": "sante.jpg"
+    },
+    {
       "code": "ESGA",
       "name": "École de Droit, Gestion, Administration et Commerce",
       "href": "ecole-droit-sciences-gestion.html",
@@ -14,7 +32,10 @@
         "Droit et Carrières Juridiques",
         "Logistique et Transport",
         "International Business"
-      ]
+      ],
+      "description": "Préparer les leaders de demain à relever les défis d’un monde en constante évolution, grâce à une formation rigoureuse, pratique et tournée vers l’avenir. Droit, gestion, administration, finance, logistique et affaires internationales structurent les parcours.",
+      "video_key": "gestion",
+      "logo": "droit.jpg"
     },
     {
       "code": "ESTI",
@@ -28,22 +49,10 @@
         "Ingénierie",
         "Mines, Pétrole et Énergies",
         "Agronomie, Agriculture, Élevage et Agro-industrie"
-      ]
-    },
-    {
-      "code": "ESSA",
-      "name": "École des Sciences de la Santé",
-      "href": "ecole-sante-developpement.html",
-      "image": "sante.jpg",
-      "domain": "sante",
-      "departments": [
-        "Médecine Générale",
-        "Sciences Infirmières et Maïeutique",
-        "Pharmacie",
-        "Sciences Biomédicales et de Laboratoire",
-        "Imagerie Médicale et Radiothérapie",
-        "Sciences Paramédicales et de Réadaptation"
-      ]
+      ],
+      "description": "Comprendre les sciences, concevoir des solutions techniques et développer les compétences de l’ingénierie. Les départements couvrent les technologies numériques, les systèmes industriels, les ressources énergétiques et l’agro-industrie.",
+      "video_key": "technologies",
+      "logo": "technique.jpg"
     },
     {
       "code": "ESHC",
@@ -56,7 +65,10 @@
         "Sciences de la Communication",
         "Journalisme et Médias",
         "Arts, Médias et Production Audiovisuelle"
-      ]
+      ],
+      "description": "Comprendre les sociétés, accompagner le développement communautaire et maîtriser les métiers de la communication. Les parcours relient sciences humaines et sociales, journalisme, médias, création audiovisuelle et arts numériques.",
+      "video_key": "humaines",
+      "logo": "logo-university-client.jpeg"
     }
   ],
   "programmes": [
@@ -795,5 +807,23 @@
     "https://sciptinternational.com/wp-content/uploads/2024/11/1cert-150x150.jpg",
     "https://sciptinternational.com/wp-content/uploads/2024/03/iso-9001-golden-medal-with-red-ribbon-vector-seal-award-gold-quality-management-systems-qms_751264-2-150x150.jpg",
     "https://sciptinternational.com/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-11-at-21.50.57-e1730390690375-150x150.jpeg"
-  ]
+  ],
+  "presentation": {
+    "school_count": 5,
+    "order": [
+      "ESSA",
+      "ESGA",
+      "ESTI",
+      "ESHC",
+      "DOCTORALE"
+    ],
+    "label": "5 écoles",
+    "source_note": "Présentation validée : les quatre regroupements de la synthèse et l’École Doctorale Internationale constituent les cinq écoles."
+  },
+  "source_descriptions": {
+    "ESSA": "Guide de Présentation de ESSA SCIPT 2026, pages 4 et 7 à 9",
+    "ESGA": "Guide de Présentation SCIPT modifié, page 56",
+    "ESTI": "Synthèse, page 2",
+    "ESHC": "Synthèse, page 4"
+  }
 }

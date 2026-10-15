@@ -44,7 +44,7 @@ function scipt_institution_transform($html) {
         return '<a' . $m[1] . '>' . $label . '</a>';
     }, $html);
     $html = str_replace(array('Afficher les écoles : Visitez nos Programmes Universitaires', 'Afficher les écoles : Visitez nos Formations Professionnelles', 'Afficher les écoles : Découvrez nos Programmes Universitaires', 'Afficher les écoles : Découvrez nos Formations Professionnelles'), array('Afficher les écoles : Programmes Universitaire', 'Afficher les écoles : Formation Professionnelles', 'Afficher les écoles : Programmes Universitaire', 'Afficher les écoles : Formation Professionnelles'), $html);
-    return str_replace(array('Visitez nos Programmes Universitaires', 'Visitez nos Formations Professionnelles'), array('Découvrez nos Programmes Universitaires', 'Découvrez nos Formations Professionnelles'), $html);
+    return str_replace(array('quatre écoles académiques et une École Doctorale Internationale SCIPT', 'quatre écoles académiques', 'Quatre écoles académiques', '4 écoles académiques', 'Visitez nos Programmes Universitaires', 'Visitez nos Formations Professionnelles'), array('cinq écoles', 'cinq écoles', 'Cinq écoles', '5 écoles', 'Découvrez nos Programmes Universitaires', 'Découvrez nos Formations Professionnelles'), $html);
 }
 add_filter('elementor/widget/render_content', 'scipt_institution_transform', 90);
 add_filter('the_content', 'scipt_institution_transform', 90);
@@ -67,7 +67,8 @@ add_filter('template_include', function ($template) {
     return $template;
 }, 100);
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-navbar-visible');
+    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-ecoles-videos');
+    wp_enqueue_style('scipt-school-videos', get_stylesheet_directory_uri() . '/assets/videos-accueil.css', array(), '20261015-ecoles-videos');
     wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array(), '20261015-architecture', true);
 });
 

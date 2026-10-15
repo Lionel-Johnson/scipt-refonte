@@ -51,17 +51,24 @@ window.SCIPT_VIDEOS_ACCUEIL = {
   },
   "universitaire": {
     "title": "Sciences infirmières : le témoignage de Murielle",
-    "url": "assets/videos/scipt-video-08.mp4",
-    "poster": "assets/videos/scipt-video-08.jpg"
+    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Sciences-infirmieres-le-temoignage-de-Murielle.mp4",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/scipt-video-08.jpg",
+    "description": "Un regard sur la formation et l’expérience étudiante au SCIPT INTERNATIONAL, à travers un témoignage en sciences infirmières.",
+    "transcript": "Témoignage d’une apprenante en sciences infirmières sur son parcours de formation au SCIPT INTERNATIONAL."
   },
   "sante": {
-    "title": "Découvrez nos formations en santé",
-    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Spot-Final-Sante.mp4"
+    "title": "Sciences de la santé — former pour soigner et accompagner",
+    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Spot-Final-Sante.mp4",
+    "description": "Découvrez la formation aux métiers de la santé au SCIPT INTERNATIONAL, entre enseignement, pratique et engagement humain.",
+    "transcript": "Découvrez la formation aux métiers de la santé au SCIPT INTERNATIONAL, entre enseignement, pratique et engagement humain.",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/sante.jpg"
   },
   "gestion": {
-    "title": "Transport et logistique : témoignage de Pemba",
-    "url": "assets/videos/scipt-video-02.mp4",
-    "poster": "assets/videos/scipt-video-02.jpg"
+    "title": "Gestion et logistique — développer les compétences professionnelles",
+    "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Transport-et-logistique-temoignage-de-Pemba.mp4",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/scipt-video-02.jpg",
+    "description": "Un témoignage de parcours dans les domaines du transport et de la logistique, au cœur des activités de gestion.",
+    "transcript": "Un témoignage de parcours dans les domaines du transport et de la logistique, au cœur des activités de gestion."
   },
   "vae": {
     "title": "VAE : valoriser son expérience professionnelle",
@@ -69,12 +76,18 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "poster": "assets/videos/scipt-video-06.jpg"
   },
   "technologies": {
-    "title": "Découvrez nos sciences, technologies et ingénierie",
-    "url": null
+    "title": "Sciences, technologies et ingénierie — concevoir les solutions de demain",
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies.mp4",
+    "description": "Une présentation des domaines de l’ESTI : sciences appliquées, systèmes numériques, ingénierie, ressources et agro-industrie.",
+    "transcript": "Une présentation des domaines de l’ESTI : sciences appliquées, systèmes numériques, ingénierie, ressources et agro-industrie.",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies.jpg"
   },
   "doctorale": {
-    "title": "Découvrez l’école doctorale internationale",
-    "url": null
+    "title": "École doctorale internationale — approfondir les savoirs par la recherche",
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale.mp4",
+    "description": "Construire une problématique, structurer une méthode et partager les résultats dans les domaines doctoraux du SCIPT.",
+    "transcript": "Construire une problématique, structurer une méthode et partager les résultats dans les domaines doctoraux du SCIPT.",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale.jpg"
   },
   "vae-explication": {
     "title": "La VAE, étape par étape",
@@ -83,5 +96,12 @@ window.SCIPT_VIDEOS_ACCUEIL = {
   "vae-archive": {
     "title": "Présentation complémentaire de la VAE",
     "url": "https://sciptinternational.com/wp-content/uploads/2025/04/VAE-VALIDATION-DES-ACQUIS-DE-LEXPERIENCE.mp4"
+  },
+  "humaines": {
+    "title": "Sciences humaines et communication — comprendre, transmettre, agir",
+    "description": "Découvrez les domaines de l’ESHC : sociétés, développement communautaire, communication, médias et création.",
+    "transcript": "Découvrez les domaines de l’ESHC : sociétés, développement communautaire, communication, médias et création.",
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines.mp4",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines.jpg"
   }
 };
