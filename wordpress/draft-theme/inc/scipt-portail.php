@@ -129,3 +129,5 @@ add_filter('template_include', function ($template) {
     if (is_page(2550) && !is_feed()) return get_stylesheet_directory() . '/scipt-account-page.php';
     return $template;
 }, 99);
+
+require_once __DIR__ . '/scipt-performances.php';
