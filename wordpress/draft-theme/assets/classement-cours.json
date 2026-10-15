@@ -1,0 +1,989 @@
+{
+  "version": "2026-10-15",
+  "source_catalogue": "assets/orientation-data.js",
+  "mode": "classement de travail dans le thème brouillon ; aucune inscription ni cours existant modifié",
+  "filieres": [
+    {
+      "id": "7645",
+      "type": "Universitaire",
+      "title": "Droit et carrières juridiques",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7646",
+      "type": "Universitaire",
+      "title": "Administration publique",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7647",
+      "type": "Universitaire",
+      "title": "Management et organisations",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7648",
+      "type": "Universitaire",
+      "title": "Marketing et commerce",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7649",
+      "type": "Universitaire",
+      "title": "Entrepreneuriat et innovation",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7650",
+      "type": "Universitaire",
+      "title": "Gestion des ressources humaines",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7651",
+      "type": "Universitaire",
+      "title": "Finance, comptabilité et audit",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7652",
+      "type": "Universitaire",
+      "title": "Logistique et supply chain management",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7653",
+      "type": "Universitaire",
+      "title": "Génie civil",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7654",
+      "type": "Universitaire",
+      "title": "Électrotechnique",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7655",
+      "type": "Universitaire",
+      "title": "Génie mécanique",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7656",
+      "type": "Universitaire",
+      "title": "Sciences informatiques et digital",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7657",
+      "type": "Universitaire",
+      "title": "Architecture et BTP",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7658",
+      "type": "Universitaire",
+      "title": "Énergies et environnement",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7659",
+      "type": "Universitaire",
+      "title": "Médecine générale",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7660",
+      "type": "Universitaire",
+      "title": "Sciences infirmières",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7661",
+      "type": "Universitaire",
+      "title": "Maïeutique et sciences obstétricales",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7662",
+      "type": "Universitaire",
+      "title": "Pharmacie",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7663",
+      "type": "Universitaire",
+      "title": "Sciences biomédicales et de laboratoire",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7664",
+      "type": "Universitaire",
+      "title": "Imagerie médicale",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7665",
+      "type": "Universitaire",
+      "title": "Secrétariat médical",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7666",
+      "type": "Universitaire",
+      "title": "Domaine doctoral de sciences juridiques, politiques et gestion",
+      "school": "SCIPT INTERNATIONAL",
+      "domain": "recherche"
+    },
+    {
+      "id": "7667",
+      "type": "Universitaire",
+      "title": "Domaine doctoral de sciences, technologies et ingénierie",
+      "school": "SCIPT INTERNATIONAL",
+      "domain": "recherche"
+    },
+    {
+      "id": "7668",
+      "type": "Universitaire",
+      "title": "Domaine doctoral de sciences de la santé",
+      "school": "SCIPT INTERNATIONAL",
+      "domain": "recherche"
+    },
+    {
+      "id": "7669",
+      "type": "Universitaire",
+      "title": "Domaine doctoral de sciences humaines et communication",
+      "school": "SCIPT INTERNATIONAL",
+      "domain": "recherche"
+    },
+    {
+      "id": "7670",
+      "type": "Professionnelle",
+      "title": "Secrétariat médical professionnel",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7671",
+      "type": "Professionnelle",
+      "title": "Assistance aux soins",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7672",
+      "type": "Professionnelle",
+      "title": "Hygiène et sécurité sanitaire",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7673",
+      "type": "Professionnelle",
+      "title": "Maintenance informatique et réseaux",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7674",
+      "type": "Professionnelle",
+      "title": "Bureautique et outils numériques",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7675",
+      "type": "Professionnelle",
+      "title": "Caméras de surveillance et sécurité",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7676",
+      "type": "Professionnelle",
+      "title": "Électricité bâtiment et industrielle",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7677",
+      "type": "Professionnelle",
+      "title": "Maçonnerie et finitions",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7678",
+      "type": "Professionnelle",
+      "title": "Plomberie et installation sanitaire",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7679",
+      "type": "Professionnelle",
+      "title": "Panneaux solaires et énergies renouvelables",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7680",
+      "type": "Professionnelle",
+      "title": "Froid domestique et industriel",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7681",
+      "type": "Professionnelle",
+      "title": "Assistance de direction",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7682",
+      "type": "Professionnelle",
+      "title": "Comptabilité et gestion",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7683",
+      "type": "Professionnelle",
+      "title": "Logistique et transport",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7684",
+      "type": "Professionnelle",
+      "title": "Pâtisserie professionnelle",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7701",
+      "title": "Mécatronique",
+      "type": "Universitaire",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7702",
+      "title": "Communication d’entreprise",
+      "type": "Universitaire",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7703",
+      "title": "Pétrole et gaz",
+      "type": "Universitaire",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7704",
+      "title": "Mines",
+      "type": "Universitaire",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7705",
+      "title": "Management des projets",
+      "type": "Universitaire",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7706",
+      "title": "Qualité, hygiène, sécurité et environnement (QHSE)",
+      "type": "Universitaire",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7801",
+      "type": "Professionnelle",
+      "title": "Secrétariat bureautique — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7802",
+      "type": "Professionnelle",
+      "title": "Secrétaire comptable — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7803",
+      "type": "Professionnelle",
+      "title": "Assistant en Ressources Humaines — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7804",
+      "type": "Professionnelle",
+      "title": "Assistante de direction — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7805",
+      "type": "Professionnelle",
+      "title": "Assistant gestionnaire des stocks — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7806",
+      "type": "Professionnelle",
+      "title": "Transit Douane — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7807",
+      "type": "Professionnelle",
+      "title": "Assistant HSE — 18 mois",
+      "school": "École de Droit, Sciences & Gestion d’Administration",
+      "domain": "gestion"
+    },
+    {
+      "id": "7808",
+      "type": "Professionnelle",
+      "title": "Maintenance informatique et électronique — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7809",
+      "type": "Professionnelle",
+      "title": "Froid et Climatisation — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7810",
+      "type": "Professionnelle",
+      "title": "Électricité bâtiment — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7811",
+      "type": "Professionnelle",
+      "title": "Électricité industrielle — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7812",
+      "type": "Professionnelle",
+      "title": "Mécatronique — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7813",
+      "type": "Professionnelle",
+      "title": "Installation des panneaux solaires — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7814",
+      "type": "Professionnelle",
+      "title": "Maintenance du matériel audiovisuel — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7815",
+      "type": "Professionnelle",
+      "title": "Construction des fosses septiques non vidangeables — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7816",
+      "type": "Professionnelle",
+      "title": "Maçonnerie — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7817",
+      "type": "Professionnelle",
+      "title": "Plomberie — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7818",
+      "type": "Professionnelle",
+      "title": "Coiffure, esthétique et onglerie — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7819",
+      "type": "Professionnelle",
+      "title": "Hôtellerie et restauration — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7820",
+      "type": "Professionnelle",
+      "title": "Éducatrice Préscolaire — 18 mois",
+      "school": "École des Sciences, Technologies et d’Ingénierie",
+      "domain": "tech"
+    },
+    {
+      "id": "7821",
+      "type": "Professionnelle",
+      "title": "Secrétariat Médical — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7822",
+      "type": "Professionnelle",
+      "title": "Vendeuse en Pharmacie — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7823",
+      "type": "Professionnelle",
+      "title": "Infirmière Assistante — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7824",
+      "type": "Professionnelle",
+      "title": "Assistant Sage-Femme — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7825",
+      "type": "Professionnelle",
+      "title": "Assistant en Imagerie Médicale — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    },
+    {
+      "id": "7826",
+      "type": "Professionnelle",
+      "title": "Assistant Technicien de Laboratoire — 18 mois",
+      "school": "École des Sciences de la Santé et du Développement",
+      "domain": "sante"
+    }
+  ],
+  "courses": [
+    {
+      "course_id": 3637,
+      "title": "Droit du Travail ANNÉE ACADÉMIQUE : 2024 – 2025",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 3663,
+      "title": "Économie d’entreprises ANNÉE ACADÉMIQUE : 2024 – 2025",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 3799,
+      "title": "Management des Ressources Humaines ANNÉE ACADÉMIQUE : 2024 – 2025",
+      "catalogue_id": "7650",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 3831,
+      "title": "Controle de Gestion ANNÉE ACADÉMIQUE : 2024 – 2025",
+      "catalogue_id": "7651",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 3889,
+      "title": "Comptabilite ANNÉE ACADÉMIQUE : 2024 – 2025",
+      "catalogue_id": "7651",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 4060,
+      "title": "Santé Publique : 2024-2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4228,
+      "title": "SÉMIOLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4230,
+      "title": "Français",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 4430,
+      "title": "NEUROLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4433,
+      "title": "SECRETARIAT MEDICAL",
+      "catalogue_id": "7665",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 4436,
+      "title": "PHARMACOLOGIE GENERALE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4540,
+      "title": "PATHOLOGIE GENERALE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4607,
+      "title": "IMMUNOLOGIE FONDAMENTALE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4698,
+      "title": "CARDIOLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4799,
+      "title": "GYNECOLOGIE &amp; OBSTETRIQUE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 4846,
+      "title": "PSYCHOLOGIE CLINIQUE",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 4959,
+      "title": "ENDOCRINOLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5025,
+      "title": "MANAGEMENT DES PROJETS",
+      "catalogue_id": "7705",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5102,
+      "title": "GERIATRIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5164,
+      "title": "PEDIATRIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5203,
+      "title": "ETHIQUE ET DEONTOLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5283,
+      "title": "MICROBIOLOGIE",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5390,
+      "title": "DROIT DU TRAVAIL Session 12/25",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 5631,
+      "title": "RATTRAPAGES MANAGEMENT DES PROJETS 12/2025",
+      "catalogue_id": "7705",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5634,
+      "title": "RATTRAPAGE DE COMPTABILITE 12/2025",
+      "catalogue_id": "7651",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5636,
+      "title": "RATTRAPAGE DE FRANCAIS 12/2025",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 5644,
+      "title": "RATTRAPAGE EN ENDOCRINOLOGIE 12/2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5646,
+      "title": "RATTRAPAGE DE PHARMACOLOGIE 12/2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5648,
+      "title": "RATTRAPAGE DE NEUROLOGIE 12/2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5651,
+      "title": "RATTRAPAGE DE SEMIOLOGIE 12/2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5653,
+      "title": "RATTRAPAGE DE GERIATRIE 12/2025",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5728,
+      "title": "Génératrice et moteur à courant continu et Électrotechnique fondamentale",
+      "catalogue_id": "7654",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5762,
+      "title": "Énergies renouvelables et solutions écologiques et Architecture des systèmes électriques du bâtiment",
+      "catalogue_id": "7658",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5796,
+      "title": "ECONOMIE DES TRANSPORTS",
+      "catalogue_id": "7652",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5816,
+      "title": "GESTION DES ENTREPOTS ET PLATEFORMES L3  2026",
+      "catalogue_id": "7652",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 5864,
+      "title": "ANATOMIE ET PHYSIOLOGIE L1 et L2 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5868,
+      "title": "PHYSIOLOGIE L3 ET MASTER 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 5981,
+      "title": "Santé Publique et Épidémiologie analytique, Biostatistiques, Planification M1 et M2, PhD1",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6002,
+      "title": "ARCHITECTURE DES SYSTÈMES ELECTRIQUES L2 2026",
+      "catalogue_id": "7654",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6035,
+      "title": "MATHÉMATIQUES APPLIQUÉES ET STATISTIQUES L2 - 2026",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 6106,
+      "title": "SANTE COMMUNAUTAIRE AVANCEE M2 et PhD1 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6124,
+      "title": "IMMUNOLOGIE GÉNÉRALE L3 - 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6166,
+      "title": "DROIT DU TRAVAIL Toutes filières SES 02-SEM01 2026",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 6178,
+      "title": "IMMUNOLOGIE AVANCÉE MASTER 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6274,
+      "title": "SANTE COMMUNAUTAIRE L3 - 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6280,
+      "title": "IMMUNOLOGIE AVANCÉE MASTER 2026 Sujet 2",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6286,
+      "title": "MATHÉMATIQUES APPLIQUÉES ET STATISTIQUES L3 - 2026 SUJET 2",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 6353,
+      "title": "DISPENSATION &amp; CONSEIL PHARMACEUTIQUE L3 - 2026",
+      "catalogue_id": "7662",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6442,
+      "title": "EXAMEN PARTIEL ANATOMIE ET PHYSIOLOGIE GÉNÉRALE L1 et L2 SES02-SEM01 2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6445,
+      "title": "EXAMEN PARTIEL EN IMMUNOLOGIE APPLIQUÉE MASTER SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6514,
+      "title": "EXAMEN PARTIEL D'ÉCONOMIE DES TRANSPORTS L3 SES02-SEM01/ 2026",
+      "catalogue_id": "7652",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6521,
+      "title": "EXAMEN PARTIEL DE SANTE PUBLIQUE ET ÉPIDÉMIOLOGIE MASTER SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6551,
+      "title": "EXAMEN PARTIEL DE GESTION DES ENTREPÔTS ET DES PLATE-FORMES L3 SES02-SEM01 /2026",
+      "catalogue_id": "7652",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6619,
+      "title": "EXAMEN PARTIEL DES FONDAMENTAUX EN SANTÉ COMMUNAUTAIRE L3 SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6646,
+      "title": "EXAMEN PARTIEL EN SANTÉ COMMUNAUTAIRE ET SYSTÈME DE SANTÉ MASTER 2 /SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6662,
+      "title": "EXAMEN PARTIEL EN IMMUNOLOGIE FONDAMENTALE L2, L3 SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_sante",
+      "reason": "Matière de santé susceptible de concerner plusieurs filières ; aucune affectation exclusive déduite du titre."
+    },
+    {
+      "course_id": 6684,
+      "title": "EXAMEN PARTIEL EN GÉNÉRATRICE ET MOTEUR DE COURANT CONTINU L2 SES02-SEM01 /2026",
+      "catalogue_id": "7654",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6693,
+      "title": "EXAMEN PARTIEL EN ARCHITECTURE DES SYSTÈMES ELECTRIQUES L2 SES02-SEM01 /2026",
+      "catalogue_id": "7654",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6748,
+      "title": "EXAMEN PARTIEL DE DROIT DU TRAVAIL SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 6805,
+      "title": "EXAMEN PARTIEL EN FONDAMENTAUX PHARMACEUTIQUES (NIVEAU AVANCÉ) SES02-SEM01 /2026",
+      "catalogue_id": "7662",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6837,
+      "title": "EXAMEN PARTIEL EN ETUDE DES SYSTÈMES RENOUVELABLES- L2",
+      "catalogue_id": "7658",
+      "status": "rattachement",
+      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+    },
+    {
+      "course_id": 6845,
+      "title": "EXAMEN PARTIEL SUR LA RÉGLEMENTATION ET NORMES AVANCÉES - L2 S01-SEM02 /2026",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 6861,
+      "title": "EXAMEN PARTIEL DE STATISTIQUES ET MATHÉMATIQUES - L2 SES02-SEM01 /2026",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 7071,
+      "title": "CONCOURS EPREUVE 1 CULTURE GENERALE - Toutes filières",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 7150,
+      "title": "CONCOURS EPREUVE 3 APTITUDES ACADÉMIQUES - Toutes filières",
+      "catalogue_id": null,
+      "status": "transversal_general",
+      "reason": "Matière commune ou épreuve toutes filières ; ne pas attribuer à une seule filière."
+    },
+    {
+      "course_id": 7208,
+      "title": "CONCOURS EPREUVE 2 FILIÈRES SANTE (Infirmière, Sage-femme, Pharmacie)",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 7210,
+      "title": "CONCOURS ÉPREUVE 2 Pétrole et Électrotechnique",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    },
+    {
+      "course_id": 7212,
+      "title": "CONCOURS EPREUVE 2 Comptabilité et Sciences de Gestion",
+      "catalogue_id": null,
+      "status": "a_confirmer",
+      "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
+    }
+  ]
+}

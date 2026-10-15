@@ -1,6 +1,7 @@
 <?php
 /** Indicateurs administratifs de la refonte, calculés à partir des contenus existants. */
 defined('ABSPATH') || exit;
+require_once __DIR__ . '/scipt-classement.php';
 
 add_action('init', function () {
     if (!post_type_exists('sfwd-courses')) return;
@@ -83,6 +84,7 @@ function scipt_render_performance_dashboard() {
         echo '</tr>';
     }
     echo '</tbody></table></div><p><a class="button" href="' . esc_url(admin_url('edit-tags.php?taxonomy=scipt_filiere&post_type=sfwd-courses')) . '">Gérer les filières</a> <a class="button" href="' . esc_url(admin_url('edit.php?post_type=sfwd-courses')) . '">Classer les cours</a></p></section>';
+    scipt_render_course_classification($data['posts']);
     echo '<section class="scipt-stat-panel"><h2>Contributions aux publications</h2><p>Auteur enregistré dans WordPress ; ce compteur ne mesure pas la réussite des étudiants.</p><div class="scipt-table-scroll"><table class="widefat striped"><thead><tr><th scope="col">Auteur</th><th scope="col">Contenus publiés</th></tr></thead><tbody>';
     foreach ($data['authors'] as $id => $count) {
         $user = get_userdata($id);
