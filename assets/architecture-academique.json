@@ -10,7 +10,7 @@
       "domain": "sante",
       "departments": [
         "Médecine Générale",
-        "Sciences Infirmières et Maïeutique",
+        "Sciences infirmières et formation des sages-femmes",
         "Pharmacie",
         "Sciences Biomédicales et de Laboratoire",
         "Imagerie Médicale et Radiothérapie",
@@ -437,7 +437,7 @@
       "id": "7660",
       "title": "Sciences Infirmières",
       "school_code": "ESSA",
-      "department": "Sciences Infirmières et Maïeutique",
+      "department": "Sciences infirmières et formation des sages-femmes",
       "specializations": [
         "IDEP",
         "Santé communautaire et maternelle-infantile",
@@ -456,7 +456,7 @@
       "id": "7661",
       "title": "Maïeutique / Sciences Obstétricales",
       "school_code": "ESSA",
-      "department": "Sciences Infirmières et Maïeutique",
+      "department": "Sciences infirmières et formation des sages-femmes",
       "specializations": [
         "Sage-femme / maïeuticien",
         "Santé de la reproduction (Master)"
