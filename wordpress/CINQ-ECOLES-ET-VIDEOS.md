@@ -9,3 +9,7 @@ Les blasons santé, droit-gestion et technologies déjà extraits du guide sont 
 WordPress : mise à jour du thème en brouillon et du registre commun (11 fragments). Aucun changement du thème public, des inscriptions, des comptes ou des rattachements des cours.
 
 Vérifications : `node scripts/verifier-architecture.cjs`, `python scripts/verifier-ecoles-videos.py`, contrôle du rendu WordPress et de la lecture des médias.
+
+Compatibilité du thème existant : `assets/ecoles-titres.js` place désormais l’école doctorale en dernier et la santé en premier. Dans le `functions.php` du brouillon existant, la version de son enqueue est passée de `20261014-3` à `20261015-ecoles-videos` pour invalider l’ancien script en cache. Le texte de la fenêtre À propos indique également cinq écoles.
+
+Contrôle effectué : chargement et lecture effective du film santé (158,88 s) et de la séquence ESTI (15 s) dans le navigateur WordPress ; ordre après exécution des scripts vérifié. Les trois nouveaux MP4 sont accessibles en HTTP 200 et identiques aux fichiers sources. Les cinq pages restent en statut `draft`.

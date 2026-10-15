@@ -135,12 +135,16 @@ for file in ROOT.glob('*.html'):
  # Une seule feuille et un seul script communs, ajoutés sans versions de pages parallèles.
  for asset in ['institution.css','about-dialogs.css','videos-accueil.css']:
   if not doc.xpath('//link[contains(@href,"'+asset+'")]'):
-   link=dom.Element('link',rel='stylesheet',href='assets/'+asset+'?v=20261015-architecture');doc.find('head').append(link)
+   link=dom.Element('link',rel='stylesheet',href='assets/'+asset+'?v=20261015-ecoles-videos');doc.find('head').append(link)
  if 'inst-page' in text and not doc.xpath('//script[contains(@src,"institution.js")]'):
-  doc.find('body').append(dom.Element('script',src='assets/institution.js?v=20261015-architecture'))
+  doc.find('body').append(dom.Element('script',src='assets/institution.js?v=20261015-ecoles-videos'))
+ for node in doc.xpath('//link[contains(@href,"institution.css")]'):
+  node.set('href','assets/institution.css?v=20261015-ecoles-videos')
+ for node in doc.xpath('//script[contains(@src,"videos-accueil-data.js")]'):
+  node.set('src','assets/videos-accueil-data.js?v=20261015-ecoles-videos')
  for node in doc.xpath('//script[@src]'):
   if node.get('src','').split('?')[0] in ['assets/app.js','assets/programmes-ecoles.js','assets/programme-contenus.js','assets/orientation-data.js','assets/diplomes-specialisations.js','assets/candidature.js','assets/orientation.js','assets/programmes-detail-modern.js']:
-   node.set('src',node.get('src').split('?')[0]+'?v=20261015-architecture')
+   node.set('src',node.get('src').split('?')[0]+'?v=20261015-ecoles-videos')
  write(file.name,'<!DOCTYPE html>\n'+dom.tostring(doc,encoding='unicode',method='html'))
 # Registre des fragments : WordPress réutilise les mêmes contenus dans son brouillon.
 page_names=['corps-professoral','approche-pedagogique','pourquoi-nous-choisir','agrement-reconnaissance','ecole-droit-sciences-gestion','ecole-sciences-technologies-ingenierie','ecole-sante-developpement','ecole-sciences-humaines-communication','ecole-scipt-international','programmes-universitaires','diplomes-specialisations']
