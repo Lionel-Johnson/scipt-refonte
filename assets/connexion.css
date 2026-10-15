@@ -7,3 +7,26 @@
 .scipt-native-account button[type=submit],.scipt-native-account input[type=submit]{background:#10263f!important;color:#fff!important;border-radius:10px!important;min-height:48px}
 .scipt-account-intro{max-width:820px;margin:48px auto;padding:32px}
 @media(max-width:1199px){.approved-navbar-shell .scipt-login-button{margin:8px 0;width:100%}}
+/* Mon Compte : charte de la refonte, formulaires Elementor existants. */
+#scipt-account-shell{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.2fr);max-width:1120px;margin:48px auto 64px;border:1px solid #e2e7ee;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 24px 64px #10263f14;font-family:Arial,sans-serif}
+#scipt-account-shell.is-connected{display:block}
+#scipt-account-shell .scipt-account-welcome{padding:clamp(28px,4vw,54px);background:linear-gradient(145deg,#10263f,#183e66);color:#fff;display:flex;flex-direction:column;justify-content:center}
+#scipt-account-shell .scipt-account-kicker{font-size:12px;font-weight:800;letter-spacing:.15em;color:#e4c783}
+#scipt-account-shell .scipt-account-welcome h2{font-size:clamp(30px,3vw,44px);line-height:1.12;color:#fff;margin:20px 0}
+#scipt-account-shell .scipt-account-welcome p,#scipt-account-shell .scipt-account-welcome li{color:#e7edf5;line-height:1.65}
+#scipt-account-shell .scipt-account-welcome ul{padding-left:20px;margin:20px 0}
+#scipt-account-shell .scipt-account-help{font-size:14px;border-top:1px solid #ffffff30;padding-top:22px;margin-top:28px}
+#scipt-account-shell .scipt-native-account{margin:0;padding:clamp(20px,3vw,40px);width:100%;max-width:none;border:0;border-radius:0;box-shadow:none}
+#scipt-account-shell .scipt-native-account>.elementor>.elementor-element{width:100%!important;max-width:100%!important}
+#scipt-account-shell .elementor-widget-spacer{display:none}
+#scipt-account-shell .eael-lr-form-wrapper{max-width:100%!important;width:100%!important;background:#fff!important;box-shadow:none!important;padding:12px 0!important}
+#scipt-account-shell .scipt-native-account input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=submit]){width:100%;background:#f4f6f9!important;color:#10263f!important;border:1px solid #cbd5e1!important;border-radius:10px!important;min-height:50px;padding:12px 16px!important;font-size:16px!important}
+#scipt-account-shell .scipt-native-account input::placeholder{color:#67758a!important;opacity:1}
+#scipt-account-shell .scipt-native-account input:focus{outline:2px solid #b99b58;outline-offset:2px}
+#scipt-account-shell .scipt-native-account label{color:#10263f!important;font-weight:600}
+#scipt-account-shell .scipt-native-account a{color:#163f70!important;text-decoration:underline;text-underline-offset:3px}
+#scipt-account-shell .scipt-native-account button[type=submit],#scipt-account-shell .scipt-native-account input[type=submit]{background:#10263f!important;color:#fff!important;border:1px solid #10263f!important;padding:14px 24px!important;border-radius:10px!important;min-height:48px;font-weight:700}
+#scipt-account-shell .e-n-tab-title{background:#edf1f6!important;color:#10263f!important;border:1px solid #dae2ec!important;border-radius:10px!important}
+#scipt-account-shell .e-n-tab-title[aria-selected=true]{background:#10263f!important;color:#fff!important}
+#scipt-account-shell .e-n-tab-title[aria-selected=true] .e-n-tab-title-text{color:#fff!important}
+@media(max-width:850px){#scipt-account-shell{grid-template-columns:1fr;margin:24px 16px 40px}#scipt-account-shell .scipt-account-welcome{padding:28px}#scipt-account-shell .scipt-account-welcome ul{margin:8px 0}#scipt-account-shell .scipt-native-account{padding:24px 18px}}

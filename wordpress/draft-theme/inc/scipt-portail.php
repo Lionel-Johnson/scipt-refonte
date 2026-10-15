@@ -17,16 +17,34 @@ function scipt_existing_account() {
     $url = get_permalink(2550);
     $content = '';
     if (class_exists('\Elementor\Plugin')) {
-        $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display(2550, true);
+        // Rendre les éléments d’origine sans l’exclusion du document courant d’Elementor.
+        $elements = json_decode(get_post_meta(2550, '_elementor_data', true), true);
+        if (is_array($elements)) {
+            global $post;
+            $previous_post = $post;
+            $post = get_post(2550);
+            setup_postdata($post);
+            ob_start();
+            echo '<div class="elementor elementor-2550" data-elementor-id="2550" data-elementor-type="wp-page">';
+            foreach ($elements as $data) {
+                $element = \Elementor\Plugin::instance()->elements_manager->create_element_instance($data);
+                if ($element) $element->print_element();
+            }
+            echo '</div>';
+            $content = ob_get_clean();
+            $post = $previous_post;
+            if ($post) setup_postdata($post);
+        }
     }
     if (!$content) return '<div class="scipt-portal"><a class="scipt-login-button" href="' . esc_url($url) . '">Accéder à Mon Compte</a></div>';
-    return '<section class="scipt-native-account" aria-label="Mon compte SCIPT">' . $content . '</section>';
+    $intro = is_user_logged_in() ? '' : '<aside class="scipt-account-welcome"><span class="scipt-account-kicker">VOTRE ESPACE SCIPT</span><h2>Votre avenir commence ici.</h2><p>Connectez-vous pour retrouver vos cours et poursuivre votre parcours.</p><ul><li>Vos cours et disciplines</li><li>Votre espace personnel</li><li>Vos échanges pédagogiques</li></ul><p class="scipt-account-help">Un premier accès ? Choisissez « Inscrivez-vous maintenant » dans le formulaire.</p></aside>';
+    return '<div id="scipt-account-shell" class="scipt-account-layout' . (is_user_logged_in() ? ' is-connected' : '') . '">' . $intro . '<section class="scipt-native-account" aria-label="Mon compte SCIPT">' . $content . '</section></div>';
 }
 remove_shortcode('scipt_connexion');
 add_shortcode('scipt_connexion', 'scipt_existing_account');
 add_shortcode('scipt_tableau_bord', 'scipt_existing_account');
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.css', array(), '20261015');
+    wp_enqueue_style('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.css', array(), '20261015-compte-v2');
     wp_enqueue_script('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.js', array(), '20261015', true);
 });
 
@@ -122,3 +140,9 @@ add_action('delete_comment', function ($id) {
     $file = get_comment_meta($id, '_scipt_file', true); $dir = scipt_private_directory();
     if ($file && $dir && basename($file['filename']) === $file['filename']) { $path = $dir . DIRECTORY_SEPARATOR . $file['filename']; if (is_file($path)) unlink($path); }
 });
+
+// L’URL existante conserve ses traitements et reçoit l’en-tête de la refonte.
+add_filter('template_include', function ($template) {
+    if (is_page(2550) && !is_feed()) return get_stylesheet_directory() . '/scipt-account-page.php';
+    return $template;
+}, 99);
