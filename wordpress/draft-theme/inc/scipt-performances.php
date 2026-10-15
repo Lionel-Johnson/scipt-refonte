@@ -36,6 +36,18 @@ function scipt_performance_data($period = 'all') {
     if (is_wp_error($terms)) $terms = array();
     $rows = array();
     foreach ($terms as $term) $rows[$term->term_id] = array('name' => $term->name, 'publish' => 0, 'draft' => 0, 'pending' => 0, 'other' => 0);
+    // Les rapprochements validés alimentent aussi les indicateurs du catalogue.
+    $classification = scipt_classification_source();
+    $overrides = get_option('scipt_classification_overrides', array());
+    if (!is_array($overrides)) $overrides = array();
+    $course_map = array();
+    foreach (($classification['filieres'] ?? array()) as $filiere) {
+        $rows['catalogue_' . $filiere['id']] = array('name' => $filiere['title'], 'publish' => 0, 'draft' => 0, 'pending' => 0, 'other' => 0);
+    }
+    foreach (($classification['courses'] ?? array()) as $course) {
+        if (isset($overrides[$course['course_id']]) && is_array($overrides[$course['course_id']])) $course = array_merge($course, $overrides[$course['course_id']]);
+        if (!empty($course['catalogue_id'])) $course_map[$course['course_id']] = 'catalogue_' . $course['catalogue_id'];
+    }
     $counts = array('publish' => 0, 'draft' => 0, 'pending' => 0, 'other' => 0);
     $unclassified = $counts; $authors = array(); $published_ids = array();
     $ids = wp_list_pluck($posts, 'ID'); $assignments = array();
@@ -50,7 +62,9 @@ function scipt_performance_data($period = 'all') {
             $published_ids[] = $post->ID;
             $authors[$post->post_author] = isset($authors[$post->post_author]) ? $authors[$post->post_author] + 1 : 1;
         }
-        if (empty($assignments[$post->ID])) $unclassified[$status]++;
+        if (isset($overrides[$post->ID])) $assignments[$post->ID] = array();
+        if (empty($assignments[$post->ID]) && isset($course_map[$post->ID], $rows[$course_map[$post->ID]])) $rows[$course_map[$post->ID]][$status]++;
+        elseif (empty($assignments[$post->ID])) $unclassified[$status]++;
         else foreach ($assignments[$post->ID] as $term_id) if (isset($rows[$term_id])) $rows[$term_id][$status]++;
     }
     arsort($authors);
@@ -75,7 +89,7 @@ function scipt_render_performance_dashboard() {
     echo '</select><button class="button button-primary">Actualiser</button></form><div class="scipt-kpis">';
     foreach ($labels as $status => $label) echo '<article><span>' . esc_html($label) . '</span><strong>' . (int) $data['counts'][$status] . '</strong></article>';
     echo '</div><section class="scipt-stat-panel"><h2>Contenus par filière</h2><p>Le compteur porte sur les entrées « cours » de LearnDash, y compris les examens qui y sont enregistrés. Un contenu partagé entre plusieurs filières est compté dans chacune ; le total global reste unique.</p>';
-    if (array_sum($data['unclassified'])) echo '<p class="scipt-data-notice"><strong>' . (int) $data['unclassified']['publish'] . ' contenus publiés sans filière.</strong> Rattachez les contenus à une filière depuis leur fiche de cours. Aucun classement automatique par titre n’est effectué.</p>';
+    if (array_sum($data['unclassified'])) echo '<p class="scipt-data-notice"><strong>' . (int) $data['unclassified']['publish'] . ' contenus publiés sans filière unique (matières communes comprises).</strong> Les rapprochements validés et leurs modifications alimentent ces compteurs. Utilisez le tableau de classement ci-dessous pour ajuster les affectations. Aucun classement automatique par titre n’est effectué.</p>';
     echo '<div class="scipt-table-scroll"><table class="widefat striped"><thead><tr><th scope="col">Filière</th><th scope="col">Publiés</th><th scope="col">Brouillons</th><th scope="col">En attente</th><th scope="col">Privés / planifiés</th></tr></thead><tbody>';
     $rows = array_values($data['rows']); $rows[] = array_merge(array('name' => 'Sans filière attribuée'), $data['unclassified']);
     foreach ($rows as $row) {
