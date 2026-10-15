@@ -39,6 +39,11 @@ function scipt_institution_transform($html) {
         return 'href="' . esc_url($url) . '"';
     }, $html);
     $html = str_replace('src="assets/', 'src="https://cdn.jsdelivr.net/gh/Lionel-Johnson/scipt-refonte@040b8cd4b0777157a44f61912508ba832bf2733c/assets/', $html);
+    $html = preg_replace_callback('~<a\\b([^>]*\\bclass="[^"]*\\bscipt-catalogue-link\\b[^"]*"[^>]*)>.*?</a>~s', function ($m) {
+        $label = strpos($m[1], 'programmes-universitaires') !== false || strpos($m[1], 'page_id=7839') !== false ? 'Programmes Universitaire' : 'Formation Professionnelles';
+        return '<a' . $m[1] . '>' . $label . '</a>';
+    }, $html);
+    $html = str_replace(array('Afficher les écoles : Visitez nos Programmes Universitaires', 'Afficher les écoles : Visitez nos Formations Professionnelles', 'Afficher les écoles : Découvrez nos Programmes Universitaires', 'Afficher les écoles : Découvrez nos Formations Professionnelles'), array('Afficher les écoles : Programmes Universitaire', 'Afficher les écoles : Formation Professionnelles', 'Afficher les écoles : Programmes Universitaire', 'Afficher les écoles : Formation Professionnelles'), $html);
     return str_replace(array('Visitez nos Programmes Universitaires', 'Visitez nos Formations Professionnelles'), array('Découvrez nos Programmes Universitaires', 'Découvrez nos Formations Professionnelles'), $html);
 }
 add_filter('elementor/widget/render_content', 'scipt_institution_transform', 90);

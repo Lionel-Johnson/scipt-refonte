@@ -125,7 +125,7 @@ for file in ROOT.glob('*.html'):
    target.text=None
    for child in dom.fragments_fromstring(markup):target.append(child)
  for link in doc.xpath('//a[contains(@class,"scipt-catalogue-link")]'):
-  link.text='Découvrez nos '+('Programmes Universitaires' if 'universitaires' in link.get('href','') else 'Formations Professionnelles')
+  link.text='Programmes Universitaire' if 'universitaires' in link.get('href','') else 'Formation Professionnelles'
  # Une seule feuille et un seul script communs, ajoutés sans versions de pages parallèles.
  for asset in ['institution.css','about-dialogs.css']:
   if not doc.xpath('//link[contains(@href,"'+asset+'")]'):
