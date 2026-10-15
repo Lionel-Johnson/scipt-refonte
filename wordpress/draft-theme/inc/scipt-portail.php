@@ -17,24 +17,7 @@ function scipt_existing_account() {
     $url = get_permalink(2550);
     $content = '';
     if (class_exists('\Elementor\Plugin')) {
-        // Rendre les éléments d’origine sans l’exclusion du document courant d’Elementor.
-        $elements = json_decode(get_post_meta(2550, '_elementor_data', true), true);
-        if (is_array($elements)) {
-            global $post;
-            $previous_post = $post;
-            $post = get_post(2550);
-            setup_postdata($post);
-            ob_start();
-            echo '<div class="elementor elementor-2550" data-elementor-id="2550" data-elementor-type="wp-page">';
-            foreach ($elements as $data) {
-                $element = \Elementor\Plugin::instance()->elements_manager->create_element_instance($data);
-                if ($element) $element->print_element();
-            }
-            echo '</div>';
-            $content = ob_get_clean();
-            $post = $previous_post;
-            if ($post) setup_postdata($post);
-        }
+        $content = \Elementor\Plugin::instance()->frontend->get_builder_content(2550, true);
     }
     if (!$content) return '<div class="scipt-portal"><a class="scipt-login-button" href="' . esc_url($url) . '">Accéder à Mon Compte</a></div>';
     $intro = is_user_logged_in() ? '' : '<aside class="scipt-account-welcome"><span class="scipt-account-kicker">VOTRE ESPACE SCIPT</span><h2>Votre avenir commence ici.</h2><p>Connectez-vous pour retrouver vos cours et poursuivre votre parcours.</p><ul><li>Vos cours et disciplines</li><li>Votre espace personnel</li><li>Vos échanges pédagogiques</li></ul><p class="scipt-account-help">Un premier accès ? Choisissez « Inscrivez-vous maintenant » dans le formulaire.</p></aside>';
