@@ -1,0 +1,23 @@
+{
+  "site": "https://sciptinternational.com",
+  "mode": "brouillon uniquement",
+  "reason": "Dernier crédit de réinitialisation utilisé après accord utilisateur.",
+  "remaining_paths": [],
+  "last_to_enable": "inc/scipt-global-pages.php",
+  "new_page_id": 8076,
+  "status": "terminé et vérifié dans le brouillon",
+  "verification": {
+    "pages": [
+      8043,
+      8042,
+      8041,
+      8040,
+      7839,
+      8076
+    ],
+    "university_filieres": 40,
+    "eshc_filieres": 8,
+    "relative_html_links_remaining": 0,
+    "theme_published": false
+  }
+}

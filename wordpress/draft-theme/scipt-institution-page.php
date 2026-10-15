@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 $data = scipt_institution_registry();
-$name = array_search(get_queried_object_id(), scipt_institution_page_map(), true);
+$name = array_search(scipt_institution_requested_page_id(), scipt_institution_page_map(), true);
 $main = $data['pages'][$name] ?? '';
 $shell = json_decode(file_get_contents(get_stylesheet_directory() . '/assets/account-shell.json'), true);
 ?><!doctype html>

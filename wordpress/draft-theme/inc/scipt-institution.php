@@ -43,11 +43,21 @@ function scipt_institution_transform($html) {
 }
 add_filter('elementor/widget/render_content', 'scipt_institution_transform', 90);
 add_filter('the_content', 'scipt_institution_transform', 90);
+function scipt_institution_requested_page_id() {
+    $id = get_queried_object_id();
+    // Prévisualisation du thème uniquement : accès aux fragments explicitement préparés.
+    if (!$id && strpos(get_stylesheet(), 'wpvibe-draft') !== false && isset($_GET['page_id'])) $id = absint($_GET['page_id']);
+    return $id;
+}
 add_filter('template_include', function ($template) {
     $map = scipt_institution_page_map();
     $data = scipt_institution_registry();
     foreach (($data['pages'] ?? array()) as $name => $html) {
-        if (isset($map[$name]) && is_page($map[$name])) return get_stylesheet_directory() . '/scipt-institution-page.php';
+        if (isset($map[$name]) && scipt_institution_requested_page_id() === $map[$name]) {
+            status_header(200);
+            nocache_headers();
+            return get_stylesheet_directory() . '/scipt-institution-page.php';
+        }
     }
     return $template;
 }, 100);
@@ -55,3 +65,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-architecture');
     wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array(), '20261015-architecture', true);
 });
+
+add_filter('pre_get_document_title', function ($title) {
+    $name = array_search(scipt_institution_requested_page_id(), scipt_institution_page_map(), true);
+    $data = scipt_institution_registry();
+    if ($name && isset($data['pages'][$name])) return get_the_title(scipt_institution_requested_page_id()) . ' — SCIPT INTERNATIONAL';
+    return $title;
+}, 9999);
