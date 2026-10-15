@@ -1,0 +1,1 @@
+(()=>{const apply=()=>document.querySelectorAll('.scipt-site .navbar-nav a').forEach(a=>{if(a.textContent.trim()==='Connexion')a.classList.add('scipt-login-button');});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();new MutationObserver(apply).observe(document.body,{childList:true,subtree:true});})();

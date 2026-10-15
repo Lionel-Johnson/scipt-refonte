@@ -12,89 +12,22 @@ function scipt_portal_url($id, $args = array()) {
     return add_query_arg($args, $base);
 }
 
-add_action('template_redirect', function () {
-    if (!is_page(8045) || $_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['scipt_auth_action'])) return;
-    $action = sanitize_key(wp_unslash($_POST['scipt_auth_action']));
-    $nonce = isset($_POST['scipt_auth_nonce']) ? sanitize_text_field(wp_unslash($_POST['scipt_auth_nonce'])) : '';
-    $error = 'La demande n’a pas pu être traitée. Vérifiez vos informations.';
-    if (!wp_verify_nonce($nonce, 'scipt_auth') || !empty($_POST['site_personnel'])) { $GLOBALS['scipt_auth_error'] = $error; return; }
-    $rate = 'scipt_auth_' . hash_hmac('sha256', isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '', wp_salt());
-    $count = (int) get_transient($rate);
-    if ($count >= 10) { $GLOBALS['scipt_auth_error'] = 'Trop de tentatives. Réessayez dans une heure.'; return; }
-    set_transient($rate, $count + 1, HOUR_IN_SECONDS);
-    $login = isset($_POST['identifiant']) ? sanitize_text_field(wp_unslash($_POST['identifiant'])) : '';
-    $password = isset($_POST['mot_de_passe']) ? wp_unslash($_POST['mot_de_passe']) : '';
-    if ($action === 'login') {
-        $user = wp_signon(array('user_login' => $login, 'user_password' => $password, 'remember' => !empty($_POST['remember'])), is_ssl());
-        if (!is_wp_error($user)) { wp_safe_redirect(scipt_portal_url(SCIPT_DASHBOARD_PAGE)); exit; }
-    } elseif ($action === 'register') {
-        $email = isset($_POST['email']) ? sanitize_email(wp_unslash($_POST['email'])) : '';
-        $name = isset($_POST['nom']) ? sanitize_text_field(wp_unslash($_POST['nom'])) : '';
-        $confirm = isset($_POST['confirmation']) ? wp_unslash($_POST['confirmation']) : '';
-        if (get_option('users_can_register') && is_email($email) && $name && strlen($password) >= 12 && strlen($password) <= 128 && $password === $confirm && !email_exists($email)) {
-            $id = wp_insert_user(array('user_login' => 'etudiant_' . str_replace('-', '', wp_generate_uuid4()), 'user_email' => $email, 'display_name' => $name, 'user_pass' => $password, 'role' => 'subscriber'));
-            if (!is_wp_error($id)) { wp_set_current_user($id); wp_set_auth_cookie($id, false, is_ssl()); wp_safe_redirect(scipt_portal_url(SCIPT_DASHBOARD_PAGE)); exit; }
-        }
-    } elseif ($action === 'forgot') {
-        retrieve_password($login);
-        $GLOBALS['scipt_auth_notice'] = 'Si un compte correspond à ces informations, un lien de réinitialisation vous sera envoyé.';
-        return;
-    } elseif ($action === 'reset') {
-        $key = isset($_POST['reset_key']) ? sanitize_text_field(wp_unslash($_POST['reset_key'])) : '';
-        $user = check_password_reset_key($key, $login);
-        $confirm = isset($_POST['confirmation']) ? wp_unslash($_POST['confirmation']) : '';
-        if (!is_wp_error($user) && strlen($password) >= 12 && strlen($password) <= 128 && $password === $confirm) {
-            reset_password($user, $password);
-            $GLOBALS['scipt_auth_notice'] = 'Votre mot de passe a été modifié. Vous pouvez vous connecter.';
-            return;
-        }
+// Réutilisation de Mon Compte : mêmes formulaires, comptes et cours LearnDash.
+function scipt_existing_account() {
+    $url = get_permalink(2550);
+    $content = '';
+    if (class_exists('\Elementor\Plugin')) {
+        $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display(2550, true);
     }
-    $GLOBALS['scipt_auth_error'] = $error;
-});
-
-add_filter('retrieve_password_message', function ($message, $key, $login) {
-    $url = scipt_portal_url(8045, array('scipt_tab' => 'reset', 'key' => $key, 'login' => rawurlencode($login)));
-    return "Une réinitialisation du mot de passe de votre compte SCIPT a été demandée.\n\n" . $url . "\n\nSi vous n’avez pas fait cette demande, ignorez ce message.";
-}, 10, 3);
-
+    if (!$content) return '<div class="scipt-portal"><a class="scipt-login-button" href="' . esc_url($url) . '">Accéder à Mon Compte</a></div>';
+    return '<section class="scipt-native-account" aria-label="Mon compte SCIPT">' . $content . '</section>';
+}
 remove_shortcode('scipt_connexion');
-add_shortcode('scipt_connexion', function () {
-    $tab = isset($_GET['scipt_tab']) ? sanitize_key(wp_unslash($_GET['scipt_tab'])) : 'login';
-    if (!in_array($tab, array('login', 'register', 'forgot', 'reset'), true)) $tab = 'login';
-    ob_start(); echo '<div class="scipt-portal">';
-    if (is_user_logged_in()) {
-        echo '<p>Vous êtes connecté.</p><a class="button" href="' . esc_url(scipt_portal_url(SCIPT_DASHBOARD_PAGE)) . '">Mon tableau de bord</a> <a href="' . esc_url(wp_logout_url(scipt_portal_url(8045))) . '">Se déconnecter</a></div>';
-        return ob_get_clean();
-    }
-    echo '<nav class="scipt-portal-tabs" aria-label="Accès au compte"><a href="' . esc_url(scipt_portal_url(8045)) . '">Se connecter</a><a href="' . esc_url(scipt_portal_url(8045, array('scipt_tab' => 'register'))) . '">Créer mon compte</a></nav>';
-    if (!empty($GLOBALS['scipt_auth_error'])) echo '<p role="alert">' . esc_html($GLOBALS['scipt_auth_error']) . '</p>';
-    if (!empty($GLOBALS['scipt_auth_notice'])) echo '<p role="status">' . esc_html($GLOBALS['scipt_auth_notice']) . '</p>';
-    echo '<form method="post">'; wp_nonce_field('scipt_auth', 'scipt_auth_nonce');
-    echo '<input type="hidden" name="scipt_auth_action" value="' . esc_attr($tab) . '"><p hidden><label>Site personnel<input name="site_personnel" tabindex="-1" autocomplete="off"></label></p>';
-    if ($tab === 'register') {
-        echo '<h2>Créer mon compte étudiant</h2><p>Le compte donne accès à votre tableau de bord. L’accès aux cours dépend de votre inscription à la formation.</p><label>Nom complet<input name="nom" autocomplete="name" maxlength="120" required></label><label>E-mail<input name="email" type="email" autocomplete="email" required></label>';
-    } elseif ($tab === 'reset') {
-        echo '<h2>Nouveau mot de passe</h2><input type="hidden" name="identifiant" value="' . esc_attr(isset($_GET['login']) ? rawurldecode(wp_unslash($_GET['login'])) : '') . '"><input type="hidden" name="reset_key" value="' . esc_attr(isset($_GET['key']) ? wp_unslash($_GET['key']) : '') . '">';
-    } else {
-        echo '<label>Identifiant ou e-mail<input name="identifiant" autocomplete="username" required></label>';
-    }
-    if ($tab !== 'forgot') {
-        echo '<label>Mot de passe<input name="mot_de_passe" type="password" autocomplete="' . ($tab === 'login' ? 'current-password' : 'new-password') . '" ' . ($tab === 'login' ? '' : 'minlength="12" maxlength="128"') . ' required></label>';
-        if ($tab !== 'login') echo '<label>Confirmer le mot de passe<input name="confirmation" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label><p>Au moins 12 caractères.</p>';
-    }
-    echo '<button type="submit">' . esc_html(array('login' => 'Se connecter', 'register' => 'Créer mon compte', 'forgot' => 'Recevoir le lien', 'reset' => 'Modifier le mot de passe')[$tab]) . '</button></form><p><a href="' . esc_url(scipt_portal_url(8045, array('scipt_tab' => 'forgot'))) . '">Mot de passe oublié ?</a></p></div>';
-    return ob_get_clean();
-});
-
-add_shortcode('scipt_tableau_bord', function () {
-    if (!is_user_logged_in()) return '<div class="scipt-portal"><p>Connectez-vous pour accéder à votre espace.</p><a class="button" href="' . esc_url(scipt_portal_url(8045)) . '">Connexion ou création de compte</a></div>';
-    $user = wp_get_current_user();
-    $html = '<div class="scipt-portal"><h2>Bienvenue, ' . esc_html($user->display_name) . '</h2>';
-    if (current_user_can('manage_options')) $html .= '<p><a href="' . esc_url(admin_url()) . '">Administration</a></p>';
-    if (in_array('wdm_instructor', (array) $user->roles, true)) $html .= '<p><a href="' . esc_url(home_url('/instructor-dashboard/')) . '">Outils enseignants LearnDash</a></p>';
-    if (shortcode_exists('ld_profile')) $html .= do_shortcode('[ld_profile]');
-    else $html .= '<p>Vos cours apparaîtront après votre inscription pédagogique.</p>';
-    return $html . '<p><a href="' . esc_url(wp_logout_url(scipt_portal_url(8045))) . '">Se déconnecter</a></p></div>';
+add_shortcode('scipt_connexion', 'scipt_existing_account');
+add_shortcode('scipt_tableau_bord', 'scipt_existing_account');
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.css', array(), '20261015');
+    wp_enqueue_script('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.js', array(), '20261015', true);
 });
 
 remove_shortcode('scipt_blog');
