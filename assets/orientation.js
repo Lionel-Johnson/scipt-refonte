@@ -1,8 +1,8 @@
 (() => {
  'use strict';
  const form=document.getElementById('orientation-form');if(!form)return;
- const data=window.SCIPT_ORIENTATION||[];
- const DOMAINS={gestion:'droit, gestion et administration',tech:'sciences, technique et numérique',sante:'santé et développement',recherche:'recherche doctorale'};
+ const data=(window.SCIPT_ORIENTATION||[]).filter(p=>p.status!=='reserve');
+ const DOMAINS={gestion:'droit, gestion et administration',tech:'sciences, technique et numérique',sante:'santé et développement',recherche:'recherche doctorale',humaines:'sciences humaines, sociales et communication'};
  const val=n=>(form.elements[n]||{}).value||'';
  // Prérenseignement depuis l'accueil : orientation.html?objectif=metier
  const pre=new URLSearchParams(location.search).get('objectif');
@@ -12,7 +12,7 @@
   if(!form.reportValidity())return;
   const a={niveau:val('niveau'),objectif:val('objectif'),type:val('type'),domaine:val('domaine'),situation:val('situation'),international:val('international')};
   const advanced=['master','doctorat'].includes(a.niveau);
-  const scored=data.filter(p=>p.domain!=='recherche'||advanced).map(p=>{
+  const scored=data.filter(p=>(p.domain!=='recherche'||advanced)&&(!(p.levels?.length===1&&p.levels[0]==='Master')||['bac2-3','master','doctorat'].includes(a.niveau))).map(p=>{
    let s=0;const why=[];
    if(a.domaine!=='nsp'&&a.domaine===p.domain){s+=3;why.push('le domaine correspond à votre intérêt ('+DOMAINS[p.domain]+')')}
    if(a.type==='diplome'&&p.type==='Universitaire'){s+=3;why.push('vous recherchez un diplôme universitaire')}

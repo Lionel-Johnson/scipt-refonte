@@ -1,0 +1,57 @@
+<?php
+/** Référentiel et composants communs de la refonte institutionnelle. */
+defined('ABSPATH') || exit;
+function scipt_institution_registry() {
+    static $data;
+    if ($data === null) {
+        $path = get_stylesheet_directory() . '/assets/institution-pages.json';
+        $data = is_readable($path) ? json_decode(file_get_contents($path), true) : array();
+        if (!is_array($data)) $data = array();
+    }
+    return $data;
+}
+function scipt_institution_page_map() {
+    return array('index'=>7837,'a-propos'=>7890,'programme'=>7891,'ecole-scipt-international'=>7881,'medias'=>7845,'admissions'=>7841,'programmes-universitaires'=>7839,'formations-professionnelles'=>7509,'ecole-sante-developpement'=>7805,'ecole-sciences-technologies-ingenierie'=>7803,'ecole-droit-sciences-gestion'=>7801,'ecole-sciences-humaines-communication'=>8076,'actualites'=>7511,'contact'=>7512,'candidature'=>7903,'certifications-internationales'=>7904,'orientation'=>7906,'partenaires'=>7907,'verification-diplomes'=>7908,'vie-etudiante'=>7909,'diplomes-specialisations'=>7910,'formations-professionnelles-18-mois'=>7911,'vae'=>7945,'qui-sommes-nous'=>8039,'agrement-reconnaissance'=>8040,'pourquoi-nous-choisir'=>8041,'approche-pedagogique'=>8042,'corps-professoral'=>8043,'blog'=>8044,'connexion'=>8045,'mentions-legales'=>7905);
+}
+function scipt_institution_menu($html, $id, $replacement) {
+    $pattern = '~<div\b[^>]*\bid=["\x27]' . preg_quote($id, '~') . '["\x27][^>]*>~i';
+    if (!preg_match($pattern, $html, $open, PREG_OFFSET_CAPTURE)) return $html;
+    $start = $open[0][1] + strlen($open[0][0]);
+    $depth = 1;
+    preg_match_all('~</?div\b[^>]*>~i', substr($html, $start), $tags, PREG_OFFSET_CAPTURE);
+    foreach ($tags[0] as $tag) {
+        $depth += stripos($tag[0], '</div') === 0 ? -1 : 1;
+        if ($depth === 0) return substr_replace($html, $replacement, $start, $tag[1]);
+    }
+    return $html;
+}
+function scipt_institution_transform($html) {
+    $data = scipt_institution_registry();
+    foreach (($data['menus'] ?? array()) as $id => $markup) $html = scipt_institution_menu($html, $id, $markup);
+    $map = scipt_institution_page_map();
+    $html = preg_replace_callback('~href="([a-z0-9-]+)\.html([^"<>]*)"~i', function ($m) use ($map) {
+        if (!isset($map[$m[1]])) return $m[0];
+        $parts = wp_parse_url(html_entity_decode($m[2], ENT_QUOTES));
+        $args = array();
+        if (!empty($parts['query'])) parse_str($parts['query'], $args);
+        $url = scipt_portal_url($map[$m[1]], $args);
+        if (!empty($parts['fragment'])) $url .= '#' . $parts['fragment'];
+        return 'href="' . esc_url($url) . '"';
+    }, $html);
+    $html = str_replace('src="assets/', 'src="https://cdn.jsdelivr.net/gh/Lionel-Johnson/scipt-refonte@040b8cd4b0777157a44f61912508ba832bf2733c/assets/', $html);
+    return str_replace(array('Visitez nos Programmes Universitaires', 'Visitez nos Formations Professionnelles'), array('Découvrez nos Programmes Universitaires', 'Découvrez nos Formations Professionnelles'), $html);
+}
+add_filter('elementor/widget/render_content', 'scipt_institution_transform', 90);
+add_filter('the_content', 'scipt_institution_transform', 90);
+add_filter('template_include', function ($template) {
+    $map = scipt_institution_page_map();
+    $data = scipt_institution_registry();
+    foreach (($data['pages'] ?? array()) as $name => $html) {
+        if (isset($map[$name]) && is_page($map[$name])) return get_stylesheet_directory() . '/scipt-institution-page.php';
+    }
+    return $template;
+}, 100);
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-architecture');
+    wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array(), '20261015-architecture', true);
+});

@@ -1,0 +1,799 @@
+{
+  "version": "2026-10-15-architecture",
+  "source": "Configuration Écoles SCIPT — synthèse fournie, pages 1 à 5",
+  "schools": [
+    {
+      "code": "ESGA",
+      "name": "École de Droit, Gestion, Administration et Commerce",
+      "href": "ecole-droit-sciences-gestion.html",
+      "image": "droit.jpg",
+      "domain": "gestion",
+      "departments": [
+        "Sciences de Gestion et d’Administration",
+        "Finance, Comptabilité et Audit",
+        "Droit et Carrières Juridiques",
+        "Logistique et Transport",
+        "International Business"
+      ]
+    },
+    {
+      "code": "ESTI",
+      "name": "École des Sciences, Technologies et Ingénierie",
+      "href": "ecole-sciences-technologies-ingenierie.html",
+      "image": "technique.jpg",
+      "domain": "tech",
+      "departments": [
+        "Sciences",
+        "Technologie",
+        "Ingénierie",
+        "Mines, Pétrole et Énergies",
+        "Agronomie, Agriculture, Élevage et Agro-industrie"
+      ]
+    },
+    {
+      "code": "ESSA",
+      "name": "École des Sciences de la Santé",
+      "href": "ecole-sante-developpement.html",
+      "image": "sante.jpg",
+      "domain": "sante",
+      "departments": [
+        "Médecine Générale",
+        "Sciences Infirmières et Maïeutique",
+        "Pharmacie",
+        "Sciences Biomédicales et de Laboratoire",
+        "Imagerie Médicale et Radiothérapie",
+        "Sciences Paramédicales et de Réadaptation"
+      ]
+    },
+    {
+      "code": "ESHC",
+      "name": "École des Sciences Humaines, Sociales et de la Communication",
+      "href": "ecole-sciences-humaines-communication.html",
+      "image": "cours-universitaire.png",
+      "domain": "humaines",
+      "departments": [
+        "Sciences Humaines et Sociales",
+        "Sciences de la Communication",
+        "Journalisme et Médias",
+        "Arts, Médias et Production Audiovisuelle"
+      ]
+    }
+  ],
+  "programmes": [
+    {
+      "id": "7647",
+      "title": "Management et Organisations",
+      "school_code": "ESGA",
+      "department": "Sciences de Gestion et d’Administration",
+      "specializations": [
+        "Management général",
+        "Gestion de projets",
+        "Management de la qualité (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7648",
+      "title": "Marketing et Commerce",
+      "school_code": "ESGA",
+      "department": "Sciences de Gestion et d’Administration",
+      "specializations": [
+        "Marketing",
+        "Commerce et distribution",
+        "Option internationale"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7649",
+      "title": "Entrepreneuriat et Innovation",
+      "school_code": "ESGA",
+      "department": "Sciences de Gestion et d’Administration",
+      "specializations": [
+        "Entrepreneuriat et innovation"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7650",
+      "title": "Gestion des Ressources Humaines",
+      "school_code": "ESGA",
+      "department": "Sciences de Gestion et d’Administration",
+      "specializations": [
+        "Gestion des ressources humaines"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7901",
+      "title": "Administration et Assistanat de Direction",
+      "school_code": "ESGA",
+      "department": "Sciences de Gestion et d’Administration",
+      "specializations": [
+        "Assistanat de direction",
+        "Administration des entreprises et des organisations"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7651",
+      "title": "Finance, Comptabilité et Audit",
+      "school_code": "ESGA",
+      "department": "Finance, Comptabilité et Audit",
+      "specializations": [
+        "Comptabilité et contrôle de gestion",
+        "Audit et fiscalité",
+        "Finance d’entreprise",
+        "Banque, marchés et ingénierie financière (Master)",
+        "Assurance (option)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7645",
+      "title": "Droit et Carrières Juridiques",
+      "school_code": "ESGA",
+      "department": "Droit et Carrières Juridiques",
+      "specializations": [
+        "Tronc commun Licence",
+        "Droit des affaires",
+        "Droit international",
+        "Droit du travail et fiscal",
+        "Droit des technologies de l’information (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7646",
+      "title": "Administration Publique",
+      "school_code": "ESGA",
+      "department": "Droit et Carrières Juridiques",
+      "specializations": [
+        "Administration publique et droit public"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7652",
+      "title": "Logistique et Supply Chain Management",
+      "school_code": "ESGA",
+      "department": "Logistique et Transport",
+      "specializations": [
+        "Supply chain et achats",
+        "Transport et transit",
+        "Logistique portuaire et aéroportuaire",
+        "Logistique humanitaire (option)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7902",
+      "title": "Commerce et Affaires Internationales",
+      "school_code": "ESGA",
+      "department": "International Business",
+      "specializations": [
+        "International Business Management",
+        "E-business et commerce digital international"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7903",
+      "title": "Sciences Fondamentales Appliquées",
+      "school_code": "ESTI",
+      "department": "Sciences",
+      "specializations": [
+        "Mathématiques et statistique appliquées",
+        "Physique et chimie appliquées"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7904",
+      "title": "Sciences de la Terre et de l’Environnement",
+      "school_code": "ESTI",
+      "department": "Sciences",
+      "specializations": [
+        "Géosciences",
+        "Sciences environnementales et naturelles"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7656",
+      "title": "Informatique et Systèmes Numériques",
+      "school_code": "ESTI",
+      "department": "Technologie",
+      "specializations": [
+        "Génie logiciel et développement",
+        "Réseaux et cybersécurité",
+        "Intelligence artificielle et data science (Master)",
+        "Technologies émergentes"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7654",
+      "title": "Génie Électrique et Systèmes Énergétiques",
+      "school_code": "ESTI",
+      "department": "Ingénierie",
+      "specializations": [
+        "Électrotechnique et électricité industrielle",
+        "Automatisme, robotique et mécatronique",
+        "Énergies renouvelables : conception technique des systèmes"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7655",
+      "title": "Génie Mécanique, Industriel et Maintenance",
+      "school_code": "ESTI",
+      "department": "Ingénierie",
+      "specializations": [
+        "Génie mécanique et maintenance industrielle",
+        "Automobile"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7653",
+      "title": "Génie Civil et Bâtiment",
+      "school_code": "ESTI",
+      "department": "Ingénierie",
+      "specializations": [
+        "Génie civil et bâtiment"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7704",
+      "title": "Mines et Géosciences Minérales",
+      "school_code": "ESTI",
+      "department": "Mines, Pétrole et Énergies",
+      "specializations": [
+        "Génie minier",
+        "Traitement des minerais et géologie appliquée"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7703",
+      "title": "Pétrole, Gaz et Ressources Énergétiques",
+      "school_code": "ESTI",
+      "department": "Mines, Pétrole et Énergies",
+      "specializations": [
+        "Exploration et production pétrolière"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "reserve",
+      "condition": "Ouverture conditionnée à un partenariat industriel."
+    },
+    {
+      "id": "7658",
+      "title": "Énergies Renouvelables et Gestion Environnementale",
+      "school_code": "ESTI",
+      "department": "Mines, Pétrole et Énergies",
+      "specializations": [
+        "Énergies renouvelables et systèmes énergétiques",
+        "Sécurité industrielle et environnementale",
+        "Gestion environnementale"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7905",
+      "title": "Production Agricole et Animale",
+      "school_code": "ESTI",
+      "department": "Agronomie, Agriculture, Élevage et Agro-industrie",
+      "specializations": [
+        "Agronomie et production végétale",
+        "Production animale et aquaculture"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7906",
+      "title": "Agro-industrie et Sécurité Alimentaire",
+      "school_code": "ESTI",
+      "department": "Agronomie, Agriculture, Élevage et Agro-industrie",
+      "specializations": [
+        "Transformation agroalimentaire",
+        "Sécurité alimentaire et gestion durable des ressources"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7659",
+      "title": "Médecine Générale",
+      "school_code": "ESSA",
+      "department": "Médecine Générale",
+      "specializations": [
+        "Santé publique et épidémiologie (3e cycle)",
+        "Médecine communautaire et du travail",
+        "Médecine humanitaire (option)"
+      ],
+      "levels": [
+        "Doctorat"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7660",
+      "title": "Sciences Infirmières",
+      "school_code": "ESSA",
+      "department": "Sciences Infirmières et Maïeutique",
+      "specializations": [
+        "IDEP",
+        "Santé communautaire et maternelle-infantile",
+        "Anesthésie-réanimation (Master)",
+        "Santé mentale (Master)",
+        "Urgences et soins critiques (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7661",
+      "title": "Maïeutique / Sciences Obstétricales",
+      "school_code": "ESSA",
+      "department": "Sciences Infirmières et Maïeutique",
+      "specializations": [
+        "Sage-femme / maïeuticien",
+        "Santé de la reproduction (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7662",
+      "title": "Pharmacie",
+      "school_code": "ESSA",
+      "department": "Pharmacie",
+      "specializations": [
+        "Pharmacie industrielle et pharmacovigilance",
+        "Pharmacie clinique et hospitalière",
+        "Contrôle qualité et gestion",
+        "Cosmétique (option)"
+      ],
+      "levels": [
+        "Doctorat"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7663",
+      "title": "Sciences Biomédicales et de Laboratoire",
+      "school_code": "ESSA",
+      "department": "Sciences Biomédicales et de Laboratoire",
+      "specializations": [
+        "Biologie médicale et technologie de laboratoire",
+        "Hématologie-immunologie (Master)",
+        "Microbiologie-parasitologie-biochimie (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7664",
+      "title": "Imagerie Médicale",
+      "school_code": "ESSA",
+      "department": "Imagerie Médicale et Radiothérapie",
+      "specializations": [
+        "Imagerie et radiologie conventionnelle",
+        "Techniques avancées d’imagerie (Master)"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7907",
+      "title": "Radiothérapie et Physique Médicale",
+      "school_code": "ESSA",
+      "department": "Imagerie Médicale et Radiothérapie",
+      "specializations": [
+        "Radiothérapie et physique médicale"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "reserve",
+      "condition": "Ouverture conditionnée à un partenariat hospitalier spécialisé."
+    },
+    {
+      "id": "7908",
+      "title": "Kinésithérapie et Réadaptation Fonctionnelle",
+      "school_code": "ESSA",
+      "department": "Sciences Paramédicales et de Réadaptation",
+      "specializations": [
+        "Kinésithérapie et réadaptation fonctionnelle"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7909",
+      "title": "Ergothérapie et Orthophonie",
+      "school_code": "ESSA",
+      "department": "Sciences Paramédicales et de Réadaptation",
+      "specializations": [
+        "Ergothérapie",
+        "Orthophonie"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7910",
+      "title": "Nutrition et Diététique",
+      "school_code": "ESSA",
+      "department": "Sciences Paramédicales et de Réadaptation",
+      "specializations": [
+        "Nutrition et diététique"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7911",
+      "title": "Appareillage et Technologies de Santé",
+      "school_code": "ESSA",
+      "department": "Sciences Paramédicales et de Réadaptation",
+      "specializations": [
+        "Optique et lunetterie",
+        "Audioprothèse",
+        "Prothèse et orthèse"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "reserve",
+      "condition": "Ouverture selon la demande et le plateau technique."
+    },
+    {
+      "id": "7912",
+      "title": "Sociologie et Anthropologie",
+      "school_code": "ESHC",
+      "department": "Sciences Humaines et Sociales",
+      "specializations": [
+        "Sociologie",
+        "Anthropologie"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7913",
+      "title": "Science Politique et Relations Internationales",
+      "school_code": "ESHC",
+      "department": "Sciences Humaines et Sociales",
+      "specializations": [
+        "Science politique et administration publique",
+        "Relations internationales et diplomatie"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7914",
+      "title": "Développement Communautaire et Action Humanitaire",
+      "school_code": "ESHC",
+      "department": "Sciences Humaines et Sociales",
+      "specializations": [
+        "Développement communautaire et économie sociale et solidaire",
+        "Action humanitaire et solidarité internationale"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7915",
+      "title": "Études Africaines, Genre et Psychologie Sociale",
+      "school_code": "ESHC",
+      "department": "Sciences Humaines et Sociales",
+      "specializations": [
+        "Études africaines",
+        "Genre et psychologie sociale",
+        "Philosophie (option)"
+      ],
+      "levels": [
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7702",
+      "title": "Communication des Organisations",
+      "school_code": "ESHC",
+      "department": "Sciences de la Communication",
+      "specializations": [
+        "Communication institutionnelle",
+        "Communication digitale et médias sociaux",
+        "Relations publiques et événementiel"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7916",
+      "title": "Communication, Journalisme et Médias",
+      "school_code": "ESHC",
+      "department": "Journalisme et Médias",
+      "specializations": [
+        "Journalisme",
+        "Journalisme d’investigation et de données",
+        "Production et gestion des médias"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7917",
+      "title": "Production Audiovisuelle et Cinéma",
+      "school_code": "ESHC",
+      "department": "Arts, Médias et Production Audiovisuelle",
+      "specializations": [
+        "Production et réalisation",
+        "Son et musique"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    },
+    {
+      "id": "7918",
+      "title": "Design, Animation et Arts Numériques",
+      "school_code": "ESHC",
+      "department": "Arts, Médias et Production Audiovisuelle",
+      "specializations": [
+        "Infographie et design graphique",
+        "Photographie et arts visuels"
+      ],
+      "levels": [
+        "Licence",
+        "Master"
+      ],
+      "status": "catalogue",
+      "condition": ""
+    }
+  ],
+  "aliases": {
+    "7657": {
+      "target": "7653",
+      "pathway": "Architecture et BTP"
+    },
+    "7701": {
+      "target": "7654",
+      "pathway": "Automatisme, robotique et mécatronique"
+    },
+    "7705": {
+      "target": "7647",
+      "pathway": "Gestion de projets"
+    },
+    "7706": {
+      "target": "7658",
+      "pathway": "Qualité, hygiène, sécurité et environnement"
+    }
+  },
+  "academy_transversal": {
+    "7665": "Secrétariat médical"
+  },
+  "notes": {
+    "ESGA": "10 filières listées : le sous-total de 8 dans la synthèse est corrigé.",
+    "total": "40 filières, dont 3 en réserve ; 20 départements. L’École doctorale est présentée séparément.",
+    "energies": "Génie électrique : conception et réalisation technique. Énergies et environnement : gestion des ressources, sécurité et environnement.",
+    "secretariat": "Le Secrétariat médical relève de l’Academy et intervient transversalement dans les six départements de santé."
+  },
+  "faculty": [
+    {
+      "name": "Professeur Albert ONDO OSSA",
+      "role": "Agrégé des Facultés de Sciences Économiques et de Gestion",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/jad20230620-conf-gabon-albertondaosso-1024x688-1.jpg"
+    },
+    {
+      "name": "Docteur Adrian ESTES",
+      "role": "PhD en Gestion de la Santé et Sécurité au Travail",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/1539433144655.jpg"
+    },
+    {
+      "name": "Docteur Nicolas W. ETOYI",
+      "role": "Doctorat en Science de Gestion",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/telechargement.jpg"
+    },
+    {
+      "name": "Docteur Pierre Luc DIFUTA",
+      "role": "Doctorant en Leadership et Développement",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/Leveque-Pierre-Luc-Difuta.jpg"
+    },
+    {
+      "name": "Dr Ima Joachim BANOAGA",
+      "role": "Doctorat en Marketing International",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/Dr.-Ima-Banoaga.jpg"
+    },
+    {
+      "name": "Dr Sawssen MABROUK",
+      "role": "Docteur en Environnement et Développement Durable",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/Sawsen-MABROUK.jpg"
+    },
+    {
+      "name": "Dr Nadia ORIGO",
+      "role": "Docteur en Science Politique et spécialiste du développement économique et social",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/Nadia_ORIGO.jpg"
+    },
+    {
+      "name": "Pr Carl ROBINSON",
+      "role": "PhD, DSc., Expert en Leadership et Développement",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/5249188151.jpeg"
+    },
+    {
+      "name": "Pr Grégoire BIYOGO",
+      "role": "Historien de la Philosophie, Expert en Derrida et Rorty",
+      "image": "https://sciptinternational.com/wp-content/uploads/2024/10/77-fi487143x685.jpg"
+    }
+  ],
+  "cert_images": [
+    "https://sciptinternational.com/wp-content/uploads/2024/11/2cert.jpg",
+    "https://sciptinternational.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-03-09-at-13.28.05-1024x346.jpeg",
+    "https://sciptinternational.com/wp-content/uploads/2024/11/1cert-150x150.jpg",
+    "https://sciptinternational.com/wp-content/uploads/2024/03/iso-9001-golden-medal-with-red-ribbon-vector-seal-award-gold-quality-management-systems-qms_751264-2-150x150.jpg",
+    "https://sciptinternational.com/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-11-at-21.50.57-e1730390690375-150x150.jpeg"
+  ]
+}

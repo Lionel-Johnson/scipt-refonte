@@ -4,7 +4,7 @@
  const panels=[...form.querySelectorAll('.apply-panel')];
  const steps=[...document.querySelectorAll('.apply-steps li')];
  const err=document.getElementById('apply-error');
- const data=window.SCIPT_ORIENTATION||[];
+ const data=(window.SCIPT_ORIENTATION||[]).filter(p=>p.status!=='reserve');
  const sel=document.getElementById('a-formation');
  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  [['Universitaire','Programmes universitaires'],['Professionnelle','Formations professionnelles']].forEach(([t,l])=>{
