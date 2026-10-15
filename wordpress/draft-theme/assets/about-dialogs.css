@@ -23,3 +23,8 @@ main>section[hidden]{display:none!important}
 @media(max-width:991px){.about-subnav.scipt-about-cards>.container{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.about-subnav.scipt-about-cards>.container{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.about-subnav.scipt-about-cards a{padding:18px 14px;min-height:112px;font-size:15px}.scipt-about-dialog{border-radius:18px;width:calc(100% - 20px)}.scipt-about-dialog-header{padding:18px}.scipt-about-dialog-content{padding:22px 18px}.scipt-about-dialog-content .about-two,.scipt-about-dialog-content .about-director,.scipt-about-dialog-content .about-paths,.scipt-about-dialog-content .about-cards,.scipt-about-dialog-content .about-value-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.about-subnav.scipt-about-cards a{transition:none}}
+
+/* Contraste commun aux cinq fenêtres institutionnelles. */
+.scipt-about-dialog .scipt-about-dialog-content,.scipt-about-dialog .scipt-about-dialog-content *{color:#10263f!important;opacity:1;text-shadow:none}
+.scipt-about-dialog .scipt-about-dialog-content .about-statement,.scipt-about-dialog .scipt-about-dialog-content .about-portrait>span{background:#f2f5fa!important;color:#10263f!important}
+.scipt-about-dialog .scipt-about-dialog-content a{text-decoration:underline;text-underline-offset:3px}
