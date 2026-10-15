@@ -5,7 +5,7 @@ function scipt_global_page_corrections($html) {
     $files = array('client-approved.js', 'fiches-data.js', 'fiche-formation.js', 'programme-contenus.js', 'professionnel-18-mois-ui.js', 'revision-octobre.js', 'programmes-detail-modern.js');
     foreach ($files as $file) {
         $pattern = '~(?:https?://[^\s"<>]+/|assets/)' . preg_quote($file, '~') . '(?:\?[^\s"<>]*)?~';
-        $html = preg_replace($pattern, esc_url(get_stylesheet_directory_uri() . '/assets/' . $file . '?v=20261015-global'), $html);
+        $html = preg_replace($pattern, esc_url(get_stylesheet_directory_uri() . '/assets/' . $file . '?v=20261015-menu-delai'), $html);
     }
     return str_replace(array('Exemples de spécialisations', 'en cours de chargement...', 'en cours de chargement…'), array('Domaines de spécialisation', 'Consultez les informations du parcours ci-dessous.', 'Consultez les informations du parcours ci-dessous.'), $html);
 }
