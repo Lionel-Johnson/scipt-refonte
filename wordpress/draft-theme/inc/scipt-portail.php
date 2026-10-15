@@ -131,3 +131,5 @@ add_filter('template_include', function ($template) {
 }, 99);
 
 require_once __DIR__ . '/scipt-performances.php';
+
+require_once __DIR__ . '/scipt-global-pages.php';
