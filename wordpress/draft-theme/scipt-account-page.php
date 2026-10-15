@@ -13,7 +13,7 @@ if ($show_performance) {
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head><meta charset="<?php bloginfo('charset'); ?>"><meta name="viewport" content="width=device-width, initial-scale=1"><?php wp_head(); ?></head>
-<body <?php body_class('scipt-account-page'); ?>>
+<body <?php body_class('approved-site scipt-account-page'); ?>>
 <?php wp_body_open(); echo $shell['header']; ?>
 <main id="contenu" class="scipt-site" tabindex="-1"><?php if (!$show_performance) : ?><h1 class="scipt-account-title">Mon espace SCIPT</h1><?php endif; ?><?php echo $account; ?></main>
 <?php echo $shell['footer']; wp_footer(); ?>
