@@ -27,3 +27,5 @@
 @media(prefers-reduced-motion:reduce){.inst-card,.about-subnav.scipt-about-cards a{transition:none}.inst-card:hover,.about-subnav.scipt-about-cards a:hover{transform:none}}
 
 .inst-page .inst-card p,.inst-page .inst-card h2,.inst-page .inst-card h3,.inst-page .inst-card li{color:#10263f}
+/* WordPress peut masquer .collapse avec visibility:collapse ; Bootstrap conserve le contrôle de display sur mobile. */
+.approved-navbar-shell .navbar-collapse,.approved-navbar-shell .navbar-collapse.collapse,.approved-navbar-shell .navbar-collapse.collapsing{visibility:visible!important}

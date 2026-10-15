@@ -67,7 +67,7 @@ add_filter('template_include', function ($template) {
     return $template;
 }, 100);
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-architecture');
+    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261015-navbar-visible');
     wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array(), '20261015-architecture', true);
 });
 
