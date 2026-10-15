@@ -528,21 +528,24 @@
       "title": "Management des Ressources Humaines ANNÉE ACADÉMIQUE : 2024 – 2025",
       "catalogue_id": "7650",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 3831,
       "title": "Controle de Gestion ANNÉE ACADÉMIQUE : 2024 – 2025",
       "catalogue_id": "7651",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 3889,
       "title": "Comptabilite ANNÉE ACADÉMIQUE : 2024 – 2025",
       "catalogue_id": "7651",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 4060,
@@ -577,7 +580,8 @@
       "title": "SECRETARIAT MEDICAL",
       "catalogue_id": "7665",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 4436,
@@ -633,7 +637,8 @@
       "title": "MANAGEMENT DES PROJETS",
       "catalogue_id": "7705",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5102,
@@ -675,14 +680,16 @@
       "title": "RATTRAPAGES MANAGEMENT DES PROJETS 12/2025",
       "catalogue_id": "7705",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5634,
       "title": "RATTRAPAGE DE COMPTABILITE 12/2025",
       "catalogue_id": "7651",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5636,
@@ -731,28 +738,32 @@
       "title": "Génératrice et moteur à courant continu et Électrotechnique fondamentale",
       "catalogue_id": "7654",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5762,
       "title": "Énergies renouvelables et solutions écologiques et Architecture des systèmes électriques du bâtiment",
       "catalogue_id": "7658",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5796,
       "title": "ECONOMIE DES TRANSPORTS",
       "catalogue_id": "7652",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5816,
       "title": "GESTION DES ENTREPOTS ET PLATEFORMES L3  2026",
       "catalogue_id": "7652",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 5864,
@@ -780,7 +791,8 @@
       "title": "ARCHITECTURE DES SYSTÈMES ELECTRIQUES L2 2026",
       "catalogue_id": "7654",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6035,
@@ -843,7 +855,8 @@
       "title": "DISPENSATION &amp; CONSEIL PHARMACEUTIQUE L3 - 2026",
       "catalogue_id": "7662",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6442,
@@ -864,7 +877,8 @@
       "title": "EXAMEN PARTIEL D'ÉCONOMIE DES TRANSPORTS L3 SES02-SEM01/ 2026",
       "catalogue_id": "7652",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6521,
@@ -878,7 +892,8 @@
       "title": "EXAMEN PARTIEL DE GESTION DES ENTREPÔTS ET DES PLATE-FORMES L3 SES02-SEM01 /2026",
       "catalogue_id": "7652",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6619,
@@ -906,14 +921,16 @@
       "title": "EXAMEN PARTIEL EN GÉNÉRATRICE ET MOTEUR DE COURANT CONTINU L2 SES02-SEM01 /2026",
       "catalogue_id": "7654",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6693,
       "title": "EXAMEN PARTIEL EN ARCHITECTURE DES SYSTÈMES ELECTRIQUES L2 SES02-SEM01 /2026",
       "catalogue_id": "7654",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6748,
@@ -927,14 +944,16 @@
       "title": "EXAMEN PARTIEL EN FONDAMENTAUX PHARMACEUTIQUES (NIVEAU AVANCÉ) SES02-SEM01 /2026",
       "catalogue_id": "7662",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6837,
       "title": "EXAMEN PARTIEL EN ETUDE DES SYSTÈMES RENOUVELABLES- L2",
       "catalogue_id": "7658",
       "status": "rattachement",
-      "reason": "Rapprochement explicite entre le titre et une filière du catalogue ; à confirmer par la scolarité avant affectation administrative."
+      "reason": "Rapprochement confirmé par la direction le 15/10/2026. Modifiable depuis le tableau de bord.",
+      "confirmed": true
     },
     {
       "course_id": 6845,
@@ -985,5 +1004,6 @@
       "status": "a_confirmer",
       "reason": "Intitulé insuffisant ou domaine absent du catalogue ; validation pédagogique nécessaire."
     }
-  ]
+  ],
+  "confirmation_date": "2026-10-15"
 }

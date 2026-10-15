@@ -53,3 +53,7 @@ Les promesses absolues de reconnaissance, double diplôme ou insertion ne sont p
 ## Vérification
 
 Les 68 identifiants du classement sont uniques et correspondent au relevé WordPress. Chaque rapprochement utilise un identifiant existant dans le catalogue. Les trois insertions éditoriales ont été contrôlées dans les données Elementor, avant la fermeture du contenu principal, sans duplication du pied de page. Les fichiers PHP du classement sont contrôlés syntaxiquement par WordPress lors de l’enregistrement. Le classement doit encore être revu depuis le tableau de bord connecté et confirmé par la scolarité.
+
+## Confirmation du 15 octobre 2026
+
+La direction a confirmé les 19 rapprochements. Le tableau de bord permet désormais de modifier chaque classement avec un sélecteur et le bouton Enregistrer. Les changements sont conservés dans une option WordPress dédiée, réservés aux administrateurs et protégés par un nonce. Les inscriptions et les droits d’accès restent inchangés. Les matières communes et les sept cas à préciser ne sont pas automatiquement affectés.
