@@ -32,3 +32,10 @@
 .pathway-content>strong{font-size:clamp(27px,3.1vw,36px)!important;overflow-wrap:anywhere}
 }
 @media(max-width:767px){.pathways-grid{grid-template-columns:1fr}.pathway-card{min-height:0}.pathway-card .pathway-content{padding:28px;gap:0}.pathway-button{margin-top:8px}.pathway-content>strong{font-size:30px!important}}
+
+/* Chiffres clés sous les cartes, dans le flux normal. */
+#parcours .highlights{position:relative!important;inset:auto!important;transform:none!important;margin:32px 0 0!important;clear:both;z-index:auto}
+#parcours .pathways-grid{margin-bottom:0}
+#parcours .pathway-card{height:auto!important;min-height:400px}
+#parcours .pathway-content{height:auto!important;padding-bottom:32px}
+@media(max-width:767px){#parcours .pathway-card{min-height:0}#parcours .highlights{margin-top:24px!important}}
