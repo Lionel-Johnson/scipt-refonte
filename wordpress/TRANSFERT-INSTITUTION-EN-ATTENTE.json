@@ -1,0 +1,16 @@
+{
+  "site": "https://sciptinternational.com",
+  "mode": "brouillon uniquement",
+  "reason": "Quota quotidien WPVibe atteint ; utilisation du crédit de réinitialisation restante soumise à accord utilisateur.",
+  "remaining_paths": [
+    "assets/institution.css",
+    "assets/institution-pages.json",
+    "assets/classement-cours.json",
+    "inc/scipt-institution.php",
+    "scipt-institution-page.php",
+    "inc/scipt-global-pages.php",
+    "scipt-account-page.php"
+  ],
+  "last_to_enable": "inc/scipt-global-pages.php",
+  "new_page_id": 8076
+}

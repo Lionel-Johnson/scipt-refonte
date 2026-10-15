@@ -31,3 +31,9 @@ Les pages Corps professoral, Approche pédagogique, Pourquoi nous choisir et Agr
 Référentiel unique : assets/architecture-academique.json. Génération des catalogues, menus et fragments : scripts/reorganiser-scipt.py. Une feuille institution.css et un script institution.js communs ; aucune page -v2 ou copie de travail publiée. Le répertoire WordPress contient le paquet du thème en brouillon, pas une deuxième version éditoriale du site.
 
 La nouvelle page ESHC WordPress porte l’identifiant 8076 et reste en brouillon. Les autres pages gardent leurs identifiants. La publication du thème WordPress n’est pas effectuée.
+
+## Vérification et état du transfert
+
+Les quatre pages refaites sont visibles sur GitHub Pages. Vérification en navigateur : neuf cartes professorales et ouverture/fermeture des portraits, six cartes pédagogiques, six cartes de choix, cinq cartes de reconnaissance et agrément. La fenêtre Notre devise fonctionne sur Qui sommes-nous. Le catalogue présente 20 départements, 40 fiches et 3 réserves sans débordement horizontal au format contrôlé. La fiche Pétrole/Gaz en réserve ne présente aucun lien de candidature.
+
+Le transfert WordPress est partiel : la limite de 100 appels quotidiens WPVibe a été atteinte. Aucun thème n’a été publié. La liste et l’ordre des fichiers restants figurent dans TRANSFERT-INSTITUTION-EN-ATTENTE.json. Le module global doit être activé seulement après transfert de ses dépendances. L’utilisation du dernier crédit de réinitialisation nécessite l’accord de l’utilisateur.
