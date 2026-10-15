@@ -27,7 +27,7 @@ remove_shortcode('scipt_connexion');
 add_shortcode('scipt_connexion', 'scipt_existing_account');
 add_shortcode('scipt_tableau_bord', 'scipt_existing_account');
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.css', array(), '20261015-compte-v2');
+    wp_enqueue_style('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.css', array(), '20261015-recherche-v3');
     wp_enqueue_script('scipt-auth-design', get_stylesheet_directory_uri() . '/assets/connexion.js', array(), '20261015', true);
 });
 
