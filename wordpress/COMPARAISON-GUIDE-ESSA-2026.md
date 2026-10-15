@@ -55,3 +55,7 @@ Les 19 rapprochements déjà confirmés sont maintenus. Les matières communes d
 4. Valider les nouvelles spécialités et leurs diplômes avant de compléter le catalogue.
 
 Cette livraison est une comparaison documentaire. Les pages WordPress et le classement confirmé restent inchangés.
+
+## Intégration autorisée
+
+Les trois pôles ont été ajoutés comme sous-rubriques dans la présentation de l’école de santé, en HTML et dans la page WordPress de refonte 7805 (brouillon). Les parcours cités sont ceux du catalogue existant. Aucune école ni formation supplémentaire n’a été créée.
