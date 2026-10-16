@@ -1,0 +1,12 @@
+/* Galerie métiers, photos 4:3 et logos COMPLETS : règles à appliquer à toutes les fiches. */
+.sc-detail-hero .sc-track-logo-frame{display:flex;justify-content:center;align-items:center;width:min(100%,350px);min-height:200px;max-height:264px;box-sizing:border-box;padding:14px 20px;margin:20px 0 18px;border-radius:22px;background:#fff;box-shadow:0 12px 36px #0002;overflow:visible}
+.sc-detail-hero .sc-track-logo-frame #program-lockup,
+.sc-detail-hero img#program-lockup{display:block!important;object-fit:contain!important;object-position:center!important;max-width:100%!important;max-height:228px!important;width:auto!important;height:auto!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transform:none!important}
+.sc-detail-hero .sc-programme-hero-media{width:100%;aspect-ratio:4/3;max-height:420px;margin:0;display:grid;position:relative;place-items:center;isolation:isolate;overflow:hidden;border-radius:22px;background:linear-gradient(128deg,#183768,#244e7c 60%,#152846);border:1px solid #ffffff44;box-shadow:0 18px 35px #07132839}
+.sc-detail-hero .sc-programme-hero-media img{display:block;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center 38%;border-radius:0!important;position:absolute;inset:0}
+.sc-detail-hero .sc-programme-hero-media img[hidden]{display:none!important}
+.sc-detail-hero .sc-programme-hero-media figcaption{z-index:1;position:absolute;bottom:0;inset-inline:0;padding:14px 18px;color:#fff;background:linear-gradient(0deg,#081b35e6,#081b3500);font-size:.88rem;font-weight:650}
+.sc-detail-hero .sc-programme-hero-media.sc-media-pending figcaption{position:static;text-align:center;background:none;padding:28px;color:#fff;font-weight:700;max-width:36ch}
+.sc-detail-hero .sc-programme-hero-media.sc-media-pending::before{content:"SCIPT INTERNATIONAL";position:absolute;top:20%;left:0;right:0;text-align:center;color:#edbd56;font-size:.76rem;letter-spacing:.15em;font-weight:800}
+@media(max-width:767px){.sc-detail-hero .container{grid-template-columns:minmax(0,1fr)!important;gap:22px}.sc-detail-hero .sc-track-logo-frame{min-height:170px;max-height:225px}.sc-detail-hero .sc-track-logo-frame #program-lockup{max-height:192px!important}.sc-detail-hero .sc-programme-hero-media{max-height:none}}
+@media(prefers-reduced-motion:reduce){.sc-detail-hero .sc-programme-hero-media *{animation:none!important;transition:none!important}}
