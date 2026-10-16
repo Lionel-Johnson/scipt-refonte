@@ -7,6 +7,12 @@ function scipt_institution_registry() {
         $path = get_stylesheet_directory() . '/assets/institution-pages.json';
         $data = is_readable($path) ? json_decode(file_get_contents($path), true) : array();
         if (!is_array($data)) $data = array();
+        /* Source du Blog validée sur GitHub, chargée uniquement dans le thème de prévisualisation. */
+        $blog_path = get_stylesheet_directory() . '/assets/blog-main.html';
+        if (is_readable($blog_path)) {
+            if (!isset($data['pages']) || !is_array($data['pages'])) $data['pages'] = array();
+            $data['pages']['blog'] = file_get_contents($blog_path);
+        }
     }
     return $data;
 }
