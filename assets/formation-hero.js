@@ -97,12 +97,12 @@
     return;
   }
   const url = new URL("assets/formations/" + file + ".webp", document.baseURI);
-  image.alt = "Illustration de la formation : " + title + " — SCIPT INTERNATIONAL";
+  image.alt = "Visuel de la formation : " + title + " — SCIPT INTERNATIONAL";
   image.onload = () => {
     holder.classList.remove("sc-media-pending");
     holder.classList.add("sc-media-ready");
     image.hidden = false;
-    caption.textContent = "Illustration du métier — " + title;
+    caption.textContent = title;
   };
   image.onerror = () => showWaiting("Visuel de « " + title + " » : fichier en cours de publication.");
   // La balise reste masquée avant réception de l'image pour éviter un clignotement.
