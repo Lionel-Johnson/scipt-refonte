@@ -44,3 +44,12 @@ background:center/18px 18px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http
 #scipt-account-shell .e-n-tab-title[aria-selected=true]{background:#10263f!important;color:#fff!important}
 #scipt-account-shell .e-n-tab-title[aria-selected=true] .e-n-tab-title-text{color:#fff!important}
 @media(max-width:850px){#scipt-account-shell{grid-template-columns:1fr;margin:24px 16px 40px}#scipt-account-shell .scipt-account-welcome{padding:28px}#scipt-account-shell .scipt-account-welcome ul{margin:8px 0}#scipt-account-shell .scipt-native-account{padding:24px 18px}}
+
+/* SCIPT 2026 — Blog et navigation validés */
+.approved-site .scipt-login-button,
+.scipt-site .scipt-login-button{transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+.approved-site .scipt-login-button:hover,.approved-site .scipt-login-button:focus-visible,
+.scipt-site .scipt-login-button:hover,.scipt-site .scipt-login-button:focus-visible{
+  background:#B5121B!important;border-color:#B5121B!important;color:#fff!important;
+  box-shadow:0 8px 22px rgba(181,18,27,.23)!important
+}
