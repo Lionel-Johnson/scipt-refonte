@@ -18,7 +18,7 @@ add_action('admin_menu', function () {
     add_menu_page('Performances SCIPT', 'Performances SCIPT', 'manage_options', 'scipt-performances', 'scipt_render_performance_dashboard', 'dashicons-chart-bar', 3);
 });
 add_action('admin_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-admin', get_stylesheet_directory_uri() . '/assets/scipt-admin.css', array(), '20261015-1');
+    wp_enqueue_style('scipt-admin', get_stylesheet_directory_uri() . '/assets/scipt-admin.css', array(), '20261016-relief');
 });
 add_action('wp_dashboard_setup', function () {
     if (current_user_can('manage_options')) wp_add_dashboard_widget('scipt_activity', 'SCIPT — activité pédagogique', function () {
@@ -88,7 +88,9 @@ function scipt_render_performance_dashboard() {
     foreach (array('all' => 'Toutes les dates', '30' => '30 derniers jours', '90' => '90 derniers jours', '365' => '365 derniers jours') as $value => $label) echo '<option value="' . esc_attr($value) . '" ' . selected($period, (string) $value, false) . '>' . esc_html($label) . '</option>';
     echo '</select><button class="button button-primary">Actualiser</button></form><div class="scipt-kpis">';
     foreach ($labels as $status => $label) echo '<article><span>' . esc_html($label) . '</span><strong>' . (int) $data['counts'][$status] . '</strong></article>';
-    echo '</div><section class="scipt-stat-panel"><h2>Contenus par filière</h2><p>Le compteur porte sur les entrées « cours » de LearnDash, y compris les examens qui y sont enregistrés. Un contenu partagé entre plusieurs filières est compté dans chacune ; le total global reste unique.</p>';
+    echo '</div>';
+    scipt_render_performance_charts($data);
+    echo '<section class="scipt-stat-panel"><h2>Contenus par filière</h2><p>Le compteur porte sur les entrées « cours » de LearnDash, y compris les examens qui y sont enregistrés. Un contenu partagé entre plusieurs filières est compté dans chacune ; le total global reste unique.</p>';
     if (array_sum($data['unclassified'])) echo '<p class="scipt-data-notice"><strong>' . (int) $data['unclassified']['publish'] . ' contenus publiés sans filière unique (matières communes comprises).</strong> Les rapprochements validés et leurs modifications alimentent ces compteurs. Utilisez le tableau de classement ci-dessous pour ajuster les affectations. Aucun classement automatique par titre n’est effectué.</p>';
     echo '<div class="scipt-table-scroll"><table class="widefat striped"><thead><tr><th scope="col">Filière</th><th scope="col">Publiés</th><th scope="col">Brouillons</th><th scope="col">En attente</th><th scope="col">Privés / planifiés</th></tr></thead><tbody>';
     $rows = array_values($data['rows']); $rows[] = array_merge(array('name' => 'Sans filière attribuée'), $data['unclassified']);
@@ -106,4 +108,22 @@ function scipt_render_performance_dashboard() {
     }
     if (!$data['authors']) echo '<tr><td colspan="2">Aucune publication sur cette période.</td></tr>';
     echo '</tbody></table></div></section><p class="scipt-stat-footnote">Calcul à la demande · ' . esc_html(wp_date('d/m/Y H:i')) . ' · Période fondée sur la date du contenu, pas sa dernière modification.</p></div>';
+}
+
+/** Graphiques en HTML/CSS : mêmes données et mêmes permissions que les compteurs. */
+function scipt_render_performance_charts($data) {
+    $total = array_sum($data['counts']);
+    $published = (int) $data['counts']['publish'];
+    $percent = $total ? round(100 * $published / $total, 1) : 0;
+    $rows = array_values($data['rows']);
+    usort($rows, function ($a, $b) { return $b['publish'] <=> $a['publish']; });
+    $rows = array_slice(array_filter($rows, function ($r) { return $r['publish'] > 0; }), 0, 8);
+    $max = $rows ? max(array_column($rows, 'publish')) : 1;
+    echo '<div class="scipt-chart-grid"><section class="scipt-stat-panel scipt-chart-bars"><span class="scipt-chart-eyebrow">RÉPARTITION DES PUBLICATIONS</span><h2>Les filières les plus actives</h2><p>Les huit premières filières sur la période sélectionnée, selon les contenus publiés.</p><div class="scipt-bars">';
+    foreach ($rows as $row) {
+        $width = round(100 * $row['publish'] / max(1, $max), 2);
+        echo '<div class="scipt-bar-row"><div><span>' . esc_html($row['name']) . '</span><strong>' . (int) $row['publish'] . '</strong></div><div class="scipt-bar-track" aria-hidden="true"><i style="width:' . esc_attr($width) . '%"></i></div></div>';
+    }
+    if (!$rows) echo '<p>Aucun contenu publié attribué à une filière sur cette période.</p>';
+    echo '</div></section><section class="scipt-stat-panel scipt-chart-ratio"><span class="scipt-chart-eyebrow">ÉTAT DU CATALOGUE</span><h2>Part des contenus publiés</h2><div class="scipt-donut" role="img" aria-label="' . esc_attr($percent . ' % des ' . $total . ' contenus sont publiés') . '" style="--published:' . esc_attr($percent) . '%"><div><strong>' . esc_html($percent) . ' %</strong><span>de contenus publiés</span></div></div><div class="scipt-chart-legend"><span><i></i>Publiés <strong>' . $published . '</strong></span><span><i></i>Autres statuts <strong>' . (int) ($total - $published) . '</strong></span></div><p>Ce taux décrit la publication des cours, et ne mesure pas la réussite des étudiants.</p></section></div>';
 }
