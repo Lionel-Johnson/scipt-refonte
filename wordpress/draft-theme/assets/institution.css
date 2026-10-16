@@ -84,3 +84,18 @@
 #scipt-account-shell.is-connected{background:radial-gradient(at 0 0,#b8954e30,transparent 55%),linear-gradient(135deg,#e5edf7,#f4f6fa);padding:clamp(16px,3vw,36px);border-radius:26px}
 #scipt-account-shell.is-connected .scipt-native-account,#scipt-account-shell.is-connected .ld-profile-summary,#scipt-account-shell.is-connected .ld-item-list-item{background:#ffffffb8!important;backdrop-filter:blur(16px);border:1px solid #fff!important;border-radius:20px!important;box-shadow:0 12px 30px #10263f12}
 @media(prefers-reduced-motion:reduce){.inst-page details.inst-card,.approved-site .approved-navbar-shell .nav-link{transition:none!important;transform:none!important}}
+
+/* Mise en valeur du Droit à l'ESGA, sous le témoignage existant. */
+.inst-page .inst-law-feature{padding-top:clamp(28px,5vw,60px);padding-bottom:clamp(28px,5vw,60px);background:linear-gradient(135deg,#edf3fa,#fff)}
+.inst-law-feature-inner{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);align-items:center;gap:clamp(24px,5vw,58px)}
+.inst-law-feature-copy{min-width:0}
+.inst-law-feature-copy h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.14;color:#10294b;margin:15px 0 18px}
+.inst-law-feature-copy p{color:#3c536c;font-size:1rem;line-height:1.75;max-width:66ch}
+.inst-law-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:20px}
+.inst-law-actions a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:999px;background:#122f54;color:#fff;text-decoration:none;font-weight:700}
+.inst-law-actions a:nth-child(2){color:#183b63;background:transparent;border:1px solid #b6c8db}
+.inst-law-actions a:hover,.inst-law-actions a:focus-visible{text-decoration:underline;outline-offset:3px}
+.inst-law-feature-visual{margin:0;min-width:0;border-radius:20px;overflow:hidden;background:#e3eaf5;box-shadow:0 14px 36px #10263f21}
+.inst-law-feature-visual img{width:100%;height:auto;aspect-ratio:4/3;display:block;object-fit:cover;object-position:center}
+.inst-law-feature-visual figcaption{color:#2d4460;font-size:.83rem;padding:10px 14px;background:#f7f9fc}
+@media(max-width:780px){.inst-law-feature-inner{grid-template-columns:1fr}.inst-law-feature-visual{max-width:640px}}
