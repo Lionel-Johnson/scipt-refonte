@@ -19,3 +19,13 @@ Décompresser et déposer leurs fichiers dans ce dossier `assets/formations/`. L
 - `gestion-transit-douane.webp` : transit et douane
 
 **Statut :** tant que les fichiers WebP du Lot 5 ne sont pas téléversés, la page de formation affiche le message d'attente existant et la page d'école continue à afficher la photographie juridique du lot initial. Les images générées sont illustratives et ne représentent pas des étudiants réels. La vidéo de Pemba reste à son emplacement, étiquetée comme témoignage sur la logistique.
+
+## Ajout du 16 octobre 2026 — nouvelles photos métiers
+
+Les archives remises par la direction comprennent 68 photos séparées, dont 20 fichiers WebP prioritaires à téléverser dans ce dossier. Ce deuxième lot n’écrase aucun des 30 fichiers existants. Les bandeaux de titres intégrés aux images ont été retirés avant leur préparation.
+
+Les fiches `programme.html` utilisent maintenant ces nouveaux visuels pour les identifiants suivants : `7656`, `7666`, `7669`, `7702`, `7806`, `7913`, `7914`, `7916` et `7917`. Si un nouveau fichier n’est pas encore disponible, la fiche tente de conserver son média précédent.
+
+**Installation :** extraire `scipt_20_visuels_prioritaires_github.zip`, puis transférer uniquement les fichiers `.webp` de `assets/formations/` dans le dossier du même nom sur GitHub. Le fichier `manifest.json` du paquet indique les correspondances par métier et par ID.
+
+La légende de chaque image sur le site affiche le nom de la formation sans qualificatif ajouté. Les autres programmes attendent des photos correspondant effectivement à leurs métiers ; aucun visuel générique non pertinent ne doit leur être attribué.
