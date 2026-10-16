@@ -195,3 +195,4 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 require_once __DIR__ . '/scipt-portail.php';
+require_once __DIR__ . '/scipt-espace-pedagogique.php';
