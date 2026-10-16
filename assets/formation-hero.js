@@ -85,18 +85,32 @@
   logo.alt = "Logo complet SCIPT INTERNATIONAL " + (isProfessional ? "ACADEMY" : "UNIVERSITY");
   logo.decoding = "async";
 
-  const file = imageById[requestedId] || (course?.alias_of && imageById[course.alias_of]) || "";
+  /* Compléments remis par la direction. Les anciens médias restent en secours
+     jusqu'à ce que les nouveaux fichiers WebP soient téléversés. */
+  const complementaryById = {
+  "7656": "professionnels-informatique-et-systemes-d-information",
+  "7666": "excellence-recherche-master-et-doctorat",
+  "7669": "excellence-recherche-master-et-doctorat",
+  "7702": "professionnels-communication-digitale-et-multimedia",
+  "7806": "professionnels-douane-et-fiscalite",
+  "7913": "excellence-relations-internationales-et-diplomatie",
+  "7914": "edrisg-developpement-des-communautes",
+  "7916": "professionnels-journalisme-et-communication",
+  "7917": "professionnels-communication-digitale-et-multimedia"
+};
+  const originalFile = imageById[requestedId] || (course?.alias_of && imageById[course.alias_of]) || "";
+  const complementaryFile = complementaryById[requestedId] || (course?.alias_of && complementaryById[course.alias_of]) || "";
+  const filesToTry = [...new Set([complementaryFile, originalFile].filter(Boolean))];
   const showWaiting = (message) => {
     holder.classList.add("sc-media-pending");
     holder.classList.remove("sc-media-ready");
     if (image) { image.hidden = true; image.removeAttribute("src"); }
     caption.textContent = message;
   };
-  if (!image || !file) {
-    showWaiting("Visuel spécifique de « " + title + " » en préparation.");
+  if (!image || !filesToTry.length) {
+    showWaiting("Visuel de « " + title + " » en préparation.");
     return;
   }
-  const url = new URL("assets/formations/" + file + ".webp", document.baseURI);
   image.alt = "Visuel de la formation : " + title + " — SCIPT INTERNATIONAL";
   image.onload = () => {
     holder.classList.remove("sc-media-pending");
@@ -104,11 +118,20 @@
     image.hidden = false;
     caption.textContent = title;
   };
-  image.onerror = () => showWaiting("Visuel de « " + title + " » : fichier en cours de publication.");
-  // La balise reste masquée avant réception de l'image pour éviter un clignotement.
-  image.hidden = true;
-  holder.classList.add("sc-media-pending");
-  caption.textContent = "Chargement du visuel métier…";
-  image.src = url.href;
-  if (image.complete && image.naturalWidth) image.onload();
+  let currentIndex = 0;
+  const tryNext = () => {
+    if (currentIndex >= filesToTry.length) {
+      showWaiting("Visuel de « " + title + " » en attente de publication.");
+      return;
+    }
+    const file = filesToTry[currentIndex++];
+    const url = new URL("assets/formations/" + file + ".webp", document.baseURI);
+    image.hidden = true;
+    holder.classList.add("sc-media-pending");
+    caption.textContent = "Chargement du visuel métier…";
+    image.src = url.href;
+    if (image.complete && image.naturalWidth) image.onload();
+  };
+  image.onerror = tryNext;
+  tryNext();
 })();
