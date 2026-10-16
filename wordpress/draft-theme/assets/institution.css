@@ -33,3 +33,26 @@
 /* Blasons originaux complets, sans recadrage, sur les pages des cinq écoles. */
 .inst-hero-image.inst-school-logo{object-fit:contain;padding:22px;background:linear-gradient(145deg,#fff,#e8edf4);height:clamp(260px,30vw,400px)}
 .inst-school-film .scipt-video-copy p,.inst-school-film details{color:#10263f;line-height:1.7}.inst-school-film details{font-size:14px;margin-top:18px}.inst-school-film summary{cursor:pointer;font-weight:700}.inst-school-film video{max-height:560px;background:#10263f}.inst-school-film .scipt-video-panel{background:linear-gradient(140deg,#fff,#eef2f7)}
+
+/* Cartes de formation : verre dépoli bleu nuit, ivoire et or SCIPT. */
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){
+ --glass-tint:rgba(68,128,185,.19);--glass-accent:#286292;
+ position:relative;isolation:isolate;overflow:hidden;
+ background:radial-gradient(ellipse at 100% 0,var(--glass-tint),transparent 70%),linear-gradient(135deg,rgba(255,255,255,.94),rgba(222,233,246,.88));
+ border:1px solid rgba(255,255,255,.9);border-radius:24px;
+ box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 #10263f0d,0 10px 30px #10263f10,0 0 0 1px #173c6612;
+ -webkit-backdrop-filter:blur(16px) saturate(130%);backdrop-filter:blur(16px) saturate(130%);
+ transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+ color:#10263f;
+}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card):nth-child(3n+2){--glass-tint:rgba(184,149,78,.23);--glass-accent:#94702d;background:radial-gradient(ellipse at 100% 0,var(--glass-tint),transparent 70%),linear-gradient(135deg,rgba(255,255,255,.95),rgba(245,238,218,.9))}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card):nth-child(3n){--glass-tint:rgba(39,109,127,.18);--glass-accent:#235d72;background:radial-gradient(ellipse at 100% 0,var(--glass-tint),transparent 70%),linear-gradient(135deg,rgba(255,255,255,.95),rgba(222,238,241,.9))}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card)::before{content:"";position:absolute;inset:0 22px auto;height:3px;background:linear-gradient(90deg,transparent,var(--glass-accent),#dcc38b,transparent);pointer-events:none;z-index:1}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card)::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,#fff6,transparent 36%,transparent 70%,#fff2);pointer-events:none;z-index:-1}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card) :is(.inst-card-body,.card-body-custom){background:transparent}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card) :is(h2,h3,h4,p,li){color:#10263f}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card) .inst-link{padding:10px 14px;border-radius:12px;background:#ffffffb8;border:1px solid #173c6620;box-shadow:inset 0 1px 0 #fff;color:#173c66}
+:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card):focus-within{outline:2px solid #94702d;outline-offset:4px;box-shadow:inset 0 1px 0 #fff,0 16px 40px #10263f20}
+@media(hover:hover) and (pointer:fine){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card):hover{transform:translateY(-5px);border-color:#b8954e9e;box-shadow:inset 0 1px 0 #fff,0 22px 44px #10263f21,0 0 0 1px #b8954e29}}
+@media(prefers-reduced-motion:reduce){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){transition:none;transform:none!important}}
+@media(forced-colors:active){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){border:1px solid CanvasText;background:Canvas;backdrop-filter:none}}

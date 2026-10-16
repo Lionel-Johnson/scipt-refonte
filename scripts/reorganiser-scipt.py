@@ -139,7 +139,7 @@ for file in ROOT.glob('*.html'):
  if 'inst-page' in text and not doc.xpath('//script[contains(@src,"institution.js")]'):
   doc.find('body').append(dom.Element('script',src='assets/institution.js?v=20261015-ecoles-videos'))
  for node in doc.xpath('//link[contains(@href,"institution.css")]'):
-  node.set('href','assets/institution.css?v=20261015-ecoles-videos')
+  node.set('href','assets/institution.css?v=20261016-verre')
  for node in doc.xpath('//script[contains(@src,"videos-accueil-data.js")]'):
   node.set('src','assets/videos-accueil-data.js?v=20261015-ecoles-videos')
  for node in doc.xpath('//script[@src]'):
