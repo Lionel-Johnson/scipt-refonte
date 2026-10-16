@@ -4,7 +4,7 @@
  const data=(window.SCIPT_ORIENTATION||[]).filter(p=>p.status!=='reserve');
  const DOMAINS={gestion:'droit, gestion et administration',tech:'sciences, technique et numérique',sante:'santé et développement',recherche:'recherche doctorale',humaines:'sciences humaines, sociales et communication'};
  const val=n=>(form.elements[n]||{}).value||'';
- // Prérenseignement depuis l'accueil : orientation.html?objectif=metier
+ // Prérenseignement depuis l’accueil : contact.html?objectif=metier#orientation
  const pre=new URLSearchParams(location.search).get('objectif');
  if(pre){const r=form.querySelector('input[name="objectif"][value="'+pre+'"]');if(r)r.checked=true}
  form.addEventListener('submit',event=>{
@@ -31,7 +31,7 @@
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   box.innerHTML='<h2>Vos pistes de formation</h2><p class="orient-note">Ces pistes sont indicatives : les niveaux d’accès, durées et conditions sont confirmés par le service des admissions.</p><div class="orient-grid">'+top.map(({p,why})=>'<article class="orient-card"><span class="orient-tag">'+esc(p.type)+'</span><h3>'+esc(p.title)+'</h3><p class="orient-school">'+esc(p.school)+'</p><p><strong>Pourquoi cette piste :</strong> '+(why.length?esc(why.join(' ; '))+'.':'proposition générale à affiner avec un conseiller.')+'</p><a class="orient-link" href="programme.html?id='+esc(p.id)+'">Voir la fiche →</a></article>').join('')+'</div>'
    +(a.international==='oui'?'<p class="orient-note">Vous êtes intéressé par l’international : consultez la rubrique <a href="admissions.html">Admissions · Étudiants internationaux</a>.</p>':'')
-   +'<div class="orient-cta"><a class="btn btn-warning" href="contact.html">Demander conseil</a><a class="btn btn-primary" href="admissions.html">Candidater</a></div>';
+   +'<div class="orient-cta"><a class="btn btn-warning" href="#contact">Demander conseil</a><a class="btn btn-primary" href="admissions.html">Candidater</a></div>';
   box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'start'});
  });
 })();
