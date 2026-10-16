@@ -116,3 +116,210 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true });
   else ready();
 })();
+
+
+/* Extension validée : lecteur associé à chaque école, pôle et formation.
+   Les clips qui ne concernent pas directement la filière sont explicitement
+   présentés comme des vidéos de son école de rattachement. */
+(() => {
+  'use strict';
+  const wp = 'https://sciptinternational.com/wp-content/uploads/2026/10/';
+  const gh = 'https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/';
+  const schools = {
+    'ecole-sante-developpement.html': {
+      key: 'sante', name: 'École des Sciences de la Santé',
+      title: 'Présentation des formations en santé',
+      url: wp+'Spot-Final-Sante.mp4',
+      poster: 'https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/sante.jpg',
+      mode: 'presentation'
+    },
+    'ecole-droit-sciences-gestion.html': {
+      key: 'gestion', name: 'École de Droit, Gestion, Administration et Commerce',
+      title: 'Témoignage de Pemba : transport et logistique',
+      url: wp+'Transport-et-logistique-temoignage-de-Pemba.mp4',
+      poster: gh+'scipt-video-02.jpg',
+      mode: 'temoignage'
+    },
+    'ecole-sciences-technologies-ingenierie.html': {
+      key: 'technologies', name: 'École des Sciences, Technologies et Ingénierie',
+      title: 'Présentation des sciences, technologies et ingénierie',
+      url: gh+'ecole-technologies.mp4', poster: gh+'ecole-technologies.jpg',
+      mode: 'presentation'
+    },
+    'ecole-sciences-humaines-communication.html': {
+      key: 'humaines', name: 'École des Sciences Humaines, Sociales et de la Communication',
+      title: 'Présentation des sciences humaines et de la communication',
+      url: gh+'ecole-humaines.mp4', poster: gh+'ecole-humaines.jpg',
+      mode: 'presentation'
+    },
+    'ecole-scipt-international.html': {
+      key: 'doctorale', name: 'École Doctorale Internationale SCIPT',
+      title: 'Présentation des parcours doctoraux et de la recherche',
+      url: gh+'ecole-doctorale.mp4', poster: gh+'ecole-doctorale.jpg',
+      mode: 'presentation'
+    }
+  };
+  const poleMedia = [
+    {title:'Présentation générale des formations en santé',url:wp+'Spot-Final-Sante.mp4',poster:schools['ecole-sante-developpement.html'].poster,description:'Vidéo générale de l’École des Sciences de la Santé'},
+    {title:'Témoignage : sciences infirmières',url:wp+'Sciences-infirmieres-le-temoignage-de-Murielle.mp4',poster:gh+'scipt-video-08.jpg',description:'Témoignage d’une étudiante en sciences infirmières, non spécifique à la formation de sage-femme'},
+    {title:'Ateliers et mises en situation en santé',url:wp+'VID-20260604-WA0006_2.mp4',poster:schools['ecole-sante-developpement.html'].poster,description:'Exemples de pratique en santé, sans rattachement exclusif à une filière paramédicale'}
+  ];
+  function movie(item, label) {
+    const video = document.createElement('video');
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = 'none';
+    video.poster = item.poster;
+    video.setAttribute('aria-label',label||item.title);
+    const source = document.createElement('source');
+    source.src = item.url;
+    source.type = 'video/mp4';
+    video.append(source);
+    return video;
+  }
+  function directLink(item) {
+    const a=document.createElement('a');
+    a.href=item.url;
+    a.textContent='Ouvrir la vidéo directement ↗';
+    a.target='_blank';a.rel='noopener noreferrer';
+    a.className='scipt-direct-video';
+    return a;
+  }
+  function player(item, label) {
+    const box=document.createElement('div');
+    box.className='scipt-video-frame scipt-media-player';
+    const video=movie(item,label);
+    box.append(video);
+    const fallback=document.createElement('div');
+    fallback.className='scipt-video-fallback';
+    fallback.append(directLink(item));
+    // Un lien d'accès demeure visible même si le navigateur ne déclenche pas error.
+    const note=document.createElement('span');
+    note.textContent='Si la lecture ne démarre pas : ';
+    fallback.prepend(note);
+    box.append(fallback);
+    video.addEventListener('error',()=>box.classList.add('scipt-media-error'));
+    return box;
+  }
+  function filmAnchor(film) {
+    if(!film.id)film.id='presentation-video-ecole';
+    return '#'+film.id;
+  }
+  function supplementPoleCards(school, film) {
+    const main=document.querySelector('.inst-page');
+    if(!main)return;
+    const anchor=filmAnchor(film);
+    const headings=[...main.querySelectorAll('.inst-section h2')];
+    const poleHeading=headings.find(h=>/trois pôles/i.test(h.textContent));
+    if(school.key==='sante'&&poleHeading){
+      const cards=poleHeading.closest('section')?.querySelectorAll('.inst-grid > article.inst-card')||[];
+      cards.forEach((card,index)=>{
+        if(card.querySelector('.scipt-pole-video') || index>2) return;
+        const item=poleMedia[index];
+        const details=document.createElement('details');
+        details.className='scipt-pole-video';
+        const summary=document.createElement('summary');
+        summary.textContent='Voir une vidéo en lien avec ce pôle';
+        const caption=document.createElement('p');
+        caption.className='scipt-pole-caption';
+        caption.textContent=item.description;
+        details.append(summary,caption,player(item),document.createElement('p'));
+        details.lastElementChild.append(directLink(item));
+        card.querySelector('.inst-card-body')?.append(details);
+      });
+    }
+    const depHeading=headings.find(h=>/départements et filières/i.test(h.textContent));
+    const departments=depHeading?.closest('section')?.querySelectorAll('details.inst-card')||[];
+    departments.forEach(group=>{
+      if(group.querySelector('.scipt-department-video-link'))return;
+      const link=document.createElement('a');
+      link.href=anchor;
+      link.className='scipt-department-video-link';
+      link.textContent=school.mode==='temoignage'?'Voir le témoignage disponible de l’école ↑':'Voir la présentation vidéo de l’école ↑';
+      // Le lien ne modifie ni les filières, ni les cartes existantes.
+      group.append(link);
+    });
+  }
+  function schoolPage() {
+    const main=document.querySelector('main.inst-page');
+    const film=main?.querySelector('.inst-school-film');
+    if(!film)return;
+    const h=main.querySelector('.inst-hero h1');
+    if(!h)return;
+    const name=h.textContent.toLocaleLowerCase('fr');
+    const school=Object.values(schools).find(s=>name.includes(s.name.toLocaleLowerCase('fr'))||
+      (s.key==='sante'&&name.includes('sciences de la santé')));
+    if(!school)return;
+    supplementPoleCards(school,film);
+    if(school.mode==='temoignage'){
+      const eyebrow=film.querySelector('.scipt-video-copy > span');
+      if(eyebrow)eyebrow.textContent='SCIPT INTERNATIONAL · TÉMOIGNAGE';
+    }
+    if(!film.querySelector('.scipt-direct-video')){
+      const video=film.querySelector('video');
+      const frame=video?.closest('.scipt-video-frame');
+      if(frame){const link=document.createElement('p');link.className='scipt-video-direct-line';link.append(directLink(school));frame.insertAdjacentElement('afterend',link);}
+    }
+  }
+  function programPage() {
+    const hero=document.querySelector('.sc-detail-hero');
+    if(!hero||document.querySelector('#scipt-programme-video'))return;
+    const params=new URLSearchParams(location.search);
+    const requested=params.get('id');
+    const item=(typeof programmes!=='undefined'&&requested)?programmes[requested]:null;
+    if(!item)return;
+    const href=item.href?.split('?')[0];
+    const school=schools[href];
+    if(!school||!school.url)return;
+    const root=document.createElement('section');
+    root.id='scipt-programme-video';
+    root.className='scipt-video-section container scipt-programme-video';
+    root.setAttribute('aria-label','Présentation vidéo de l’école de rattachement');
+    const card=document.createElement('div');
+    card.className='scipt-video-panel';
+    const copy=document.createElement('div');
+    copy.className='scipt-video-copy';
+    const eyebrow=document.createElement('span');
+    eyebrow.textContent=school.mode==='temoignage'?'TÉMOIGNAGE DE L’ÉCOLE DE RATTACHEMENT':'VIDÉO DE L’ÉCOLE DE RATTACHEMENT';
+    const title=document.createElement('h2');
+    title.textContent=school.title;
+    const intro=document.createElement('p');
+    intro.textContent=school.mode==='temoignage'?
+      'Ce témoignage concerne la logistique et la gestion au sein de l’école ; il ne constitue pas une vidéo propre à cette filière.':
+      'Présentation de l’école à laquelle appartient cette formation ; le film n’est pas nécessairement spécifique à cette filière.';
+    copy.append(eyebrow,title,intro);
+    card.append(copy,player(school,'Vidéo de l’école : '+school.name));
+    root.append(card);
+    // Les scènes et témoignages complémentaires restent associés aux formations concernées.
+    let extra=[];
+    const programId=item.alias_of||requested;
+    if(school.key==='sante'){
+      if(programId==='7660'||programId==='7661'||programId==='7824'){
+        extra=[poleMedia[1],poleMedia[2]];
+      }else if(programId==='7659'||programId==='7662'||programId==='7663'||programId==='7664'||
+       item.type==='Professionnelle'){
+        extra=[poleMedia[2]];
+      }
+    }else if(school.key==='technologies'&&programId==='7818'){
+      extra=[{title:'Formation professionnelle : beauté et esthétique',url:gh+'scipt-video-09.mp4',poster:gh+'scipt-video-09.jpg',description:'Témoignage et présentation dans les métiers de la beauté et de l’esthétique'}];
+    }
+    if(extra.length){
+      const heading=document.createElement('h3');
+      heading.className='scipt-programme-extras-title';
+      heading.textContent='Pratique et témoignages disponibles';
+      const grid=document.createElement('div');
+      grid.className='scipt-video-gallery-grid';
+      extra.forEach(m=>{
+        const article=document.createElement('article');article.className='scipt-video-card';
+        const h=document.createElement('h4');h.textContent=m.title;
+        const p=document.createElement('p');p.textContent=m.description;
+        article.append(player(m),h,p);
+        grid.append(article);
+      });
+      root.append(heading,grid);
+    }
+    hero.insertAdjacentElement('afterend',root);
+  }
+  function ready(){schoolPage();programPage();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready,{once:true});else ready();
+})();
