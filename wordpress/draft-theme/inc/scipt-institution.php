@@ -78,3 +78,14 @@ add_filter('pre_get_document_title', function ($title) {
     if ($name && isset($data['pages'][$name])) return get_the_title(scipt_institution_requested_page_id()) . ' — SCIPT INTERNATIONAL';
     return $title;
 }, 9999);
+
+/* Blog, navigation et filtres de programmes (prévisualisation du thème). */
+add_action('wp_enqueue_scripts', function () {
+    $root = get_stylesheet_directory_uri() . '/assets/';
+    wp_enqueue_style('scipt-blog-refresh', $root . 'scipt-blog-refresh.css', array(), '20261016-blog');
+    wp_enqueue_script('scipt-nav-fix', $root . 'scipt-nav-fix.js', array(), '20261016-blog', true);
+    if (scipt_institution_requested_page_id() === 8044) {
+        wp_enqueue_script('scipt-blog-programmes', $root . 'blog-programmes-data.js', array(), '20261016-blog', true);
+        wp_enqueue_script('scipt-blog-refresh', $root . 'blog.js', array('scipt-blog-programmes'), '20261016-blog', true);
+    }
+}, 30);
