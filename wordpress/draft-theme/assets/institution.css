@@ -99,3 +99,17 @@
 .inst-law-feature-visual img{width:100%;height:auto;aspect-ratio:4/3;display:block;object-fit:cover;object-position:center}
 .inst-law-feature-visual figcaption{color:#2d4460;font-size:.83rem;padding:10px 14px;background:#f7f9fc}
 @media(max-width:780px){.inst-law-feature-inner{grid-template-columns:1fr}.inst-law-feature-visual{max-width:640px}}
+
+
+/* Navigation : priorité du survol rouge de Connexion sur l'ancien fond dégradé.
+   Même règle sur toutes les pages GitHub Pages et le thème brouillon WordPress. */
+.approved-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active),
+.scipt-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active) {
+  background: #B5121B !important;
+  background-image: none !important;
+  background-color: #B5121B !important;
+  border-color: #B5121B !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(181,18,27,.24) !important;
+  text-decoration: none !important;
+}
