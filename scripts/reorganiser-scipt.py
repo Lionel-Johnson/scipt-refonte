@@ -157,3 +157,6 @@ pro=[{**u,'levels':['AFP','CFP','CAP','CQF'],'href':u['href']+'?parcours=pro','d
 prefix='const university='+jd(uni)+';const professional='+jd(pro)+''';function render(group,filter='Tous'){const target=document.getElementById(group==='uni'?'university-cards':'professional-cards');if(!target)return;target.innerHTML=(group==='uni'?university:professional).filter(x=>filter==='Tous'||x.levels.includes(filter)).map(x=>`<div class="col-md-6 col-xl-4"><article class="program-card"><div class="card-body-custom"><h3><img class="school-emblem" src="assets/${x.image}" alt="">${x.name}</h3><p>${x.desc}</p><a href="${x.href}">Découvrir l’école →</a></div></article></div>`).join('')}render('uni');render('pro');'''
 write('assets/app.js',prefix+app[start:])
 print('Architecture et pages générées :',len(programmes),'identifiants conservés ou ajoutés ;',len(ori),'entrées hors alias.')
+# Les présentations validées sont réappliquées après la génération académique.
+import runpy
+runpy.run_path(str(ROOT / 'scripts/integrer-presentations-client.py'), run_name='__main__')

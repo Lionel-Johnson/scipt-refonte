@@ -14,7 +14,7 @@ add_filter('the_content', 'scipt_global_page_corrections', 99);
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('scipt-about-dialogs', get_stylesheet_directory_uri() . '/assets/about-dialogs.css', array(), '20261015-contrast');
-    wp_enqueue_script('scipt-about-dialogs', get_stylesheet_directory_uri() . '/assets/about-dialogs.js', array(), '20261015-ecoles-videos', true);
+    wp_enqueue_script('scipt-about-dialogs', get_stylesheet_directory_uri() . '/assets/about-dialogs.js', array(), '20261019', true);
 });
 
 require_once __DIR__ . '/scipt-institution.php';
