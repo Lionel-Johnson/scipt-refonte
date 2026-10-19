@@ -667,5 +667,43 @@
       ],
       "slug": "ecole-scipt-international"
     }
-  ]
+  ],
+  "certifications": [
+    [
+      "Nature",
+      "Autorité ou norme",
+      "Référence"
+    ],
+    [
+      "Agrément administratif",
+      "Ministère de l’Éducation Nationale, de la Formation Professionnelle chargé de la Formation Civique",
+      "Agrément N° 00352/MENFPFC/SG/DGFP/DFP"
+    ],
+    [
+      "Reconnaissance, enseignement supérieur",
+      "Ministère de l’Enseignement Supérieur, de la Recherche Scientifique, du Transfert des Technologies, de la Culture et des Arts",
+      "Dossier CESP 2022, N° 40 du 18/07/2022"
+    ],
+    [
+      "Reconnaissance technique, santé et action sociale",
+      "Ministère de la Santé et des Affaires Sociales, pour l’action menée sous la bannière de la FADEC",
+      "Avis de Reconnaissance Technique N° 00198"
+    ],
+    [
+      "Certification qualité",
+      "Norme ISO 9001:2015, obtenue en 2022",
+      "Atteste la qualité du système de management, pas la reconnaissance d’un diplôme"
+    ],
+    [
+      "Certification éducation et formation",
+      "Norme ISO 21001:2018 (systèmes de management des organismes d’éducation), obtenue en 2026",
+      "Atteste la qualité du système de management de l’établissement en tant qu’organisme d’éducation, pas la reconnaissance d’un diplôme"
+    ],
+    [
+      "Certification internationale",
+      "American Certification Services, Global Program, après un audit de deux ans",
+      "Reconnaissance du système de qualité de l’établissement"
+    ]
+  ],
+  "certifications_intro": "Ces mentions sont de natures différentes : un agrément autorise à exercer, une reconnaissance est délivrée par une autorité, une certification porte sur la qualité d’un système de management. Aucune ne vaut à elle seule délivrance d’un diplôme."
 }

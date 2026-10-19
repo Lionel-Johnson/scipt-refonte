@@ -1,5 +1,27 @@
 # Présentations institutionnelles — retour client du 19 octobre 2026
 
+## Contrôle complémentaire des pages 5 à 10 du PDF
+
+Comparaison du PDF transmis le 19 octobre avec les textes HTML : les 87 éléments
+contrôlés (paragraphes et cellules des tableaux, y compris leurs en-têtes) concordent
+après normalisation des espaces et des retours à la ligne du PDF.
+
+| Pages PDF | Contenus | Emplacement |
+| --- | --- | --- |
+| 5–6 | Présentation, origine, constat, réponse, conception de la formation | À propos / Qui sommes-nous, présentation et volets dépliables |
+| 7–8 | Accompagnement, ouverture internationale et tableau, production, annexes | Même rubrique ; « Notre vision » renommé « Notre ouverture internationale » |
+| 8–9 | Mission, vision et quatre valeurs | Rubrique Mission & vision existante |
+| 9 | Les neuf repères chiffrés 2020–2026 | Bannière « SCIPT INTERNATIONAL en chiffres » |
+| 9–10 | Les six agréments, reconnaissances et certifications | Page dédiée Agrément et reconnaissance |
+| 10 | Deux programmes, cinq écoles | Fin de la nouvelle présentation institutionnelle |
+
+Le contrôle a révélé des omissions dans la page des agréments : références
+CESP 2022 N° 40 du 18/07/2022 et FADEC N° 00198, autorités correspondantes,
+et précision sur l’audit de deux ans d’American Certification Services.
+Le tableau complet est désormais intégré, sans supprimer les visuels existants.
+L’accroche « Former ici, pour réussir partout. » et les métadonnées proposées
+en page 5 sont également appliquées aux deux pages de présentation.
+
 Le document Word et sa transcription précisent des ajouts aux pages existantes.
 Les vingt pages de départements proposées dans le gabarit Word ne sont pas créées.
 

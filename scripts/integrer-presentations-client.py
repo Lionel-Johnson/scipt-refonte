@@ -75,6 +75,13 @@ for file in ROOT.glob('*.html'):
     slug = file.stem
     content = None
     if slug in ('a-propos', 'qui-sommes-nous'):
+        text = re.sub(r'(<section class="about-hero".*?<h1>).*?(</h1>)', lambda m: m[1] + 'SCIPT INTERNATIONAL<br><em>Former ici, pour réussir partout.</em>' + m[2], text, count=1, flags=re.S)
+        seo_title = 'SCIPT INTERNATIONAL : former en Afrique | Libreville'
+        seo_description = 'SCIPT INTERNATIONAL, créé en 2020 à Libreville : des formations professionnelles et universitaires et des diplômes internationaux, sans quitter l’Afrique.'
+        text = re.sub(r'<title>.*?</title>', '<title>' + seo_title + '</title>', text, count=1)
+        text = re.sub(r'<meta content="[^"]*" name="description">', '<meta content="' + seo_description + '" name="description">', text, count=1)
+        for key, value in [('og:title', seo_title), ('og:description', seo_description)]:
+            text = re.sub(r'<meta content="[^"]*" property="' + key + '">', '<meta content="' + value + '" property="' + key + '">', text, count=1)
         content = about()
         anchor = re.search(r'<nav[^>]*class="about-subnav".*?</nav>', text, re.S)
         assert anchor, slug
@@ -91,6 +98,7 @@ for file in ROOT.glob('*.html'):
         text = text[:anchor] + START + content + END + text[anchor:]
     elif slug == 'agrement-reconnaissance':
         content = section('Certification ISO 21001:2018', '<p class="scipt-editorial-period">Obtenue en 2026</p><p>Cette certification porte sur le système de management de SCIPT INTERNATIONAL en tant qu’organisme d’éducation et de formation. Elle complète la certification ISO 9001:2015, obtenue en 2022.</p><p>Ces certifications attestent la qualité d’un système de management ; elles ne constituent pas, à elles seules, la reconnaissance d’un diplôme.</p>', 'iso-21001-2018')
+        content += section('Agréments, reconnaissances et certifications', paragraphs([DATA['certifications_intro']]) + table(DATA['certifications'], 'Autorités, normes et références institutionnelles'), 'references-institutionnelles')
         anchor = text.index('<section class="inst-section"', text.index('<main'))
         text = text[:anchor] + START + content + END + text[anchor:]
     if content:
