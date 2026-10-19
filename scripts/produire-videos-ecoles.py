@@ -7,15 +7,15 @@ F='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 B='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 S='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'
 films={
- 'technologies':('ESTI','technique.jpg',['Sciences, technologies','et ingénierie'],[
+ 'technologies':('ESTI','logos/esti-scipt-20261020.webp',['Sciences, technologies','et ingénierie'],[
  ('COMPRENDRE LES SCIENCES',['Sciences fondamentales appliquées','Terre, environnement et géosciences']),
  ('CONCEVOIR ET INNOVER',['Informatique et systèmes numériques','Génies électrique, mécanique et civil']),
  ('TRANSFORMER LES RESSOURCES',['Mines, pétrole et énergies','Agronomie et agro-industrie'])]),
- 'humaines':('ESHC','logo-university-client.jpeg',['Sciences humaines,','sociales et communication'],[
+ 'humaines':('ESHC','logos/eshc-scipt-20261020.webp',['Sciences humaines,','sociales et communication'],[
  ('COMPRENDRE LES SOCIÉTÉS',['Sociologie et anthropologie','Science politique et relations internationales']),
  ('ACCOMPAGNER LE DÉVELOPPEMENT',['Développement communautaire','Action humanitaire et solidarité']),
  ('COMMUNIQUER ET CRÉER',['Journalisme et médias','Production audiovisuelle et arts numériques'])]),
- 'doctorale':('ÉCOLE DOCTORALE','blason-doctoral.png',['La recherche au service','de nouveaux savoirs'],[
+ 'doctorale':('ÉCOLE DOCTORALE','logos/edi-scipt-20261020.webp',['La recherche au service','de nouveaux savoirs'],[
  ('CONSTRUIRE UNE PROBLÉMATIQUE',['Sciences juridiques, politiques et gestion','Sciences, technologies et ingénierie']),
  ('APPROFONDIR UNE EXPERTISE',['Sciences de la santé','Sciences humaines, sociales et communication']),
  ('PRODUIRE ET PARTAGER LES SAVOIRS',['Méthode scientifique et analyse','Présentation rigoureuse des résultats'])])}
@@ -33,7 +33,7 @@ for key,(code,logo,title,slides) in films.items():
   for j,line in enumerate(lines):filters.append(text_filter(line,60,398+j*40,24,'0xeaf0f7',F,enable))
  filters.extend([text_filter('FORMATION  /  PRATIQUE  /  EXCELLENCE',60,615,16,'0xc1ccdb',F),"drawbox=x=60:y=583:w='1160':h=3:color=0x314765:t=fill",'drawbox=x=60:y=583:w=1160:h=3:color=0xb8954e:t=fill'])
  graph=','.join(filters)+'[base];[1:v]scale=280:280:force_original_aspect_ratio=decrease,pad=300:300:(ow-iw)/2:(oh-ih)/2:color=0x10263f[logo];[base][logo]overlay=x=920:y=145+6*sin(t*0.65),fade=t=in:st=0:d=0.7,fade=t=out:st=14.3:d=0.7[v]'
- out=ROOT/f'assets/videos/ecole-{key}.mp4'
+ out=ROOT/f'assets/videos/ecole-{key}-20261020.mp4'
  cmd=['ffmpeg','-hide_banner','-loglevel','error','-y','-f','lavfi','-i','color=c=0x10263f:s=1280x720:r=24:d=15','-loop','1','-i',str(ROOT/'assets'/logo),'-filter_complex',graph,'-map','[v]','-t','15','-c:v','libx264','-preset','fast','-crf','24','-pix_fmt','yuv420p','-movflags','+faststart','-an',str(out)]
  subprocess.run(cmd,check=True)
  subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-ss','1','-i',str(out),'-frames:v','1',str(out.with_suffix('.jpg'))],check=True)

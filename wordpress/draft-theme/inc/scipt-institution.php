@@ -95,11 +95,11 @@ add_filter('template_include', function ($template) {
     return $template;
 }, 100);
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261016-login-hover-red');
+    wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261020-logos');
     wp_enqueue_style('scipt-presentations-client', get_stylesheet_directory_uri() . '/assets/presentations-client.css', array('scipt-institution'), '20261019-glass');
     wp_enqueue_style('scipt-school-videos', get_stylesheet_directory_uri() . '/assets/videos-accueil.css', array(), '20261016-media-parcours');
-    wp_enqueue_script('scipt-media-data', get_stylesheet_directory_uri() . '/assets/medias-formations-data.js', array(), '20261019-curation', true);
-    wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array('scipt-media-data'), '20261019-curation', true);
+    wp_enqueue_script('scipt-media-data', get_stylesheet_directory_uri() . '/assets/medias-formations-data.js', array(), '20261020-logos', true);
+    wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array('scipt-media-data'), '20261020-logos', true);
     wp_enqueue_script('scipt-presentations-client', get_stylesheet_directory_uri() . '/assets/presentations-client.js', array(), '20261019-glass', true);
     if (scipt_institution_requested_page_id() === 7891) {
         $public_assets = 'https://lionel-johnson.github.io/scipt-refonte/assets/';
@@ -107,11 +107,11 @@ add_action('wp_enqueue_scripts', function () {
         foreach (array('diplomes-specialisations','professionnel-18-mois-data','programme-contenus','programmes-ecoles','formation-hero','fiches-data','fiche-formation','diplomes-specialisations-ui','professionnel-18-mois-ui','programmes-maquettes-data','programmes-detail-modern') as $script) {
             $handle = 'scipt-programme-' . $script;
             $url = $script === 'formation-hero' ? get_stylesheet_directory_uri() . '/assets/formation-hero.js' : $public_assets . $script . '.js';
-            wp_enqueue_script($handle, $url, $previous, '20261019-curation', true);
+            wp_enqueue_script($handle, $url, $previous, '20261020-logos', true);
             $previous = array($handle);
         }
-        wp_enqueue_style('scipt-formation-hero', $public_assets . 'formation-hero.css', array(), '20261019-curation');
-        wp_enqueue_style('scipt-programmes-detail', $public_assets . 'programmes-detail-modern.css', array(), '20261019-curation');
+        wp_enqueue_style('scipt-formation-hero', $public_assets . 'formation-hero.css', array(), '20261020-logos');
+        wp_enqueue_style('scipt-programmes-detail', $public_assets . 'programmes-detail-modern.css', array(), '20261020-logos');
     }
 });
 

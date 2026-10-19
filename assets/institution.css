@@ -113,3 +113,6 @@
   box-shadow: 0 8px 22px rgba(181,18,27,.24) !important;
   text-decoration: none !important;
 }
+
+/* Bandeau doctoral officiel : proportions d’origine, sans recadrage. */
+.sc-doctoral-lockup{display:block;width:min(100%,440px);height:auto;object-fit:contain;margin:0 0 20px}

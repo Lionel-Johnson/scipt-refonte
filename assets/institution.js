@@ -12,7 +12,7 @@
       title: 'Ateliers, stages et mises en situation',
       caption: 'Découvrez les exercices pratiques et les mises en situation encadrées.',
       url: mediaRoot + 'VID-20260604-WA0006_2.mp4',
-      poster: 'https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/sante.jpg'
+      poster: 'https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/logos/essa-scipt-20261020.webp'
     },
     {
       title: 'Témoignage étudiant : Elsa en stage',

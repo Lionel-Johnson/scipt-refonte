@@ -15,8 +15,8 @@
   const title = course?.title || $("program-title")?.textContent || "Formation";
   const isProfessional = course?.type === "Professionnelle";
   // Les logos sont officiels et affichés entiers, indépendamment de la photo métier.
-  logo.src = new URL(isProfessional ? "logo-academy-client.png" : "logo-university-client.jpeg", window.SCIPT_MEDIA_ASSET_ROOT || new URL(".", document.currentScript.src).href).href;
-  logo.alt = "Logo complet SCIPT INTERNATIONAL " + (isProfessional ? "ACADEMY" : "UNIVERSITY");
+  logo.src = window.SCIPT_LOGO_POUR_PARCOURS(course);
+  logo.alt = course?.href === "ecole-scipt-international.html" ? "Logo complet École Doctorale Internationale SCIPT" : "Logo complet SCIPT INTERNATIONAL " + (isProfessional ? "ACADEMY" : "UNIVERSITY");
   logo.decoding = "async";
 
   const media = window.SCIPT_MEDIA_BY_PROGRAMME?.[requestedId];

@@ -2277,8 +2277,8 @@ footer a {
     padding: 12px
 }
 
-.university-school img[src$="droit.jpg"],
-.university-school img[src$="sante.jpg"] {
+.university-school img[src$="logos/esga-scipt-20261020.webp"],
+.university-school img[src$="logos/essa-scipt-20261020.webp"] {
     object-fit: contain;
     background: #f7f2e9;
     padding: 12px

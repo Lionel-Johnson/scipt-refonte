@@ -61,7 +61,7 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Spot-Final-Sante.mp4",
     "description": "Découvrez la formation aux métiers de la santé au SCIPT INTERNATIONAL, entre enseignement, pratique et engagement humain.",
     "transcript": "Découvrez la formation aux métiers de la santé au SCIPT INTERNATIONAL, entre enseignement, pratique et engagement humain.",
-    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/sante.jpg"
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/logos/essa-scipt-20261020.webp"
   },
   "gestion": {
     "title": "Gestion et logistique — développer les compétences professionnelles",
@@ -77,17 +77,17 @@ window.SCIPT_VIDEOS_ACCUEIL = {
   },
   "technologies": {
     "title": "Sciences, technologies et ingénierie — concevoir les solutions de demain",
-    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies.mp4",
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies-20261020.mp4",
     "description": "Une présentation des domaines de l’ESTI : sciences appliquées, systèmes numériques, ingénierie, ressources et agro-industrie.",
     "transcript": "Une présentation des domaines de l’ESTI : sciences appliquées, systèmes numériques, ingénierie, ressources et agro-industrie.",
-    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies.jpg"
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-technologies-20261020.jpg"
   },
   "doctorale": {
     "title": "École doctorale internationale — approfondir les savoirs par la recherche",
-    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale.mp4",
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale-20261020.mp4",
     "description": "Construire une problématique, structurer une méthode et partager les résultats dans les domaines doctoraux du SCIPT.",
     "transcript": "Construire une problématique, structurer une méthode et partager les résultats dans les domaines doctoraux du SCIPT.",
-    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale.jpg"
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-doctorale-20261020.jpg"
   },
   "vae-explication": {
     "title": "La VAE, étape par étape",
@@ -101,7 +101,7 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "title": "Sciences humaines et communication — comprendre, transmettre, agir",
     "description": "Découvrez les domaines de l’ESHC : sociétés, développement communautaire, communication, médias et création.",
     "transcript": "Découvrez les domaines de l’ESHC : sociétés, développement communautaire, communication, médias et création.",
-    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines.mp4",
-    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines.jpg"
+    "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines-20261020.mp4",
+    "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines-20261020.jpg"
   }
 };

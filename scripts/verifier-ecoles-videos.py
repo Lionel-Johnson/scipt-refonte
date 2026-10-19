@@ -27,7 +27,7 @@ for p in root.glob('*.html'):
  s=p.read_text();assert not re.search(r'(?:quatre|4) écoles académiques',s,re.I),p.name
 assert 'Médecine Générale et Pharmacie' in (root/names[0]).read_text()
 for key in ['technologies','humaines','doctorale']:
- p=root/f'assets/videos/ecole-{key}.mp4'
+ p=root/f'assets/videos/ecole-{key}-20261020.mp4'
  info=json.loads(subprocess.check_output(['ffprobe','-v','quiet','-show_format','-show_streams','-of','json',str(p)]))
  assert float(info['format']['duration'])>=15
  assert info['streams'][0]['codec_name']=='h264'

@@ -33,7 +33,6 @@
 /* Blasons originaux complets, sans recadrage, sur les pages des cinq écoles. */
 .inst-hero-image.inst-school-logo{object-fit:contain;padding:22px;background:linear-gradient(145deg,#fff,#e8edf4);height:clamp(260px,30vw,400px)}
 .inst-school-film .scipt-video-copy p,.inst-school-film details{color:#10263f;line-height:1.7}.inst-school-film details{font-size:14px;margin-top:18px}.inst-school-film summary{cursor:pointer;font-weight:700}.inst-school-film video{max-height:560px;background:#10263f}.inst-school-film .scipt-video-panel{background:linear-gradient(140deg,#fff,#eef2f7)}
-
 /* Cartes de formation : verre dépoli bleu nuit, ivoire et or SCIPT. */
 :is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){
  --glass-tint:rgba(68,128,185,.19);--glass-accent:#286292;
@@ -56,7 +55,6 @@
 @media(hover:hover) and (pointer:fine){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card):hover{transform:translateY(-5px);border-color:#b8954e9e;box-shadow:inset 0 1px 0 #fff,0 22px 44px #10263f21,0 0 0 1px #b8954e29}}
 @media(prefers-reduced-motion:reduce){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){transition:none;transform:none!important}}
 @media(forced-colors:active){:is(.approved-site,.scipt-site) :is(.inst-programme,.inst-card:has(> .inst-card-body > a[href*="id="]),.program-card,.approved-domain,.diploma-pathway,.orient-card){border:1px solid CanvasText;background:Canvas;backdrop-filter:none}}
-
 /* Départements : verre dépoli et zoom discret, sans déplacer les contenus ouverts. */
 .inst-page details.inst-card{background:radial-gradient(ellipse at 95% 0,#b8954e22,transparent 65%),linear-gradient(135deg,#fffffff2,#e0eaf4eb);border:1px solid #ffffffdf;backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #fff,0 10px 28px #10263f10;transition:transform .24s ease,box-shadow .24s ease}
 .inst-page details.inst-card:nth-of-type(2n){background:radial-gradient(ellipse at 95% 0,#377c9b26,transparent 65%),linear-gradient(135deg,#fffffff2,#e8edf5eb)}
@@ -72,6 +70,17 @@
 .approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link:hover,.approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link[aria-expanded=true]{background:linear-gradient(145deg,#e6edf5,#dbe5f0)!important;color:#173f69!important;box-shadow:inset 3px 3px 7px #a8b4c05c,inset -3px -3px 7px #fff!important}
 .approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link:focus-visible{outline:3px solid #94702d;outline-offset:3px}
 .approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link:active{transform:scale(.98)}
+/* Survol rouge prioritaire sur le dégradé de la navigation SCIPT. */
+.approved-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active),
+.scipt-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active) {
+  background: #B5121B !important;
+  background-image: none !important;
+  background-color: #B5121B !important;
+  border-color: #B5121B !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(181,18,27,.24) !important;
+  text-decoration: none !important;
+}
 .approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link.scipt-login-button,.approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.nav-link.active{background:linear-gradient(140deg,#214d78,#10263f)!important;color:#fff!important;border-color:#b8954e!important;box-shadow:4px 4px 10px #10263f30,-3px -3px 9px #fff!important}
 .approved-site .approved-navbar-shell .nav-item:has(>.scipt-menu-toggle){display:flex;align-items:stretch;gap:0}
 .approved-site .approved-navbar-shell .navbar .navbar-nav>.nav-item>.scipt-catalogue-link{border-radius:999px 0 0 999px!important;border-right:0!important;padding-right:8px!important}
@@ -85,31 +94,8 @@
 #scipt-account-shell.is-connected .scipt-native-account,#scipt-account-shell.is-connected .ld-profile-summary,#scipt-account-shell.is-connected .ld-item-list-item{background:#ffffffb8!important;backdrop-filter:blur(16px);border:1px solid #fff!important;border-radius:20px!important;box-shadow:0 12px 30px #10263f12}
 @media(prefers-reduced-motion:reduce){.inst-page details.inst-card,.approved-site .approved-navbar-shell .nav-link{transition:none!important;transform:none!important}}
 
-/* Mise en valeur du Droit à l'ESGA, sous le témoignage existant. */
-.inst-page .inst-law-feature{padding-top:clamp(28px,5vw,60px);padding-bottom:clamp(28px,5vw,60px);background:linear-gradient(135deg,#edf3fa,#fff)}
-.inst-law-feature-inner{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);align-items:center;gap:clamp(24px,5vw,58px)}
-.inst-law-feature-copy{min-width:0}
-.inst-law-feature-copy h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.14;color:#10294b;margin:15px 0 18px}
-.inst-law-feature-copy p{color:#3c536c;font-size:1rem;line-height:1.75;max-width:66ch}
-.inst-law-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:20px}
-.inst-law-actions a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:999px;background:#122f54;color:#fff;text-decoration:none;font-weight:700}
-.inst-law-actions a:nth-child(2){color:#183b63;background:transparent;border:1px solid #b6c8db}
-.inst-law-actions a:hover,.inst-law-actions a:focus-visible{text-decoration:underline;outline-offset:3px}
-.inst-law-feature-visual{margin:0;min-width:0;border-radius:20px;overflow:hidden;background:#e3eaf5;box-shadow:0 14px 36px #10263f21}
-.inst-law-feature-visual img{width:100%;height:auto;aspect-ratio:4/3;display:block;object-fit:cover;object-position:center}
-.inst-law-feature-visual figcaption{color:#2d4460;font-size:.83rem;padding:10px 14px;background:#f7f9fc}
-@media(max-width:780px){.inst-law-feature-inner{grid-template-columns:1fr}.inst-law-feature-visual{max-width:640px}}
 
 
-/* Navigation : priorité du survol rouge de Connexion sur l'ancien fond dégradé.
-   Même règle sur toutes les pages GitHub Pages et le thème brouillon WordPress. */
-.approved-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active),
-.scipt-site .approved-navbar-shell .navbar .navbar-nav > .nav-item > .nav-link.scipt-login-button:is(:hover,:focus-visible,:active) {
-  background: #B5121B !important;
-  background-image: none !important;
-  background-color: #B5121B !important;
-  border-color: #B5121B !important;
-  color: #fff !important;
-  box-shadow: 0 8px 22px rgba(181,18,27,.24) !important;
-  text-decoration: none !important;
-}
+
+
+.sc-doctoral-lockup{display:block;width:min(100%,440px);height:auto;object-fit:contain;margin:0 0 20px}

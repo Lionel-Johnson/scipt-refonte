@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-20",
+  "logos": {
+    "academy": {
+      "file": "logos/scipt-academy-20261020.webp",
+      "label": "SCIPT INTERNATIONAL ACADEMY",
+      "source": "Logo_SCIPT_INTERNATIONAL_ACADEMY.jpg(6).jpeg",
+      "source_sha256": "b823e68e4e3ed6a8953eb6901c8f62193c5163639ffa62633d0be5d0c55de8e2",
+      "width": 1086,
+      "height": 724
+    },
+    "university": {
+      "file": "logos/scipt-university-20261020.webp",
+      "label": "SCIPT INTERNATIONAL UNIVERSITY",
+      "source": "Logo_SCIPT_INTERNATIONAL_UNIVERSITY.jpg(2).jpeg",
+      "source_sha256": "9d9f963dad6969dfde3ab43c5c3b6e10b9e678644dd51674e046474f8a38ff1d",
+      "width": 1086,
+      "height": 724
+    },
+    "ediLockup": {
+      "file": "logos/edi-scipt-bandeau-20261020.webp",
+      "label": "École Doctorale Internationale SCIPT — EDI-SCIPT",
+      "source": "file_000000004db48211a6af485648ff31b1.png",
+      "source_sha256": "614dac7ea8266b5fcbc8c94c90267cc1cb0f93364228c8d9ec82594eb9cc7a08",
+      "width": 1942,
+      "height": 809
+    },
+    "EDI": {
+      "file": "logos/edi-scipt-20261020.webp",
+      "label": "École Doctorale Internationale SCIPT",
+      "source": "file_00000000073882078b195c0a04125207.png",
+      "source_sha256": "0f7a2df2233190ba2c7bf253d8bc01bf900829259e2c7e1abe1aaaadf3a77d13",
+      "width": 1254,
+      "height": 1254
+    },
+    "ESHC": {
+      "file": "logos/eshc-scipt-20261020.webp",
+      "label": "École des Sciences Humaines, Sociales et de la Communication",
+      "source": "file_00000000d4508211a5c31aa165cf269b.png",
+      "source_sha256": "436bbdc4089888c3dce88febcfc6f42fe4022e43809b55447966541414e98ddc",
+      "width": 1254,
+      "height": 1254
+    },
+    "ESSA": {
+      "file": "logos/essa-scipt-20261020.webp",
+      "label": "École des Sciences de la Santé et du Développement",
+      "source": "file_00000000573c82118f3a1c519635876f.png",
+      "source_sha256": "aa6da28a7ad92924308ae7633260e3ec14e9de45df1a11a2121c4f2e292f429a",
+      "width": 1254,
+      "height": 1254
+    },
+    "ESGA": {
+      "file": "logos/esga-scipt-20261020.webp",
+      "label": "École de Droit, de Gestion et d’Administration",
+      "source": "file_00000000c7808207be8114830f879650.png",
+      "source_sha256": "fbc974058a49b1526ef9563dbbe8946249d6a76d8aec0083d28a0b3418033a8f",
+      "width": 1254,
+      "height": 1254
+    },
+    "ESTI": {
+      "file": "logos/esti-scipt-20261020.webp",
+      "label": "École des Sciences, Technologie et d’Ingénierie",
+      "source": "file_000000000bcc820797156446e530dbaa.png",
+      "source_sha256": "f053eeb295ec5687f4efa118d193258543050279e34e04231e73a2ecdaf5c3d8",
+      "width": 1254,
+      "height": 1254
+    }
+  }
+}

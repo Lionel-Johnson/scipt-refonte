@@ -6,7 +6,7 @@
       "code": "ESSA",
       "name": "École des Sciences de la Santé",
       "href": "ecole-sante-developpement.html",
-      "image": "sante.jpg",
+      "image": "logos/essa-scipt-20261020.webp",
       "domain": "sante",
       "departments": [
         "Médecine Générale",
@@ -18,13 +18,13 @@
       ],
       "description": "Former des professionnels de santé compétents, responsables et profondément humains. L’école associe enseignements théoriques structurés, pratique et ouverture internationale pour répondre aux besoins sanitaires du Gabon et de l’Afrique.",
       "video_key": "sante",
-      "logo": "sante.jpg"
+      "logo": "logos/essa-scipt-20261020.webp"
     },
     {
       "code": "ESGA",
       "name": "École de Droit, Gestion, Administration et Commerce",
       "href": "ecole-droit-sciences-gestion.html",
-      "image": "droit.jpg",
+      "image": "logos/esga-scipt-20261020.webp",
       "domain": "gestion",
       "departments": [
         "Sciences de Gestion et d’Administration",
@@ -35,13 +35,13 @@
       ],
       "description": "Préparer les leaders de demain à relever les défis d’un monde en constante évolution, grâce à une formation rigoureuse, pratique et tournée vers l’avenir. Droit, gestion, administration, finance, logistique et affaires internationales structurent les parcours.",
       "video_key": "gestion",
-      "logo": "droit.jpg"
+      "logo": "logos/esga-scipt-20261020.webp"
     },
     {
       "code": "ESTI",
       "name": "École des Sciences, Technologies et Ingénierie",
       "href": "ecole-sciences-technologies-ingenierie.html",
-      "image": "technique.jpg",
+      "image": "logos/esti-scipt-20261020.webp",
       "domain": "tech",
       "departments": [
         "Sciences",
@@ -52,7 +52,7 @@
       ],
       "description": "Comprendre les sciences, concevoir des solutions techniques et développer les compétences de l’ingénierie. Les départements couvrent les technologies numériques, les systèmes industriels, les ressources énergétiques et l’agro-industrie.",
       "video_key": "technologies",
-      "logo": "technique.jpg"
+      "logo": "logos/esti-scipt-20261020.webp"
     },
     {
       "code": "ESHC",
@@ -68,7 +68,7 @@
       ],
       "description": "Comprendre les sociétés, accompagner le développement communautaire et maîtriser les métiers de la communication. Les parcours relient sciences humaines et sociales, journalisme, médias, création audiovisuelle et arts numériques.",
       "video_key": "humaines",
-      "logo": "logo-university-client.jpeg"
+      "logo": "logos/eshc-scipt-20261020.webp"
     }
   ],
   "programmes": [
@@ -825,5 +825,7 @@
     "ESGA": "Guide de Présentation SCIPT modifié, page 56",
     "ESTI": "Synthèse, page 2",
     "ESHC": "Synthèse, page 4"
-  }
+  },
+  "doctoral_logo": "logos/edi-scipt-20261020.webp",
+  "doctoral_lockup": "logos/edi-scipt-bandeau-20261020.webp"
 }

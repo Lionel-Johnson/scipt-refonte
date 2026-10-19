@@ -16,7 +16,7 @@
  document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear());
  if(typeof p!=='undefined'&&p){
   const lockup=document.getElementById('program-lockup');
-  if(lockup){const professional=p.type==='Professionnelle';lockup.src=professional?'assets/logo-academy-officiel.jpg':'assets/logo-university-officiel.jpg';lockup.alt='Logo officiel SCIPT INTERNATIONAL '+(professional?'ACADEMY':'UNIVERSITY')}
+  if(lockup){const professional=p.type==='Professionnelle';lockup.src=window.SCIPT_LOGO_POUR_PARCOURS(p);lockup.alt=p.href==='ecole-scipt-international.html'?'Logo officiel École Doctorale Internationale SCIPT':'Logo officiel SCIPT INTERNATIONAL '+(professional?'ACADEMY':'UNIVERSITY')}
   const image=document.querySelector('.sc-detail-hero>.container>img');
   if(image){image.src=p.type==='Professionnelle'?'assets/slide-professionnel-v2.png':p.school.includes('Santé')?'assets/708928025_1838045444299020_3015249326694980685_n.jpg':p.school.includes('Doctorale')?'assets/cours-universitaire.png':p.school.includes('Droit')?'assets/747587268_1884906659612898_6764401732807429606_n.jpg':'assets/cours-technologie.png';image.alt=p.title+' — '+p.school}
  }
