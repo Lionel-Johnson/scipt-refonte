@@ -34,6 +34,11 @@ function scipt_institution_menu($html, $id, $replacement) {
 function scipt_institution_transform($html) {
     $data = scipt_institution_registry();
     foreach (($data['menus'] ?? array()) as $id => $markup) $html = scipt_institution_menu($html, $id, $markup);
+    // Complément du menu À propos, y compris pour les en-têtes Elementor existants.
+    $html = preg_replace_callback('~(<ul\b[^>]*\bid="menu-about"[^>]*>)(.*?)(</ul>)~s', function ($m) {
+        if (strpos($m[2], '#chiffres-cles') !== false) return $m[0];
+        return $m[1] . $m[2] . '<li><a class="dropdown-item" href="qui-sommes-nous.html#chiffres-cles">SCIPT INTERNATIONAL en chiffres</a></li>' . $m[3];
+    }, $html);
     $map = scipt_institution_page_map();
     $html = preg_replace_callback('~href="([a-z0-9-]+)\.html([^"<>]*)"~i', function ($m) use ($map) {
         if (!isset($map[$m[1]])) return $m[0];
@@ -74,6 +79,7 @@ add_filter('template_include', function ($template) {
 }, 100);
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.css', array(), '20261016-login-hover-red');
+    wp_enqueue_style('scipt-presentations-client', get_stylesheet_directory_uri() . '/assets/presentations-client.css', array('scipt-institution'), '20261019');
     wp_enqueue_style('scipt-school-videos', get_stylesheet_directory_uri() . '/assets/videos-accueil.css', array(), '20261016-media-parcours');
     wp_enqueue_script('scipt-institution', get_stylesheet_directory_uri() . '/assets/institution.js', array(), '20261016-media-parcours', true);
 });
