@@ -1,0 +1,72 @@
+[
+  {
+    "name": "geosciences-ressources",
+    "subject": "Two adult African geoscientists examining rock samples and a geological map at a safe marked field research station; quarry rock layers and a distant petroleum drilling installation visible in the background, ecological sampling equipment on the desk. Theme: geology, mining, petroleum and earth/environmental science.",
+    "asset": "assets/formations/geosciences-ressources.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "agriculture-agroindustrie",
+    "subject": "Adult African agronomist and food production specialist in a modern cooperative farm, examining harvested vegetables at a small hygienic processing and packing station next to cultivated greenhouse rows. Theme: agricultural production, livestock/feed record charts without legible text and agro-industry.",
+    "asset": "assets/formations/agriculture-agroindustrie.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "readaptation-technologies-sante",
+    "subject": "Adult African physiotherapist and rehabilitation technology specialist carefully helping an adult patient adjust a lower-limb orthotic support in a bright rehabilitation unit, with parallel walking bars, a therapeutic tablet and daily living training objects. Theme: physical rehabilitation, occupational therapy and assistive technology, accurate body anatomy and respectful interaction.",
+    "asset": "assets/formations/readaptation-technologies-sante.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "nutrition-dietetique",
+    "subject": "Adult African female nutrition professional in a bright consultation room discussing a balanced plate of local vegetables, fish, grains and fruit with an adult client; food portions, measuring tape and neutral notes on the table, no weight shaming. Theme: nutrition and dietetics.",
+    "asset": "assets/formations/nutrition-dietetique.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "sciences-sociales-terrain",
+    "subject": "Two adult African social science researchers conducting a respectful community interview with a diverse small group of adult women and men in a Gabonese community meeting space, notebooks and audio recorder on table, active listening. Theme: sociology, anthropology, gender studies and social psychology.",
+    "asset": "assets/formations/sciences-sociales-terrain.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": false
+  },
+  {
+    "name": "design-arts-numeriques",
+    "subject": "Adult African digital artist drawing a character model with a stylus on a pen display in a contemporary creative studio, a second screen showing a clearly visible 3D animation character and a color palette, precise hands. Theme: design, animation and digital arts.",
+    "asset": "assets/formations/design-arts-numeriques.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": false
+  },
+  {
+    "name": "mecanique-mecatronique",
+    "subject": "Adult African mechanical maintenance specialist in navy protective workwear and safety glasses inspecting a clean industrial CNC machine and a robotic mechanical assembly, open mechanical drawings without readable text, workshop safety. Theme: mechanical engineering, industrial maintenance and mechatronics, realistic machinery.",
+    "asset": "assets/formations/mecanique-mecatronique.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "education-prescolaire",
+    "subject": "Adult African early childhood educator guiding three preschool children in an age-appropriate tabletop learning activity with colorful wooden shapes in a bright classroom in Gabon; fully clothed, respectful educational scene. Theme: preschool education.",
+    "asset": "assets/formations/education-prescolaire.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "hotellerie-patisserie",
+    "subject": "Adult African female pastry chef in clean white chef uniform and male hospitality service professional in a modern hotel training kitchen adjacent to a refined restaurant dining area, preparing a tray of well-made pastries and setting a dining table. Theme: pastry arts, hospitality and restaurant service.",
+    "asset": "assets/formations/hotellerie-patisserie.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  },
+  {
+    "name": "hse-prevention",
+    "subject": "Adult African health safety environment inspector wearing proper hardhat, high visibility vest and safety glasses reviewing a safety checklist on a tablet at a controlled industrial worksite, safety signage without readable text and safe equipment in background. Theme: occupational health, safety and environment.",
+    "asset": "assets/formations/hse-prevention.webp",
+    "provenance": "Visuel conceptuel généré ; les personnes ne sont pas des étudiants identifiés de l’établissement.",
+    "uniforme_logo_officiel": true
+  }
+]

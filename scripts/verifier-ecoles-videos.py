@@ -11,7 +11,7 @@ assert a['schools'][0]['code']=='ESSA'
 registry=json.loads((root/'wordpress/draft-theme/assets/institution-pages.json').read_text())
 for n in names:
  doc=html.fromstring((root/n).read_text())
- videos=doc.xpath('//main//video');assert len(videos)==1,(n,len(videos))
+ videos=doc.xpath('//main//video');assert len(videos)>=1,(n,len(videos))
  assert videos[0].get('controls') is not None
  assert videos[0].xpath('./source/@src')
  assert doc.xpath('//main//nav[contains(@class,"inst-school-nav")]//a/@href')==names,n
@@ -19,6 +19,10 @@ for n in names:
  assert doc.xpath('//main//img[contains(@class,"inst-school-logo")]'),n
  assert not doc.xpath('//main//*[contains(@class,"scipt-video-pending")]'),n
  assert '<video ' in registry['pages'][n[:-5]],n
+ if n=='ecole-droit-sciences-gestion.html':
+  assert doc.xpath('//section[contains(@class,"inst-school-film")]//img[contains(@src,"droit-carrieres-juridiques")]')
+  assert not doc.xpath('//section[contains(@class,"inst-school-film")]//video')
+  assert doc.xpath('//*[@id="temoignage-logistique"]//video')
 for p in root.glob('*.html'):
  s=p.read_text();assert not re.search(r'(?:quatre|4) écoles académiques',s,re.I),p.name
 assert 'Médecine Générale et Pharmacie' in (root/names[0]).read_text()

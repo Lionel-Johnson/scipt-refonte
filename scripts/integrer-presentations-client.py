@@ -12,7 +12,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/presentations-client-20261019.json').read_text())
 START, END = '<!-- presentations-client:start -->', '<!-- presentations-client:end -->'
-STYLE = '<link rel="stylesheet" href="assets/presentations-client.css?v=20261019">'
+STYLE = '<link rel="stylesheet" href="assets/presentations-client.css?v=20261019-glass">'
 MENU = '<li><a class="dropdown-item" href="qui-sommes-nous.html#chiffres-cles">SCIPT INTERNATIONAL en chiffres</a></li>'
 
 
@@ -35,18 +35,23 @@ def section(title, body, id):
 
 def about():
     parts = DATA['institution']
-    body = paragraphs(parts[0]['paragraphs']) + '<div class="scipt-editorial-stories">'
+    body = '<div class="scipt-editorial-intro">' + paragraphs(parts[0]['paragraphs']) + '</div><div class="scipt-editorial-stories">'
     for i, part in enumerate(parts[1:9], 1):
         content = paragraphs(part['paragraphs'])
         if i == 6:
             content += table(DATA['international'], 'Domaines et orientations de l’ouverture internationale')
-        body += '<details><summary>' + E(part['title']) + '</summary><div>' + content + '</div></details>'
+        body += '<details class="scipt-glass-story"><summary><span class="scipt-story-index">' + str(i).zfill(2) + '</span><span>' + E(part['title']) + '</span><span class="scipt-story-toggle" aria-hidden="true">+</span></summary><div class="scipt-story-content">' + content + '</div></details>'
     body += '</div>'
     result = section('Présentation de l’établissement', body, 'presentation-etablissement')
-    cards = ''.join('<div class="scipt-stat"><dt>' + E(label) + '</dt><dd>' + E(value) + '</dd></div>' for label, value in DATA['figures'])
-    result += section('SCIPT INTERNATIONAL en chiffres', '<p class="scipt-editorial-period">Repères institutionnels · 2020–2026</p><dl class="scipt-stats">' + cards + '</dl>', 'chiffres-cles')
-    links = '<ul class="scipt-editorial-schools">' + ''.join('<li><a href="' + s['slug'] + '.html">' + E(s['title']) + ' →</a></li>' for s in DATA['schools']) + '</ul>'
-    result += section('Deux programmes, cinq écoles', paragraphs(parts[10]['paragraphs']) + '<div class="scipt-editorial-actions"><a href="programmes-universitaires.html">SCIPT INTERNATIONAL UNIVERSITY →</a><a href="formations-professionnelles.html">SCIPT INTERNATIONAL ACADEMY →</a></div>' + links, 'deux-programmes-cinq-ecoles')
+    numbers = ['2020', '6', '5', '3', '472', '65 · 25 · 10 %', '6', '24', '11']
+    cards = ''
+    for i, ((label, value), number) in enumerate(zip(DATA['figures'], numbers)):
+        cards += '<div class="scipt-stat"><dt><button class="scipt-stat-trigger" type="button" aria-expanded="false" aria-controls="stat-detail-' + str(i) + '"><strong>' + number + '</strong><span>' + E(label) + '</span><small aria-hidden="true">Découvrir ↗</small></button></dt><dd id="stat-detail-' + str(i) + '"><b>' + E(label) + '</b><span>' + E(value) + '</span></dd></div>'
+    result += section('SCIPT INTERNATIONAL en chiffres', '<p class="scipt-editorial-period">Repères institutionnels · 2020–2026</p><p class="scipt-stats-hint">Survolez ou touchez une carte pour en découvrir le détail.</p><dl class="scipt-stats">' + cards + '</dl>', 'chiffres-cles')
+    links = '<ul class="scipt-editorial-schools">' + ''.join('<li><a href="' + s['slug'] + '.html"><span>' + E(s['title']) + '</span><span aria-hidden="true">↗</span></a></li>' for s in DATA['schools']) + '</ul>'
+    copy = '<div class="scipt-programmes-copy">' + paragraphs(parts[10]['paragraphs']) + '<div class="scipt-editorial-actions"><a href="programmes-universitaires.html">SCIPT INTERNATIONAL UNIVERSITY →</a><a href="formations-professionnelles.html">SCIPT INTERNATIONAL ACADEMY →</a></div>' + links + '</div>'
+    visual = '<figure class="scipt-programmes-visual"><img src="assets/deux-programmes-cinq-ecoles.webp" alt="Études universitaires et compétences professionnelles : des apprenants africains tournés vers leur avenir" width="1000" height="1250" loading="lazy"><figcaption>Des savoirs. Des métiers. Un avenir.</figcaption></figure>'
+    result += section('Deux programmes, cinq écoles', '<div class="scipt-programmes-layout">' + copy + visual + '</div>', 'deux-programmes-cinq-ecoles')
     return result
 
 
@@ -94,7 +99,8 @@ for file in ROOT.glob('*.html'):
     elif slug in [s['slug'] for s in DATA['schools']]:
         content = school(next(s for s in DATA['schools'] if s['slug'] == slug))
         # Keep the existing introduction and film together, before new prose.
-        anchor = text.index('<section class="inst-section"', text.index('<main'))
+        archive = re.search(r'<section[^>]*class="[^"]*scipt-logistique-archive[^>]*>', text)
+        anchor = archive.start() if archive else text.index('<section class="inst-section"', text.index('<main'))
         text = text[:anchor] + START + content + END + text[anchor:]
     elif slug == 'agrement-reconnaissance':
         content = section('Certification ISO 21001:2018', '<p class="scipt-editorial-period">Obtenue en 2026</p><p>Cette certification porte sur le système de management de SCIPT INTERNATIONAL en tant qu’organisme d’éducation et de formation. Elle complète la certification ISO 9001:2015, obtenue en 2022.</p><p>Ces certifications attestent la qualité d’un système de management ; elles ne constituent pas, à elles seules, la reconnaissance d’un diplôme.</p>', 'iso-21001-2018')
@@ -102,8 +108,13 @@ for file in ROOT.glob('*.html'):
         anchor = text.index('<section class="inst-section"', text.index('<main'))
         text = text[:anchor] + START + content + END + text[anchor:]
     if content:
+        text = re.sub(r'<link[^>]*href="assets/presentations-client\.css[^"]*"[^>]*>\n?', '', text)
         if STYLE not in text:
             text = text.replace('</head>', STYLE + '\n</head>')
+        if slug in ('a-propos', 'qui-sommes-nous'):
+            script = '<script src="assets/presentations-client.js?v=20261019-glass"></script>'
+            text = re.sub(r'<script src="assets/presentations-client\.js[^"]*"></script>', '', text)
+            text = text.replace('</body>', script + '</body>')
         updated[slug] = re.search(r'<main\b.*?</main>', text, re.S).group()
     # The same destination is available from every existing About dropdown.
     pattern = r'(<ul\b[^>]*\bid="menu-about"[^>]*>)(.*?)(</ul>)'
@@ -120,7 +131,13 @@ for file in ROOT.glob('*.html'):
 registry_path = ROOT / 'wordpress/draft-theme/assets/institution-pages.json'
 registry = json.loads(registry_path.read_text())
 registry['pages'].update(updated)
+programme = re.search(r'<main\b.*?</main>', (ROOT / 'programme.html').read_text(), re.S).group()
+updated['programme'] = programme
+registry['pages']['programme'] = programme
 registry_path.write_text(json.dumps(registry, ensure_ascii=False) + '\n')
+(ROOT / 'wordpress/draft-theme/assets/presentations-pages.json').write_text(json.dumps({'pages': updated}, ensure_ascii=False) + '\n')
 target = ROOT / 'wordpress/draft-theme/assets/presentations-client.css'
 target.write_text((ROOT / 'assets/presentations-client.css').read_text())
+for asset in ['presentations-client.js', 'formation-hero.js', 'medias-formations-data.js', 'institution.js']:
+    (ROOT / 'wordpress/draft-theme/assets' / asset).write_text((ROOT / 'assets' / asset).read_text())
 print('Présentations intégrées :', ', '.join(updated))
