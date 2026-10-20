@@ -32,12 +32,13 @@
     showWaiting("Visuel de « " + title + " » en préparation.");
     return;
   }
-  image.alt = "Visuel de la formation : " + title + " — SCIPT INTERNATIONAL";
+  image.alt = media?.alt || "Visuel de la formation : " + title + " — SCIPT INTERNATIONAL";
+  holder.classList.toggle("sc-real-stage-photo", media?.kind === "stage");
   image.onload = () => {
     holder.classList.remove("sc-media-pending");
     holder.classList.add("sc-media-ready");
     image.hidden = false;
-    caption.textContent = title;
+    caption.textContent = media?.caption || title;
   };
   let currentIndex = 0;
   const tryNext = () => {

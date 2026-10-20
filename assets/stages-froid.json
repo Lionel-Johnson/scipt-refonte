@@ -1,0 +1,74 @@
+{
+  "title": "Étudiants en stage — Froid et climatisation",
+  "description": "Des étudiants du SCIPT INTERNATIONAL en situation professionnelle : interventions sur des unités intérieures et extérieures de climatisation, entretien et travail en équipe.",
+  "course_ids": [
+    "7680",
+    "7809"
+  ],
+  "covers": {
+    "7680": "unite-exterieure",
+    "7809": "unite-interieure-01"
+  },
+  "photos": [
+    {
+      "key": "unite-interieure-01",
+      "file": "stages/froid-climatisation/unite-interieure-01-20261020.webp",
+      "caption": "Étudiant en stage : intervention sur un climatiseur mural.",
+      "width": 567,
+      "height": 1280,
+      "source_filename": "IMG-20261003-WA0162.jpg",
+      "source_url": "https://drive.google.com/file/d/1UoRdfZRXFVuT0Ig-gIbBuR3cWpGmMsAd/view",
+      "source_folder_url": "https://drive.google.com/drive/folders/1PZOCHO6mCj30d_oY9B2a1DBbs3ApHcZg",
+      "source_sha256": "9bcee25858c44ff82a6d8f5d9f12041119502d964c1731ce261f28aa6016f53b",
+      "web_sha256": "6cf3b5174b24632993fa459b96e5200a5e653afdd2ce4094386dbdc5af034149"
+    },
+    {
+      "key": "unite-interieure-02",
+      "file": "stages/froid-climatisation/unite-interieure-02-20261020.webp",
+      "caption": "Étudiant en stage : travaux sur une unité intérieure de climatisation.",
+      "width": 567,
+      "height": 1280,
+      "source_filename": "IMG-20261003-WA0166.jpg",
+      "source_url": "https://drive.google.com/file/d/1wfeAiH3dKzhp4wkjIBbRMtHJAdtp1f9v/view",
+      "source_folder_url": "https://drive.google.com/drive/folders/1PZOCHO6mCj30d_oY9B2a1DBbs3ApHcZg",
+      "source_sha256": "3f1463ac0241d3d64aac4366f4008a869193de5d63314cd6f4ae37033fca9b40",
+      "web_sha256": "cd38c5ef956b637a1618ac0dc9a94613f8ff88403138490577ac1061ec83f7fb"
+    },
+    {
+      "key": "unite-exterieure",
+      "file": "stages/froid-climatisation/unite-exterieure-20261020.webp",
+      "caption": "Étudiant en stage : intervention sur l’unité extérieure d’un climatiseur.",
+      "width": 853,
+      "height": 1280,
+      "source_filename": "FB_IMG_1786849353558.jpg",
+      "source_url": "https://drive.google.com/file/d/1Vh3cWg94Xi2sRRUM4fK6V-MEe42OFPwt/view",
+      "source_folder_url": "https://drive.google.com/drive/folders/1OvtEI1EpqK2Shsynz3wxYcAwkaGNcZ5d",
+      "source_sha256": "d614768d8939b6a6e1ad7472d8db23ca8729b2ed76e6eaa795b81b13dc936c75",
+      "web_sha256": "eae72884e10ec5b70a6a0fd0817b950bc34a5b27fb25ca0010f176e971eefc85"
+    },
+    {
+      "key": "entretien-interieur",
+      "file": "stages/froid-climatisation/entretien-interieur-20261020.webp",
+      "caption": "Étudiant en stage : entretien d’un climatiseur mural.",
+      "width": 750,
+      "height": 1000,
+      "source_filename": "FB_IMG_1786849357593.jpg",
+      "source_url": "https://drive.google.com/file/d/10Y5z35MCOLauVpzDGDAVBWGxRLi2RR7j/view",
+      "source_folder_url": "https://drive.google.com/drive/folders/1OvtEI1EpqK2Shsynz3wxYcAwkaGNcZ5d",
+      "source_sha256": "92d2479e2221b56ebdbc7ead350d0596b42cf0364f5a2462f09f485cc068c6d4",
+      "web_sha256": "a073ae9625ffc079bd719233fd2762abaf2bf1a4bd6a63221fddd7ad46f67b31"
+    },
+    {
+      "key": "intervention-equipe",
+      "file": "stages/froid-climatisation/intervention-equipe-20261020.webp",
+      "caption": "Étudiants en stage : intervention en équipe sur une installation de climatisation.",
+      "width": 719,
+      "height": 1080,
+      "source_filename": "IMG-20221102-WA0096.jpg",
+      "source_url": "https://drive.google.com/file/d/1I2t0fkg4qlgy5QC21QADG-4tt-9x9flg/view",
+      "source_folder_url": "https://drive.google.com/drive/folders/1OvtEI1EpqK2Shsynz3wxYcAwkaGNcZ5d",
+      "source_sha256": "95871c0b1abd897488c6ba7552e5936b3852f54899283c1920a94edaa31316c9",
+      "web_sha256": "e8ac724b4af1b8adf7ccb5501fed09f651ba142c8a4ac6f4009262b5917cc534"
+    }
+  ]
+}

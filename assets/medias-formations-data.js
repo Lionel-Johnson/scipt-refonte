@@ -190,8 +190,11 @@ window.SCIPT_MEDIA_BY_PROGRAMME = {
   },
   "7680": {
     "title": "Froid domestique et industriel",
-    "image": "formations/technique-froid-climatisation.webp",
-    "videos": []
+    "image": "stages/froid-climatisation/unite-exterieure-20261020.webp",
+    "videos": [],
+    "kind": "stage",
+    "alt": "Étudiant en stage : intervention sur l’unité extérieure d’un climatiseur.",
+    "caption": "Étudiant en stage : intervention sur l’unité extérieure d’un climatiseur."
   },
   "7681": {
     "title": "Assistance de direction",
@@ -291,8 +294,11 @@ window.SCIPT_MEDIA_BY_PROGRAMME = {
   },
   "7809": {
     "title": "Froid et Climatisation — parcours professionnel 18 mois",
-    "image": "formations/technique-froid-climatisation.webp",
-    "videos": []
+    "image": "stages/froid-climatisation/unite-interieure-01-20261020.webp",
+    "videos": [],
+    "kind": "stage",
+    "alt": "Étudiant en stage : intervention sur un climatiseur mural.",
+    "caption": "Étudiant en stage : intervention sur un climatiseur mural."
   },
   "7810": {
     "title": "Électricité bâtiment — parcours professionnel 18 mois",

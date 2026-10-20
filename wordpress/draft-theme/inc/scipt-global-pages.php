@@ -19,3 +19,4 @@ add_action('wp_enqueue_scripts', function () {
 
 require_once __DIR__ . '/scipt-institution.php';
 require_once __DIR__ . '/scipt-logos.php';
+require_once __DIR__ . '/scipt-stages.php';

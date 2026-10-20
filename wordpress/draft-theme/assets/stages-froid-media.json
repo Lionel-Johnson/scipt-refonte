@@ -1,0 +1,24 @@
+{
+  "photos": {
+    "unite-interieure-01": {
+      "attachment_id": 8085,
+      "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Etudiant-en-stage-intervention-sur-un-climatiseur-mural.jpg"
+    },
+    "unite-interieure-02": {
+      "attachment_id": 8086,
+      "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Etudiant-en-stage-travaux-sur-une-unite-interieure-de-climatisation.jpg"
+    },
+    "unite-exterieure": {
+      "attachment_id": 8087,
+      "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Etudiant-en-stage-intervention-sur-lunite-exterieure-dun-climatiseur.jpg"
+    },
+    "entretien-interieur": {
+      "attachment_id": 8088,
+      "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Etudiant-en-stage-entretien-dun-climatiseur-mural.jpg"
+    },
+    "intervention-equipe": {
+      "attachment_id": 8089,
+      "url": "https://sciptinternational.com/wp-content/uploads/2026/10/Etudiants-en-stage-intervention-en-equipe-sur-une-installation-de-climatisation.jpg"
+    }
+  }
+}

@@ -12,7 +12,11 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets/presentations-client-20261019.json').read_text())
 START, END = '<!-- presentations-client:start -->', '<!-- presentations-client:end -->'
-STYLE = '<link rel="stylesheet" href="assets/presentations-client.css?v=20261019-glass">'
+STYLE = '<link rel="stylesheet" href="assets/presentations-client.css?v=20261020-ecoles">'
+LOGOS = json.loads((ROOT / 'assets/logos/manifest.json').read_text())['logos']
+SCHOOL_CODES = {'ecole-droit-sciences-gestion': 'ESGA', 'ecole-sciences-technologies-ingenierie': 'ESTI',
+                'ecole-sante-developpement': 'ESSA', 'ecole-sciences-humaines-communication': 'ESHC',
+                'ecole-scipt-international': 'EDI'}
 MENU = '<li><a class="dropdown-item" href="qui-sommes-nous.html#chiffres-cles">SCIPT INTERNATIONAL en chiffres</a></li>'
 
 
@@ -33,6 +37,17 @@ def section(title, body, id):
     return '<section class="scipt-editorial" id="' + id + '"><div class="container"><h2>' + E(title) + '</h2>' + body + '</div></section>'
 
 
+def school_divider(item):
+    code = SCHOOL_CODES[item['slug']]
+    logo = LOGOS[code]
+    title = re.sub(r',?\s*' + code + r'-SCIPT\s*$', '', item['title'])
+    return ('<li data-school="' + code + '"><a class="scipt-school-divider" href="' + item['slug'] + '.html">'
+            '<img class="scipt-school-divider-crest" src="assets/' + logo['file'] + '" alt="Blason ' + code + '-SCIPT"'
+            ' width="1254" height="1254" loading="lazy" decoding="async">'
+            '<span class="scipt-school-divider-copy"><strong>' + code + '-SCIPT</strong><span>' + E(title) + '</span></span>'
+            '<span class="scipt-school-divider-arrow" aria-hidden="true">↗</span></a></li>')
+
+
 def about():
     parts = DATA['institution']
     body = '<div class="scipt-editorial-intro">' + paragraphs(parts[0]['paragraphs']) + '</div><div class="scipt-editorial-stories">'
@@ -48,7 +63,7 @@ def about():
     for i, ((label, value), number) in enumerate(zip(DATA['figures'], numbers)):
         cards += '<div class="scipt-stat"><dt><button class="scipt-stat-trigger" type="button" aria-expanded="false" aria-controls="stat-detail-' + str(i) + '"><strong>' + number + '</strong><span>' + E(label) + '</span><small aria-hidden="true">Découvrir ↗</small></button></dt><dd id="stat-detail-' + str(i) + '"><b>' + E(label) + '</b><span>' + E(value) + '</span></dd></div>'
     result += section('SCIPT INTERNATIONAL en chiffres', '<p class="scipt-editorial-period">Repères institutionnels · 2020–2026</p><p class="scipt-stats-hint">Survolez ou touchez une carte pour en découvrir le détail.</p><dl class="scipt-stats">' + cards + '</dl>', 'chiffres-cles')
-    links = '<ul class="scipt-editorial-schools">' + ''.join('<li><a href="' + s['slug'] + '.html"><span>' + E(s['title']) + '</span><span aria-hidden="true">↗</span></a></li>' for s in DATA['schools']) + '</ul>'
+    links = '<ul class="scipt-editorial-schools" aria-label="Les cinq écoles SCIPT INTERNATIONAL">' + ''.join(school_divider(s) for s in DATA['schools']) + '</ul>'
     copy = '<div class="scipt-programmes-copy">' + paragraphs(parts[10]['paragraphs']) + '<div class="scipt-editorial-actions"><a href="programmes-universitaires.html">SCIPT INTERNATIONAL UNIVERSITY →</a><a href="formations-professionnelles.html">SCIPT INTERNATIONAL ACADEMY →</a></div>' + links + '</div>'
     visual = '<figure class="scipt-programmes-visual"><img src="assets/deux-programmes-cinq-ecoles.webp" alt="Études universitaires et compétences professionnelles : des apprenants africains tournés vers leur avenir" width="1000" height="1250" loading="lazy"><figcaption>Des savoirs. Des métiers. Un avenir.</figcaption></figure>'
     result += section('Deux programmes, cinq écoles', '<div class="scipt-programmes-layout">' + copy + visual + '</div>', 'deux-programmes-cinq-ecoles')
