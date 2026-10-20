@@ -21,3 +21,4 @@ require_once __DIR__ . '/scipt-institution.php';
 require_once __DIR__ . '/scipt-logos.php';
 require_once __DIR__ . '/scipt-stages.php';
 require_once __DIR__ . '/scipt-doctoral.php';
+require_once __DIR__ . '/scipt-about-cards.php';

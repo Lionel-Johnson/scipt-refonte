@@ -103,7 +103,7 @@ for file in ROOT.glob('*.html'):
         for key, value in [('og:title', seo_title), ('og:description', seo_description)]:
             text = re.sub(r'<meta content="[^"]*" property="' + key + '">', '<meta content="' + value + '" property="' + key + '">', text, count=1)
         content = about()
-        anchor = re.search(r'<nav[^>]*class="about-subnav".*?</nav>', text, re.S)
+        anchor = re.search(r'<nav[^>]*class="[^\"]*\babout-subnav\b[^\"]*".*?</nav>', text, re.S)
         assert anchor, slug
         text = text[:anchor.end()] + START + content + END + text[anchor.end():]
         mission = '<!-- mission-client:start --><div class="container scipt-mission-client"><h3>Mission, vision et valeurs</h3>' + paragraphs(DATA['institution'][9]['paragraphs']) + '</div><!-- mission-client:end -->'
