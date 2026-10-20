@@ -5,7 +5,7 @@ function scipt_global_page_corrections($html) {
     $files = array('app.js', 'programmes-ecoles.js', 'diplomes-specialisations.js', 'orientation-data.js', 'orientation.js', 'candidature.js', 'client-approved.js', 'fiches-data.js', 'fiche-formation.js', 'programme-contenus.js', 'professionnel-18-mois-ui.js', 'revision-octobre.js', 'programmes-detail-modern.js', 'videos-accueil-data.js');
     foreach ($files as $file) {
         $pattern = '~(?:https?://[^\s"<>]+/|assets/)' . preg_quote($file, '~') . '(?:\?[^\s"<>]*)?~';
-        $html = preg_replace($pattern, esc_url(get_stylesheet_directory_uri() . '/assets/' . $file . '?v=20261020-logos'), $html);
+        $html = preg_replace($pattern, esc_url(get_stylesheet_directory_uri() . '/assets/' . $file . '?v=20261020-doctoral16'), $html);
     }
     return str_replace(array('Exemples de spécialisations', 'en cours de chargement...', 'en cours de chargement…'), array('Domaines de spécialisation', 'Consultez les informations du parcours ci-dessous.', 'Consultez les informations du parcours ci-dessous.'), $html);
 }
@@ -20,3 +20,4 @@ add_action('wp_enqueue_scripts', function () {
 require_once __DIR__ . '/scipt-institution.php';
 require_once __DIR__ . '/scipt-logos.php';
 require_once __DIR__ . '/scipt-stages.php';
+require_once __DIR__ . '/scipt-doctoral.php';

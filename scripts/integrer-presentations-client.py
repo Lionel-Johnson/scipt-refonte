@@ -115,7 +115,10 @@ for file in ROOT.glob('*.html'):
         content = school(next(s for s in DATA['schools'] if s['slug'] == slug))
         # Keep the existing introduction and film together, before new prose.
         archive = re.search(r'<section[^>]*class="[^"]*scipt-logistique-archive[^>]*>', text)
-        anchor = archive.start() if archive else text.index('<section class="inst-section"', text.index('<main'))
+        main_start = text.index('<main')
+        first_section = re.search(r'<section\b[^>]*class="[^\"]*\binst-section\b[^\"]*"[^>]*>', text[main_start:])
+        assert archive or first_section, slug
+        anchor = archive.start() if archive else main_start + first_section.start()
         text = text[:anchor] + START + content + END + text[anchor:]
     elif slug == 'agrement-reconnaissance':
         content = section('Certification ISO 21001:2018', '<p class="scipt-editorial-period">Obtenue en 2026</p><p>Cette certification porte sur le système de management de SCIPT INTERNATIONAL en tant qu’organisme d’éducation et de formation. Elle complète la certification ISO 9001:2015, obtenue en 2022.</p><p>Ces certifications attestent la qualité d’un système de management ; elles ne constituent pas, à elles seules, la reconnaissance d’un diplôme.</p>', 'iso-21001-2018')

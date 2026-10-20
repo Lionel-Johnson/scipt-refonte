@@ -1,0 +1,1011 @@
+{
+  "source": {
+    "file": "SCIPT_INTERNATIONAL_EDI_Fiche_des_16_domaines_doctoraux.docx",
+    "sha256": "6f9cf1dad64085248c622c7140fe88807edeadc2aff86f3b04473f7c246c8fa6",
+    "date": "2026-10-20",
+    "summary": [
+      {
+        "number": 1,
+        "title": "Droit et sciences juridiques",
+        "school": "ESGA-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 2,
+        "title": "Sciences de gestion, management et commerce international",
+        "school": "ESGA-SCIPT",
+        "disciplines": 7,
+        "specialties": 6
+      },
+      {
+        "number": 3,
+        "title": "Finance, comptabilité, audit et économie appliquée",
+        "school": "ESGA-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 4,
+        "title": "Sciences fondamentales et appliquées",
+        "school": "ESTI-SCIPT",
+        "disciplines": 5,
+        "specialties": 6
+      },
+      {
+        "number": 5,
+        "title": "Informatique et technologies du numérique",
+        "school": "ESTI-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 6,
+        "title": "Ingénierie, mécatronique et robotique",
+        "school": "ESTI-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 7,
+        "title": "Mines, pétrole et énergies",
+        "school": "ESTI-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 8,
+        "title": "Agronomie, agriculture, élevage et agro-industrie",
+        "school": "ESTI-SCIPT",
+        "disciplines": 5,
+        "specialties": 6
+      },
+      {
+        "number": 9,
+        "title": "Médecine et sciences médicales",
+        "school": "ESSA-SCIPT",
+        "disciplines": 5,
+        "specialties": 6
+      },
+      {
+        "number": 10,
+        "title": "Sciences infirmières et maïeutiques",
+        "school": "ESSA-SCIPT",
+        "disciplines": 5,
+        "specialties": 5
+      },
+      {
+        "number": 11,
+        "title": "Pharmacie et sciences du médicament",
+        "school": "ESSA-SCIPT",
+        "disciplines": 5,
+        "specialties": 5
+      },
+      {
+        "number": 12,
+        "title": "Sciences biomédicales, imagerie et réadaptation",
+        "school": "ESSA-SCIPT",
+        "disciplines": 5,
+        "specialties": 6
+      },
+      {
+        "number": 13,
+        "title": "Sciences humaines et sociales",
+        "school": "ESHC-SCIPT",
+        "disciplines": 6,
+        "specialties": 6
+      },
+      {
+        "number": 14,
+        "title": "Sciences de l’éducation et de la formation",
+        "school": "ESHC-SCIPT",
+        "disciplines": 5,
+        "specialties": 5
+      },
+      {
+        "number": 15,
+        "title": "Communication, journalisme et médias",
+        "school": "ESHC-SCIPT",
+        "disciplines": 5,
+        "specialties": 5
+      },
+      {
+        "number": 16,
+        "title": "Arts, médias audiovisuels et industries créatives",
+        "school": "ESHC-SCIPT",
+        "disciplines": 5,
+        "specialties": 5
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "7666",
+      "code": "ESGA",
+      "title": "Droit, gestion et administration",
+      "paragraphs": [
+        "Ce grand domaine forme des chercheurs capables d’éclairer les décisions des États, des entreprises et des organisations par une analyse rigoureuse des règles, des organisations et des flux économiques. Il s’adresse aux juristes, gestionnaires, financiers et cadres dirigeants qui souhaitent approfondir une question de recherche issue de leur pratique."
+      ],
+      "domain_numbers": [
+        1,
+        2,
+        3
+      ],
+      "school": "ESGA-SCIPT : École de Droit, des Sciences de Gestion et d’Administration"
+    },
+    {
+      "id": "7667",
+      "code": "ESTI",
+      "title": "Sciences, technologies et ingénierie",
+      "paragraphs": [
+        "Ce grand domaine est celui des sciences de la nature, du numérique et de l’ingénieur. Il accueille des travaux qui visent à comprendre, concevoir et améliorer des systèmes techniques, des procédés et des ressources, avec une attention particulière aux besoins de développement du continent : énergie, numérique, agriculture, industrie, infrastructures."
+      ],
+      "domain_numbers": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "school": "ESTI-SCIPT : École des Sciences, Technologies et Ingénierie"
+    },
+    {
+      "id": "7668",
+      "code": "ESSA",
+      "title": "Sciences de la santé",
+      "paragraphs": [
+        "Ce grand domaine forme des chercheurs et des cliniciens-chercheurs capables d’améliorer les soins, l’organisation des services et la santé des populations. Il valorise l’expérience de terrain des professionnels de santé et l’adosse à une méthode scientifique, dans le respect strict de l’éthique de la recherche et de la déontologie."
+      ],
+      "domain_numbers": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "school": "ESSA-SCIPT : École des Sciences de la Santé"
+    },
+    {
+      "id": "7669",
+      "code": "ESHC",
+      "title": "Sciences humaines, sociales et communication",
+      "paragraphs": [
+        "Ce grand domaine étudie les sociétés, les personnes, les cultures et les moyens par lesquels elles se transmettent leurs savoirs et leurs récits. Il s’adresse aux enseignants, formateurs, psychologues, communicants, créateurs et cadres associatifs ou institutionnels qui souhaitent porter un regard scientifique sur leur terrain."
+      ],
+      "domain_numbers": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "school": "ESHC-SCIPT : École des Sciences Humaines, Sociales et de la Communication"
+    }
+  ],
+  "domains": [
+    {
+      "number": 1,
+      "title": "Droit et sciences juridiques",
+      "group_id": "7666",
+      "school_code": "ESGA",
+      "paragraphs": [
+        "Le droit est à la fois un outil de régulation et un objet de recherche. Ce domaine doctoral permet d’étudier la manière dont les normes sont conçues, appliquées et contestées, et d’en proposer une analyse critique appuyée sur la doctrine, la jurisprudence et le droit comparé. Il convient à des profils qui veulent contribuer à la réforme d’une règle, à l’harmonisation d’un cadre juridique ou à la compréhension d’un contentieux nouveau."
+      ],
+      "disciplines": [
+        {
+          "title": "Droit privé",
+          "description": "Obligations, contrats, famille, propriété et responsabilité."
+        },
+        {
+          "title": "Droit public",
+          "description": "Droit constitutionnel, droit administratif, finances publiques et contentieux."
+        },
+        {
+          "title": "Droit des affaires et des sociétés",
+          "description": "Droit commercial, droit des sociétés, procédures collectives, régimes d’harmonisation régionale."
+        },
+        {
+          "title": "Droit international et comparé",
+          "description": "Droit international public et privé, organisations internationales, comparaison des systèmes."
+        },
+        {
+          "title": "Droit du travail et de la protection sociale",
+          "description": "Relations de travail, sécurité sociale, négociation collective."
+        },
+        {
+          "title": "Droit des ressources naturelles et de l’environnement",
+          "description": "Régimes miniers, pétroliers, forestiers et environnementaux."
+        }
+      ],
+      "specialties": [
+        "Droit des affaires et droit communautaire",
+        "Droit public et gouvernance des institutions",
+        "Droit international et relations internationales",
+        "Droit minier, pétrolier et de l’énergie",
+        "Droit de la santé et bioéthique",
+        "Droit du numérique et protection des données"
+      ],
+      "research_axes": [
+        "Harmonisation juridique régionale et sécurité des investissements",
+        "Régulation du numérique et données personnelles",
+        "Justice, procédure et accès au droit"
+      ],
+      "attachment": "ESGA-SCIPT · départements d’appui : Droit et Carrières Juridiques",
+      "orientation": "Recherche sur les règles qui organisent la vie sociale, économique et institutionnelle, avec une attention particulière aux droits applicables en Afrique centrale et aux échanges internationaux."
+    },
+    {
+      "number": 2,
+      "title": "Sciences de gestion, management et commerce international",
+      "group_id": "7666",
+      "school_code": "ESGA",
+      "paragraphs": [
+        "Ce domaine réunit les disciplines qui étudient comment les organisations décident, se transforment et créent de la valeur. Il accueille aussi bien les travaux de gestion d’entreprise que ceux d’administration publique, de commerce international ou de logistique. Le doctorat y est souvent l’occasion de transformer une expérience de direction en un travail de recherche structuré, avec cadre théorique, méthode et résultats discutés."
+      ],
+      "disciplines": [
+        {
+          "title": "Management stratégique",
+          "description": "Stratégie, gouvernance, performance et conduite du changement."
+        },
+        {
+          "title": "Marketing et comportement du consommateur",
+          "description": "Marchés, marques, distribution, comportements d’achat."
+        },
+        {
+          "title": "Gestion des ressources humaines",
+          "description": "Compétences, leadership, relations professionnelles."
+        },
+        {
+          "title": "Entrepreneuriat et innovation",
+          "description": "Création d’entreprise, financement, écosystèmes, innovation."
+        },
+        {
+          "title": "Commerce et affaires internationales",
+          "description": "Stratégies d’internationalisation, négociation, zones d’intégration économique."
+        },
+        {
+          "title": "Logistique, transport et chaînes d’approvisionnement",
+          "description": "Organisation des flux, ports et corridors, performance logistique."
+        },
+        {
+          "title": "Administration et gouvernance publique",
+          "description": "Management public, politiques publiques, décentralisation."
+        }
+      ],
+      "specialties": [
+        "Management et gestion stratégique",
+        "Doctorat en administration des affaires (DBA)",
+        "Gestion industrielle et des opérations",
+        "Commerce international et stratégies d’exportation",
+        "Logistique et gestion de la chaîne d’approvisionnement",
+        "Administration publique et gouvernance"
+      ],
+      "research_axes": [
+        "Entrepreneuriat et croissance des PME en Afrique centrale",
+        "Chaînes de valeur et intégration régionale",
+        "Gouvernance et performance des organisations publiques"
+      ],
+      "attachment": "ESGA-SCIPT · départements d’appui : Sciences de Gestion et d’Administration ; International Business ; Logistique et Transport",
+      "orientation": "Recherche sur la conduite des organisations, la stratégie, l’entrepreneuriat, les échanges internationaux et la performance des chaînes logistiques."
+    },
+    {
+      "number": 3,
+      "title": "Finance, comptabilité, audit et économie appliquée",
+      "group_id": "7666",
+      "school_code": "ESGA",
+      "paragraphs": [
+        "Ce domaine traite de la manière dont les ressources sont mobilisées, mesurées et contrôlées. Il concerne les normes comptables, les marchés et institutions financières, l’audit et la gestion des risques. Il convient aux professionnels de la banque, de l’assurance, de l’expertise comptable et des administrations économiques qui veulent adosser leur pratique à une démarche scientifique."
+      ],
+      "disciplines": [
+        {
+          "title": "Comptabilité et information financière",
+          "description": "Normes, reporting, comptabilité de gestion."
+        },
+        {
+          "title": "Finance d’entreprise et de marché",
+          "description": "Décisions d’investissement, évaluation, marchés financiers."
+        },
+        {
+          "title": "Audit, contrôle et gestion des risques",
+          "description": "Audit interne et externe, conformité, contrôle de gestion."
+        },
+        {
+          "title": "Finances publiques",
+          "description": "Budget, fiscalité, dette, évaluation de la dépense."
+        },
+        {
+          "title": "Économie appliquée et du développement",
+          "description": "Croissance, pauvreté, politiques économiques, économie sectorielle."
+        },
+        {
+          "title": "Finance inclusive",
+          "description": "Microfinance, services financiers numériques, inclusion."
+        }
+      ],
+      "specialties": [
+        "Comptabilité",
+        "Finance d’entreprise et de marché",
+        "Audit, contrôle de gestion et gouvernance",
+        "Finances publiques et fiscalité",
+        "Économie du développement",
+        "Finance inclusive et monnaie mobile"
+      ],
+      "research_axes": [
+        "Gouvernance financière et transparence",
+        "Financement des PME et inclusion financière",
+        "Fiscalité et mobilisation des ressources domestiques"
+      ],
+      "attachment": "ESGA-SCIPT · départements d’appui : Finance, Comptabilité et Audit",
+      "orientation": "Recherche sur la mesure, le financement et le contrôle des activités économiques, de l’entreprise jusqu’aux finances publiques."
+    },
+    {
+      "number": 4,
+      "title": "Sciences fondamentales et appliquées",
+      "group_id": "7667",
+      "school_code": "ESTI",
+      "paragraphs": [
+        "Les sciences fondamentales fournissent les outils et les modèles sur lesquels reposent toutes les ingénieries. Ce domaine accueille des travaux théoriques ou expérimentaux, y compris ceux qui appliquent ces disciplines à des problèmes locaux : qualité de l’eau, matériaux de construction, modélisation de phénomènes naturels."
+      ],
+      "disciplines": [
+        {
+          "title": "Mathématiques et mathématiques appliquées",
+          "description": "Analyse, algèbre, probabilités, optimisation, modélisation."
+        },
+        {
+          "title": "Statistique et science des données",
+          "description": "Inférence, apprentissage statistique, analyse de grands jeux de données."
+        },
+        {
+          "title": "Physique et sciences des matériaux",
+          "description": "Physique appliquée, matériaux, énergie, instrumentation."
+        },
+        {
+          "title": "Chimie et chimie appliquée",
+          "description": "Chimie analytique, chimie des procédés, substances naturelles."
+        },
+        {
+          "title": "Sciences de la terre et de l’environnement",
+          "description": "Géosciences, hydrologie, climat, écosystèmes."
+        }
+      ],
+      "specialties": [
+        "Mathématiques appliquées et modélisation",
+        "Statistique et science des données",
+        "Physique appliquée et matériaux",
+        "Chimie analytique et des substances naturelles",
+        "Sciences de l’environnement",
+        "Géosciences et hydrologie"
+      ],
+      "research_axes": [
+        "Modélisation mathématique de phénomènes environnementaux",
+        "Qualité de l’eau et gestion des ressources",
+        "Caractérisation de matériaux locaux"
+      ],
+      "attachment": "ESTI-SCIPT · départements d’appui : Sciences",
+      "orientation": "Recherche en mathématiques, physique, chimie, sciences de la terre et de l’environnement, ainsi qu’en analyse de données."
+    },
+    {
+      "number": 5,
+      "title": "Informatique et technologies du numérique",
+      "group_id": "7667",
+      "school_code": "ESTI",
+      "paragraphs": [
+        "Le numérique irrigue désormais toutes les activités. Ce domaine doctoral s’intéresse à la conception de logiciels et de systèmes fiables, à l’exploitation des données et à l’intelligence artificielle, ainsi qu’à la sécurité des infrastructures. Il convient aux titulaires d’un Master en informatique, génie logiciel, réseaux ou systèmes d’information qui veulent produire une contribution originale et démontrable, au-delà de la simple réalisation d’une application."
+      ],
+      "disciplines": [
+        {
+          "title": "Génie logiciel et architectures",
+          "description": "Conception, qualité, tests, systèmes distribués."
+        },
+        {
+          "title": "Intelligence artificielle et apprentissage automatique",
+          "description": "Apprentissage, vision, langage, systèmes de décision."
+        },
+        {
+          "title": "Réseaux et télécommunications",
+          "description": "Architectures réseau, mobile, objets connectés."
+        },
+        {
+          "title": "Cybersécurité",
+          "description": "Sécurité des systèmes, cryptographie appliquée, gestion des risques."
+        },
+        {
+          "title": "Systèmes d’information et données",
+          "description": "Entrepôts de données, interopérabilité, gouvernance des données."
+        },
+        {
+          "title": "Systèmes embarqués et Internet des objets",
+          "description": "Cartes, capteurs, communication, systèmes temps réel."
+        }
+      ],
+      "specialties": [
+        "Technologies de l’information (PhD in Information Technology)",
+        "Intelligence artificielle et science des données",
+        "Génie logiciel",
+        "Réseaux, télécommunications et objets connectés",
+        "Cybersécurité",
+        "Systèmes d’information"
+      ],
+      "research_axes": [
+        "Intelligence artificielle pour la santé, l’agriculture et l’éducation",
+        "Sécurité des services numériques publics",
+        "Systèmes d’information frugaux et interopérables"
+      ],
+      "attachment": "ESTI-SCIPT · départements d’appui : Technologie",
+      "orientation": "Recherche sur les systèmes informatiques, l’intelligence artificielle, les réseaux, la sécurité et les usages du numérique."
+    },
+    {
+      "number": 6,
+      "title": "Ingénierie, mécatronique et robotique",
+      "group_id": "7667",
+      "school_code": "ESTI",
+      "paragraphs": [
+        "Ce domaine rassemble les sciences de l’ingénieur qui permettent de concevoir des machines, des installations et des infrastructures. C’est dans ce domaine que s’inscrit un doctorat en robotique, qui combine mécanique, électronique, automatique, perception et logiciel. Les travaux y sont évalués sur leur rigueur méthodologique et leur contribution, et pas seulement sur la réalisation d’un prototype."
+      ],
+      "disciplines": [
+        {
+          "title": "Génie électrique et électronique",
+          "description": "Machines, réseaux électriques, électronique de puissance, instrumentation."
+        },
+        {
+          "title": "Génie mécanique et énergétique",
+          "description": "Conception mécanique, thermique, fluides, fabrication."
+        },
+        {
+          "title": "Automatique et mécatronique",
+          "description": "Modélisation, commande, systèmes asservis, intégration."
+        },
+        {
+          "title": "Robotique et systèmes autonomes",
+          "description": "Cinématique, commande, perception, navigation, collaboration humain-robot."
+        },
+        {
+          "title": "Génie civil et infrastructures",
+          "description": "Structures, géotechnique, matériaux, routes et ouvrages."
+        },
+        {
+          "title": "Génie industriel",
+          "description": "Organisation de la production, qualité, maintenance, fiabilité."
+        }
+      ],
+      "specialties": [
+        "Sciences de l’ingénieur (PhD in Engineering)",
+        "Génie électrique",
+        "Génie mécanique",
+        "Mécatronique et automatique",
+        "Robotique et systèmes intelligents",
+        "Génie civil"
+      ],
+      "research_axes": [
+        "Robotique de service, agricole ou d’assistance adaptée au contexte africain",
+        "Maintenance prédictive et fiabilité des équipements",
+        "Matériaux et structures pour le bâtiment en climat tropical"
+      ],
+      "attachment": "ESTI-SCIPT · départements d’appui : Ingénierie",
+      "orientation": "Recherche sur la conception, la commande et l’intégration de systèmes électriques, mécaniques, automatisés et robotisés."
+    },
+    {
+      "number": 7,
+      "title": "Mines, pétrole et énergies",
+      "group_id": "7667",
+      "school_code": "ESTI",
+      "paragraphs": [
+        "Les ressources du sous-sol et les énergies sont au coeur des économies de la sous-région. Ce domaine doctoral permet d’aborder, par la recherche, les enjeux techniques, environnementaux et économiques de leur exploitation : sécurité des opérations, valorisation locale, transition énergétique, réduction des impacts. Il convient à des ingénieurs et cadres de l’industrie qui souhaitent structurer leur expérience en un travail scientifique."
+      ],
+      "disciplines": [
+        {
+          "title": "Géosciences et géologie appliquée",
+          "description": "Prospection, géologie minière et pétrolière."
+        },
+        {
+          "title": "Génie minier et traitement des minerais",
+          "description": "Exploitation, concentration, métallurgie."
+        },
+        {
+          "title": "Génie pétrolier et gazier",
+          "description": "Forage, réservoir, production, transport."
+        },
+        {
+          "title": "Énergies renouvelables",
+          "description": "Solaire, hydraulique, biomasse, stockage."
+        },
+        {
+          "title": "Efficacité énergétique et réseaux",
+          "description": "Gestion de l’énergie, microréseaux, électrification."
+        },
+        {
+          "title": "Santé, sécurité et environnement industriels",
+          "description": "Gestion des risques, impacts, remise en état."
+        }
+      ],
+      "specialties": [
+        "Génie minier et valorisation des ressources",
+        "Génie pétrolier",
+        "Énergies renouvelables et systèmes énergétiques",
+        "Efficacité énergétique et réseaux intelligents",
+        "Géosciences appliquées",
+        "Environnement et sécurité industrielle"
+      ],
+      "research_axes": [
+        "Électrification rurale par énergies renouvelables",
+        "Valorisation locale des ressources minérales",
+        "Réduction de l’empreinte environnementale des activités extractives"
+      ],
+      "attachment": "ESTI-SCIPT · départements d’appui : Mines, Pétrole et Énergies",
+      "orientation": "Recherche sur l’exploitation, la transformation et la gouvernance des ressources minières, pétrolières et énergétiques, y compris les énergies renouvelables."
+    },
+    {
+      "number": 8,
+      "title": "Agronomie, agriculture, élevage et agro-industrie",
+      "group_id": "7667",
+      "school_code": "ESTI",
+      "paragraphs": [
+        "Nourrir une population croissante dans un contexte de changement climatique suppose de la recherche appliquée au plus près des exploitations. Ce domaine accueille des travaux sur les systèmes de production, la santé animale, la pisciculture, la conservation et la transformation des produits, ainsi que sur l’économie des filières. Les méthodes développées dans d’autres pays peuvent y être confrontées aux réalités locales."
+      ],
+      "disciplines": [
+        {
+          "title": "Agronomie et sciences du sol",
+          "description": "Fertilité, cultures, protection des plantes, agroécologie."
+        },
+        {
+          "title": "Productions animales et santé animale",
+          "description": "Élevage, alimentation, zootechnie, santé vétérinaire appliquée."
+        },
+        {
+          "title": "Aquaculture et pisciculture",
+          "description": "Élevage de poissons, qualité de l’eau, nutrition, filières."
+        },
+        {
+          "title": "Agro-industrie et technologies alimentaires",
+          "description": "Transformation, conservation, qualité, emballage."
+        },
+        {
+          "title": "Économie et développement rural",
+          "description": "Filières, coopératives, sécurité alimentaire, politiques agricoles."
+        }
+      ],
+      "specialties": [
+        "Agronomie et agroécologie",
+        "Productions animales",
+        "Aquaculture et pisciculture",
+        "Sciences et technologies alimentaires",
+        "Économie rurale et développement agricole",
+        "Agriculture de précision et numérique agricole"
+      ],
+      "research_axes": [
+        "Adaptation des cultures aux évolutions du climat",
+        "Conservation et transformation locale des produits agricoles",
+        "Mécanisation et robotique agricole à faible coût"
+      ],
+      "attachment": "ESTI-SCIPT · départements d’appui : Agronomie, Agriculture, Élevage et Agro-industrie",
+      "orientation": "Recherche sur l’amélioration des productions végétales, animales et halieutiques, leur transformation et la sécurité alimentaire."
+    },
+    {
+      "number": 9,
+      "title": "Médecine et sciences médicales",
+      "group_id": "7668",
+      "school_code": "ESSA",
+      "paragraphs": [
+        "Ce domaine accueille les travaux de médecins et de chercheurs en santé qui étudient les maladies, leurs déterminants et leur prise en charge. Les questions de recherche peuvent porter sur une pathologie fréquente dans la sous-région, sur l’organisation des soins ou sur l’évaluation d’une intervention de santé publique. Toute recherche impliquant des personnes suppose l’accord d’un comité d’éthique compétent."
+      ],
+      "disciplines": [
+        {
+          "title": "Médecine clinique",
+          "description": "Médecine interne, pédiatrie, gynécologie-obstétrique, chirurgie, urgences."
+        },
+        {
+          "title": "Physiologie et sciences biomédicales fondamentales",
+          "description": "Fonctions normales et pathologiques, mécanismes."
+        },
+        {
+          "title": "Épidémiologie et santé publique",
+          "description": "Surveillance, déterminants de santé, évaluation des programmes."
+        },
+        {
+          "title": "Maladies infectieuses et tropicales",
+          "description": "Paludisme, VIH, tuberculose, maladies émergentes."
+        },
+        {
+          "title": "Médecine communautaire et soins primaires",
+          "description": "Prévention, éducation sanitaire, organisation des soins."
+        }
+      ],
+      "specialties": [
+        "Sciences médicales",
+        "Physiologie médicale",
+        "Santé publique et épidémiologie",
+        "Maladies infectieuses et tropicales",
+        "Pédiatrie et santé de l’enfant",
+        "Santé de la mère et du nouveau-né"
+      ],
+      "research_axes": [
+        "Paludisme et santé de l’enfant",
+        "Santé maternelle et néonatale",
+        "Maladies non transmissibles et prévention"
+      ],
+      "attachment": "ESSA-SCIPT · départements d’appui : Médecine Générale",
+      "orientation": "Recherche clinique, épidémiologique et biomédicale au service du diagnostic, du traitement et de la prévention."
+    },
+    {
+      "number": 10,
+      "title": "Sciences infirmières et maïeutiques",
+      "group_id": "7668",
+      "school_code": "ESSA",
+      "paragraphs": [
+        "Les soins infirmiers et la maïeutique ont chacune leurs concepts, leurs savoirs et leurs champs de pratique. Ce domaine doctoral leur offre un cadre commun de recherche tout en préservant leur identité : les travaux peuvent porter sur la qualité des soins, la sécurité des patients, la formation, l’organisation des services ou la prise en charge de la grossesse, de l’accouchement et du post-partum."
+      ],
+      "disciplines": [
+        {
+          "title": "Sciences infirmières",
+          "description": "Soins fondamentaux, soins critiques, soins communautaires, qualité et sécurité."
+        },
+        {
+          "title": "Maïeutique (sciences de la sage-femme)",
+          "description": "Surveillance de la grossesse, accouchement, post-partum, santé du nouveau-né."
+        },
+        {
+          "title": "Éducation thérapeutique et promotion de la santé",
+          "description": "Accompagnement du patient, prévention, littératie en santé."
+        },
+        {
+          "title": "Management des soins",
+          "description": "Organisation des services, leadership, ressources humaines en santé."
+        },
+        {
+          "title": "Pédagogie en sciences de la santé",
+          "description": "Simulation, compétences cliniques, évaluation."
+        }
+      ],
+      "specialties": [
+        "Sciences infirmières (PhD in Nursing)",
+        "Sciences maïeutiques",
+        "Management des soins et des services de santé",
+        "Éducation en sciences de la santé",
+        "Soins de santé primaires"
+      ],
+      "research_axes": [
+        "Qualité des soins en maternité",
+        "Sécurité du patient et prévention des infections",
+        "Formation par simulation des soignants"
+      ],
+      "attachment": "ESSA-SCIPT · départements d’appui : Sciences Infirmières et Maïeutique",
+      "orientation": "Recherche sur les soins infirmiers et sur la pratique de la sage-femme, deux disciplines distinctes que le domaine rapproche sans les confondre."
+    },
+    {
+      "number": 11,
+      "title": "Pharmacie et sciences du médicament",
+      "group_id": "7668",
+      "school_code": "ESSA",
+      "paragraphs": [
+        "Ce domaine étudie le médicament sous tous ses aspects : découverte, formulation, contrôle de qualité, pharmacologie, usage rationnel et accessibilité. Dans la sous-région, il peut s’appuyer sur la richesse de la pharmacopée traditionnelle, avec les exigences de preuve et de sécurité que suppose toute valorisation scientifique."
+      ],
+      "disciplines": [
+        {
+          "title": "Pharmacologie et toxicologie",
+          "description": "Mécanismes d’action, effets indésirables, sécurité."
+        },
+        {
+          "title": "Pharmacognosie et substances naturelles",
+          "description": "Plantes médicinales, extraction, caractérisation."
+        },
+        {
+          "title": "Pharmacie galénique et contrôle qualité",
+          "description": "Formulation, stabilité, analyses, assurance qualité."
+        },
+        {
+          "title": "Pharmacie clinique et santé publique",
+          "description": "Bon usage, pharmacovigilance, accès aux médicaments."
+        },
+        {
+          "title": "Chaîne du médicament",
+          "description": "Approvisionnement, lutte contre les produits falsifiés."
+        }
+      ],
+      "specialties": [
+        "Pharmacie (PhD in Pharmacy)",
+        "Pharmacologie et toxicologie",
+        "Substances naturelles et phytothérapie",
+        "Contrôle qualité et sciences analytiques",
+        "Pharmacie clinique et pharmacovigilance"
+      ],
+      "research_axes": [
+        "Évaluation de plantes médicinales utilisées en médecine traditionnelle",
+        "Qualité des médicaments circulant sur le marché",
+        "Accès aux médicaments essentiels"
+      ],
+      "attachment": "ESSA-SCIPT · départements d’appui : Pharmacie",
+      "orientation": "Recherche sur le médicament, de sa conception à son usage, y compris les substances d’origine végétale."
+    },
+    {
+      "number": 12,
+      "title": "Sciences biomédicales, imagerie et réadaptation",
+      "group_id": "7668",
+      "school_code": "ESSA",
+      "paragraphs": [
+        "Ce domaine réunit les disciplines techniques qui permettent de poser un diagnostic et d’accompagner la récupération du patient. Les recherches portent sur la fiabilité des examens, l’optimisation des techniques d’imagerie, la biologie médicale ou les méthodes de rééducation. Les spécialités qui exigent un plateau technique lourd, comme la radiothérapie, ne sont ouvertes qu’une fois ces moyens réunis."
+      ],
+      "disciplines": [
+        {
+          "title": "Biologie médicale et analyses biomédicales",
+          "description": "Hématologie, biochimie, microbiologie, immunologie, biologie moléculaire."
+        },
+        {
+          "title": "Imagerie médicale",
+          "description": "Radiologie, échographie, scanner, IRM, physique de l’imagerie."
+        },
+        {
+          "title": "Radiothérapie et physique médicale",
+          "description": "Dosimétrie, protection, planification des traitements."
+        },
+        {
+          "title": "Kinésithérapie et réadaptation",
+          "description": "Rééducation fonctionnelle, handicap, évaluation du mouvement."
+        },
+        {
+          "title": "Sciences paramédicales",
+          "description": "Nutrition, soins de santé, techniques d’appui au diagnostic et au soin."
+        }
+      ],
+      "specialties": [
+        "Sciences biomédicales",
+        "Biologie médicale et microbiologie",
+        "Imagerie médicale",
+        "Physique médicale et radiothérapie (sous réserve du plateau technique)",
+        "Réadaptation et sciences du mouvement",
+        "Sciences de la santé (PhD in Health Sciences)"
+      ],
+      "research_axes": [
+        "Diagnostic biologique adapté aux contextes à ressources limitées",
+        "Intelligence artificielle appliquée à l’imagerie",
+        "Réadaptation communautaire et handicap"
+      ],
+      "attachment": "ESSA-SCIPT · départements d’appui : Sciences Biomédicales et de Laboratoire ; Imagerie Médicale et de Radiothérapie ; Sciences Paramédicales et de Réadaptation",
+      "orientation": "Recherche sur le diagnostic biologique et par l’image, sur les thérapies par rayonnements et sur la rééducation fonctionnelle."
+    },
+    {
+      "number": 13,
+      "title": "Sciences humaines et sociales",
+      "group_id": "7669",
+      "school_code": "ESHC",
+      "paragraphs": [
+        "Les sciences humaines et sociales donnent des clés pour comprendre les comportements, les institutions et les mutations d’une société. Ce domaine accueille des travaux qualitatifs et quantitatifs, appuyés sur des enquêtes de terrain, sur l’analyse de corpus ou sur des démarches comparatives. Il vise à produire des connaissances utiles à l’action publique, à l’accompagnement des personnes et à la compréhension du patrimoine culturel."
+      ],
+      "disciplines": [
+        {
+          "title": "Psychologie",
+          "description": "Psychologie clinique, du développement, sociale, du travail."
+        },
+        {
+          "title": "Sociologie et anthropologie",
+          "description": "Familles, urbanisation, religion, travail, cultures."
+        },
+        {
+          "title": "Histoire, géographie et patrimoine",
+          "description": "Histoire de l’Afrique centrale, aménagement du territoire, patrimoine."
+        },
+        {
+          "title": "Philosophie et éthique",
+          "description": "Philosophie politique, éthique appliquée, épistémologie."
+        },
+        {
+          "title": "Langues, lettres et civilisations",
+          "description": "Linguistique, littératures, traduction, enseignement des langues."
+        },
+        {
+          "title": "Sciences religieuses et théologie",
+          "description": "Étude académique des traditions religieuses, selon le cadre de délivrance."
+        }
+      ],
+      "specialties": [
+        "Psychologie",
+        "Sciences sociales",
+        "Sociologie et anthropologie du développement",
+        "Histoire et patrimoine",
+        "Philosophie et éthique",
+        "Langues et littératures (dont anglais)"
+      ],
+      "research_axes": [
+        "Santé mentale et accompagnement psychosocial",
+        "Mutations familiales et urbaines",
+        "Langues, plurilinguisme et éducation"
+      ],
+      "attachment": "ESHC-SCIPT · départements d’appui : Sciences Humaines et Sociales",
+      "orientation": "Recherche sur les individus, les groupes, les cultures et les transformations sociales."
+    },
+    {
+      "number": 14,
+      "title": "Sciences de l’éducation et de la formation",
+      "group_id": "7669",
+      "school_code": "ESHC",
+      "paragraphs": [
+        "Former mieux suppose de comprendre comment l’on apprend et comment l’on enseigne. Ce domaine s’adresse aux enseignants, inspecteurs, directeurs d’établissement, ingénieurs de formation et responsables de politiques éducatives. Les travaux peuvent porter sur une innovation pédagogique, sur l’évaluation des compétences ou sur l’usage des technologies dans l’apprentissage."
+      ],
+      "disciplines": [
+        {
+          "title": "Didactique et pédagogie",
+          "description": "Enseignement des disciplines, approches par compétences, pédagogie active."
+        },
+        {
+          "title": "Ingénierie de formation et de compétences",
+          "description": "Conception de dispositifs, référentiels, formation professionnelle."
+        },
+        {
+          "title": "Évaluation et docimologie",
+          "description": "Évaluation des apprentissages, certification, qualité."
+        },
+        {
+          "title": "Technologies éducatives",
+          "description": "Plateformes, ressources numériques, apprentissage à distance."
+        },
+        {
+          "title": "Politiques et administration de l’éducation",
+          "description": "Gouvernance, planification, équité, enseignement supérieur."
+        }
+      ],
+      "specialties": [
+        "Sciences de l’éducation (Ed.D)",
+        "Ingénierie de la formation",
+        "Évaluation et mesure en éducation",
+        "Technologies éducatives",
+        "Administration et leadership éducatif"
+      ],
+      "research_axes": [
+        "Approche par compétences et pratiques de classe",
+        "Formation à distance dans les contextes de faible connectivité",
+        "Qualité et gouvernance de l’enseignement supérieur"
+      ],
+      "attachment": "ESHC-SCIPT · départements d’appui : Sciences Humaines et Sociales (filières éducation et formation)",
+      "orientation": "Recherche sur l’enseignement, l’apprentissage, l’évaluation et les politiques éducatives, de l’école à la formation des adultes."
+    },
+    {
+      "number": 15,
+      "title": "Communication, journalisme et médias",
+      "group_id": "7669",
+      "school_code": "ESHC",
+      "paragraphs": [
+        "L’information façonne l’opinion, l’action publique et la vie des organisations. Ce domaine étudie les pratiques de communication, les médias traditionnels et numériques, ainsi que l’éthique de l’information. Il convient aux communicants, journalistes et responsables de la communication institutionnelle désireux d’analyser leur métier avec les outils des sciences sociales."
+      ],
+      "disciplines": [
+        {
+          "title": "Sciences de l’information et de la communication",
+          "description": "Théories, communication des organisations, communication publique."
+        },
+        {
+          "title": "Journalisme et pratiques éditoriales",
+          "description": "Enquête, déontologie, genres journalistiques, économie des médias."
+        },
+        {
+          "title": "Médias numériques et réseaux sociaux",
+          "description": "Plateformes, désinformation, usages numériques."
+        },
+        {
+          "title": "Communication de santé et de développement",
+          "description": "Sensibilisation, changement de comportement, plaidoyer."
+        },
+        {
+          "title": "Relations publiques et communication de crise",
+          "description": "Réputation, gestion des crises, parties prenantes."
+        }
+      ],
+      "specialties": [
+        "Sciences de l’information et de la communication",
+        "Journalisme et études des médias",
+        "Communication de santé et de développement",
+        "Communication des organisations",
+        "Médias numériques et société"
+      ],
+      "research_axes": [
+        "Désinformation et vérification des faits",
+        "Communication de santé publique",
+        "Médias et gouvernance démocratique"
+      ],
+      "attachment": "ESHC-SCIPT · départements d’appui : Sciences de la Communication ; Journalisme et Médias",
+      "orientation": "Recherche sur la production, la circulation et la réception de l’information, dans les organisations comme dans l’espace public."
+    },
+    {
+      "number": 16,
+      "title": "Arts, médias audiovisuels et industries créatives",
+      "group_id": "7669",
+      "school_code": "ESHC",
+      "paragraphs": [
+        "Les arts et les industries créatives contribuent à l’identité d’un pays et à son économie. Ce domaine accueille des recherches mêlant analyse, pratique et création : histoire des formes, esthétique, économie de la culture, techniques de production. Il offre aux artistes et aux professionnels de l’audiovisuel un cadre pour documenter, théoriser et transmettre leur pratique."
+      ],
+      "disciplines": [
+        {
+          "title": "Arts visuels et esthétique",
+          "description": "Histoire de l’art, arts plastiques, design, esthétique."
+        },
+        {
+          "title": "Cinéma et production audiovisuelle",
+          "description": "Écriture, réalisation, montage, économie de la production."
+        },
+        {
+          "title": "Musique et musicologie",
+          "description": "Traditions musicales, ethnomusicologie, composition."
+        },
+        {
+          "title": "Arts du spectacle",
+          "description": "Théâtre, danse, performance, médiation."
+        },
+        {
+          "title": "Patrimoine et industries créatives",
+          "description": "Politiques culturelles, valorisation du patrimoine, entrepreneuriat culturel."
+        }
+      ],
+      "specialties": [
+        "Arts et esthétique",
+        "Cinéma et audiovisuel",
+        "Musique et musicologie (D.Mus)",
+        "Patrimoine culturel et médiation",
+        "Industries créatives et économie de la culture"
+      ],
+      "research_axes": [
+        "Valorisation des patrimoines musicaux et oraux",
+        "Économie des industries créatives en Afrique centrale",
+        "Écritures audiovisuelles et récits contemporains"
+      ],
+      "attachment": "ESHC-SCIPT · départements d’appui : Arts, Médias et Production Audiovisuelle",
+      "orientation": "Recherche sur la création artistique, les arts du spectacle, l’audiovisuel, la musique et le patrimoine culturel."
+    }
+  ],
+  "common": {
+    "doctoral_routes": "Le doctorat professionnel et le PhD peuvent être ouverts dans un même domaine, selon la nature du projet. Le doctorat professionnel vise la résolution d’un problème réel par la recherche appliquée ; le PhD s’inscrit dans une trajectoire principalement scientifique. Ces deux voies relèvent de règles et d’exigences distinctes, à confirmer pour chaque domaine.",
+    "conditions_paragraphs": [
+      "Les éléments ci-dessous sont des propositions de principe, communes à l’ensemble des domaines. Les règles précises relèvent du règlement doctoral applicable et de la convention avec l’université délivrante.",
+      "Les durées, les coûts, les exigences de publication, le nombre de crédits et la composition du jury ne sont pas fixés ici. Ils seront communiqués officiellement, domaine par domaine et parcours par parcours."
+    ],
+    "conditions": [
+      {
+        "step": "Admission",
+        "principle": "Master ou diplôme équivalent dans une discipline compatible avec le domaine, étude du dossier, entretien et, si nécessaire, épreuve de positionnement."
+      },
+      {
+        "step": "Positionnement",
+        "principle": "Évaluation des acquis et, au besoin, mise à niveau ciblée, décidée avant l’entrée effective dans le programme."
+      },
+      {
+        "step": "Projet de recherche",
+        "principle": "Formulation d’une problématique, revue critique de la littérature, protocole de recherche validé par l’instance académique."
+      },
+      {
+        "step": "Encadrement",
+        "principle": "Direction de recherche assurée par un encadrant compétent dans le domaine, avec réunions régulières et rapports d’avancement."
+      },
+      {
+        "step": "Travaux",
+        "principle": "Collecte et analyse des données, expérimentation ou développement théorique, discussion des résultats."
+      },
+      {
+        "step": "Rédaction et soutenance",
+        "principle": "Mémoire ou thèse rédigé progressivement, dépôt, puis soutenance devant un jury compétent."
+      }
+    ],
+    "status_paragraphs": [
+      "Cette fiche présente un cadre de référence. Pour éviter toute confusion, nous distinguons ce qui est établi, ce qui est proposé et ce qui reste à confirmer.",
+      "Pour toute information ou pour déposer un dossier de positionnement : www.sciptinternational.com · info@sciptinternational.com · (+241) 74 25 43 43 · (+241) 76 42 16 42."
+    ],
+    "statuses": [
+      {
+        "point": "Quatre écoles et leurs départements",
+        "status": "Structure institutionnelle du SCIPT INTERNATIONAL, reprise comme base."
+      },
+      {
+        "point": "Déclinaison en seize domaines doctoraux",
+        "status": "À valider par la direction : la répartition proposée ici regroupe les disciplines des départements existants."
+      },
+      {
+        "point": "Disciplines et axes de recherche",
+        "status": "Propositions pédagogiques et scientifiques, à affiner avec l’encadrement."
+      },
+      {
+        "point": "Spécialités doctorales possibles",
+        "status": "Ouverture conditionnée à l’encadrement, aux moyens et au cadre de délivrance."
+      },
+      {
+        "point": "Université délivrant le diplôme, intitulé exact, accréditation, reconnaissance",
+        "status": "À confirmer officiellement. Aucun partenariat, agrément ou droit de délivrance n’est présenté comme acquis."
+      },
+      {
+        "point": "Durées, coûts, échéanciers, règles de soutenance",
+        "status": "À communiquer officiellement pour chaque parcours."
+      }
+    ]
+  }
+}
