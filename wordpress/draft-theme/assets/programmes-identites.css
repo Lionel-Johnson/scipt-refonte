@@ -1,0 +1,18 @@
+/* Repères des cinq écoles : blasons officiels complets, marine et or. */
+.inst-school-nav.scipt-school-logo-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:30px 0}
+.inst-school-nav.scipt-school-logo-nav>a{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;padding:22px 16px;border:1px solid #dae3ef;border-radius:22px;background:radial-gradient(ellipse at 50% 0,#e9f0fb,transparent 75%),#fff;color:#102b53;text-align:center;white-space:normal;box-shadow:0 4px 10px #10263f05,0 16px 32px -16px #123d8d40;transition:transform .25s,box-shadow .25s,border-color .25s}
+.inst-school-nav.scipt-school-logo-nav>a:hover,.inst-school-nav.scipt-school-logo-nav>a:focus-visible{transform:translateY(-4px);border-color:#b8954e;background:linear-gradient(145deg,#fff,#f1f5fc);color:#102b53;box-shadow:0 18px 36px -14px #123d8d50}
+.scipt-school-logo-nav .scipt-school-nav-crest{display:block;width:94px;height:94px;max-width:100%;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 5px 5px #10263f16)}
+.scipt-school-nav-code{font-size:16px;font-weight:800;letter-spacing:.06em;color:#173d80}
+.scipt-school-nav-name{font-size:12px;font-weight:500;line-height:1.55;color:#415570;hyphens:none;word-break:normal;overflow-wrap:normal}
+.scipt-school-nav-action{margin-top:auto;padding-top:6px;font-size:11px;font-weight:750;color:#805c1c}
+.inst-section .scipt-programme-school-header{display:flex;align-items:center;gap:clamp(20px,3vw,38px);margin:0 0 28px;padding:clamp(20px,3vw,34px);border:1px solid #d8e1ed;border-left:5px solid #b8954e;border-radius:24px;background:radial-gradient(ellipse at 100% 0,#e2ebfb99,transparent 65%),linear-gradient(120deg,#fff,#faf8f1);box-shadow:0 6px 16px #10263f05,0 22px 40px -24px #173d8045;scroll-margin-top:110px}
+.scipt-programme-school-header .scipt-programme-school-crest{display:block;width:140px;height:140px;max-width:100%;object-fit:contain;flex:0 0 140px;filter:drop-shadow(0 7px 8px #10263f16)}
+.scipt-programme-school-copy{min-width:0}
+.scipt-programme-school-kicker{display:block;margin-bottom:10px;font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#805c1c}
+.inst-section .scipt-programme-school-header h2{margin:0;font-size:clamp(23px,2.8vw,36px);line-height:1.25;letter-spacing:-.6px;hyphens:none;word-break:normal;overflow-wrap:normal}
+@media(max-width:1100px){.inst-school-nav.scipt-school-logo-nav{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:767px){.inst-school-nav.scipt-school-logo-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.inst-school-nav.scipt-school-logo-nav>a{padding:18px 14px}.scipt-school-logo-nav .scipt-school-nav-crest{width:82px;height:82px}.inst-school-nav.scipt-school-logo-nav>a:last-child{grid-column:1/-1}.inst-section .scipt-programme-school-header{gap:20px}.scipt-programme-school-header .scipt-programme-school-crest{width:100px;height:100px;flex-basis:100px}}
+@media(max-width:480px){.inst-section .scipt-programme-school-header{flex-direction:column;align-items:flex-start;padding:22px;gap:16px}.scipt-programme-school-header .scipt-programme-school-crest{width:110px;height:110px;flex:0 0 auto}.scipt-school-nav-code{font-size:15px}.scipt-school-nav-name{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.inst-school-nav.scipt-school-logo-nav>a{transition:none}.inst-school-nav.scipt-school-logo-nav>a:is(:hover,:focus-visible){transform:none}}
+@media print{.inst-school-nav.scipt-school-logo-nav>a,.inst-section .scipt-programme-school-header{box-shadow:none;break-inside:avoid}}

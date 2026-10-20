@@ -129,6 +129,12 @@ add_filter('pre_get_document_title', function ($title) {
     return $title;
 }, 9999);
 
+/* Repères des cinq écoles dans le catalogue universitaire en prévisualisation. */
+add_action('wp_enqueue_scripts', function () {
+    if (scipt_institution_requested_page_id() !== 7839) return;
+    wp_enqueue_style('scipt-programmes-identites', get_stylesheet_directory_uri() . '/assets/programmes-identites.css', array('scipt-institution'), '20261020-blasons');
+}, 40);
+
 /* Blog, navigation et filtres de programmes (prévisualisation du thème). */
 add_action('wp_enqueue_scripts', function () {
     $root = get_stylesheet_directory_uri() . '/assets/';
