@@ -20,9 +20,12 @@ for n in names:
  assert not doc.xpath('//main//*[contains(@class,"scipt-video-pending")]'),n
  assert '<video ' in registry['pages'][n[:-5]],n
  if n=='ecole-droit-sciences-gestion.html':
-  assert doc.xpath('//section[contains(@class,"inst-school-film")]//img[contains(@src,"droit-carrieres-juridiques")]')
-  assert not doc.xpath('//section[contains(@class,"inst-school-film")]//video')
+  assert doc.xpath('//section[@id="presentation-esga"]//source[contains(@src,"presentation-esga-20261021.mp4")]')
+  assert doc.xpath('//section[contains(@class,"inst-law-feature")]//img[contains(@src,"droit-carrieres-juridiques")]')
   assert doc.xpath('//*[@id="temoignage-logistique"]//video')
+ if n=='ecole-sante-developpement.html':
+  assert doc.xpath('//section[@id="presentation-essa"]//source[contains(@src,"presentation-essa-20261021.mp4")]')
+  assert doc.xpath('//section[@id="spot-sante-archive"]//source[contains(@src,"Spot-Final-Sante.mp4")]')
 for p in root.glob('*.html'):
  s=p.read_text();assert not re.search(r'(?:quatre|4) écoles académiques',s,re.I),p.name
 assert 'Médecine Générale et Pharmacie' in (root/names[0]).read_text()

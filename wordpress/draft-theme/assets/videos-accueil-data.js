@@ -103,5 +103,17 @@ window.SCIPT_VIDEOS_ACCUEIL = {
     "transcript": "Découvrez les domaines de l’ESHC : sociétés, développement communautaire, communication, médias et création.",
     "url": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines-20261020.mp4",
     "poster": "https://raw.githubusercontent.com/Lionel-Johnson/scipt-refonte/main/assets/videos/ecole-humaines-20261020.jpg"
+  },
+  "presentation-essa": {
+    "title": "Présentation de l’ESSA",
+    "url": "assets/videos/presentation-essa-20261021.mp4",
+    "poster": "https://lionel-johnson.github.io/scipt-refonte/assets/videos/presentation-essa-20261021.jpg",
+    "description": "Découvrez la présentation de l’École des Sciences de la Santé et du Développement du SCIPT INTERNATIONAL."
+  },
+  "presentation-esga": {
+    "title": "Présentation de l’ESGA",
+    "url": "assets/videos/presentation-esga-20261021.mp4",
+    "poster": "https://lionel-johnson.github.io/scipt-refonte/assets/videos/presentation-esga-20261021.jpg",
+    "description": "Découvrez la présentation de l’École de Droit, de Gestion et d’Administration du SCIPT INTERNATIONAL."
   }
 };

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-21",
+  "videos": [
+    {
+      "code": "ESSA",
+      "page": "ecole-sante-developpement.html",
+      "title": "Présentation de l’ESSA",
+      "kicker": "ESSA · VIDÉO DE PRÉSENTATION",
+      "description": "Découvrez la présentation de l’École des Sciences de la Santé et du Développement du SCIPT INTERNATIONAL.",
+      "url": "assets/videos/presentation-essa-20261021.mp4",
+      "poster": "https://lionel-johnson.github.io/scipt-refonte/assets/videos/presentation-essa-20261021.jpg",
+      "duration_seconds": 45.041667,
+      "web_size_bytes": 9078443,
+      "web_sha256": "f1a1c28fb0c63cedb3b988076702db7e65e8a2281b48882f2dfd91f749b4c304",
+      "original_name": "Présentation ESSA.mp4",
+      "original_sha256": "c59f0c3abbee414db90110db684fb61294a6eb1f25e6aea2b9461c94c1ef78b3"
+    },
+    {
+      "code": "ESGA",
+      "page": "ecole-droit-sciences-gestion.html",
+      "title": "Présentation de l’ESGA",
+      "kicker": "ESGA · VIDÉO DE PRÉSENTATION",
+      "description": "Découvrez la présentation de l’École de Droit, de Gestion et d’Administration du SCIPT INTERNATIONAL.",
+      "url": "assets/videos/presentation-esga-20261021.mp4",
+      "poster": "https://lionel-johnson.github.io/scipt-refonte/assets/videos/presentation-esga-20261021.jpg",
+      "duration_seconds": 42.92,
+      "web_size_bytes": 9482187,
+      "web_sha256": "d41a0dc3432534fbf316a04ce24d322fc8109627dd992bae1b439f02c7c8ff30",
+      "original_name": "Présentation ESGA.mp4",
+      "original_sha256": "43912a04a7166627b217dad9a96ce87d551a2a6d8b9aeab6edf0fd65c62565c2"
+    }
+  ]
+}
