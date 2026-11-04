@@ -1,0 +1,23 @@
+<!-- À coller dans verification-diplomes.html, à la place du formulaire « Demande de vérification » -->
+<link rel="stylesheet" href="assets/css/verification-genius.css">
+
+<section class="gv-wrap" id="verification-certificat">
+  <div class="gv-head">
+    <h2>🎓 GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY<br>Subsidiary of BLESSED COSMOPOLITAN COLLEGE UK
+    </h2>
+    <p>Pour vérifier l’authenticité de votre certificat délivré par le Genius College ou en collaboration avec le
+      <b>Blessed Cosmopolitan College UK</b>, entrez le numéro de série ou de vérification ci-dessous et cliquez sur
+      <b>Vérifier</b>.</p>
+  </div>
+
+  <div class="gv-search">
+    <input id="gv-input" type="text" placeholder="Entrez le numéro de série (ex : 0010133)" autocomplete="off"
+      aria-label="Numéro de série">
+    <button id="gv-btn" class="gv-btn" type="button">Vérifier</button>
+  </div>
+
+  <div id="gv-result" aria-live="polite"></div>
+  <div class="gv-pdfbar"><button class="gv-pdf" type="button">📄 Télécharger en PDF</button></div>
+</section>
+
+<script src="assets/js/verification-genius.js" defer></script>
