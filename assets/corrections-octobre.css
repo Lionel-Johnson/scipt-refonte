@@ -17,3 +17,23 @@
 .scipt-editorial-card a,.scipt-blog-grid article a{color:#103d78;text-decoration:none}
 .scipt-blog-description{color:#53647c;line-height:1.65}
 .scipt-blog-discover{padding-top:56px}.scipt-blog-article textarea{width:100%;min-height:140px}.scipt-blog-article label{display:block;margin:20px 0}.scipt-blog-article input[type=file]{display:block;margin-top:12px}
+
+
+/* TopHeader — cinq badges strictement contenus dans cinq cases identiques. */
+.approved-header .approved-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.navbar-certifications{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:0 1 54%;width:min(100%,620px);min-width:0}
+.navbar-certifications .badge-tile{display:block;flex:1 1 0;width:20%;min-width:0;height:clamp(58px,6.3vw,76px);max-height:76px;box-sizing:border-box}
+.navbar-certifications .badge-national,
+.navbar-certifications .badge-iso9001,
+.navbar-certifications .badge-international,
+.navbar-certifications .badge-emploi{background-image:url("insignes-scipt.png");background-repeat:no-repeat;background-size:400% 100%}
+.navbar-certifications .badge-national{background-position:0% 50%}
+.navbar-certifications .badge-iso9001{background-position:33.333% 50%}
+.navbar-certifications .badge-international{background-position:66.667% 50%}
+.navbar-certifications .badge-emploi{background-position:100% 50%}
+.navbar-certifications .badge-iso21001{object-fit:contain;padding:2px}
+@media(max-width:767px){
+ .approved-header .approved-header-inner{flex-wrap:wrap;justify-content:center}
+ .navbar-certifications{flex:0 0 100%;width:100%;max-width:620px;margin:8px auto 0;gap:4px}
+ .navbar-certifications .badge-tile{height:clamp(48px,12vw,64px);max-height:64px}
+}
