@@ -44,10 +44,11 @@ Deno.serve(async req => {
     }
 
     const db = createClient(url, serviceKey, { auth: { persistSession: false } });
+    // Les tables GENIUS et BCC ont été importées avec les en-têtes français.
     const { data, error } = await db
       .from(TABLES[issuer])
-      .select("serial_number,institution,holder_name,program,issue_year,status")
-      .eq("serial_number", serial)
+      .select("matricule,etablissement,nom_complet,diplome_formation,annee,statut")
+      .eq("matricule", serial)
       .maybeSingle();
 
     if (error) {
@@ -55,16 +56,16 @@ Deno.serve(async req => {
       return json({ error: "Recherche impossible." }, 500);
     }
 
-    if (!data || data.status !== "valid") return json({ found: false });
+    if (!data || data.statut !== "valid") return json({ found: false });
 
     return json({
       found: true,
       diploma: {
-        serial_number: data.serial_number,
-        institution: data.institution,
-        holder_name: data.holder_name,
-        program: data.program,
-        issue_year: data.issue_year
+        serial_number: data.matricule,
+        institution: data.etablissement,
+        holder_name: data.nom_complet,
+        program: data.diplome_formation,
+        issue_year: data.annee
       }
     });
   } catch {
