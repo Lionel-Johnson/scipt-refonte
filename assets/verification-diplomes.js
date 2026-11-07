@@ -82,6 +82,20 @@
     const lead = document.createElement('p');
     lead.className = 'lookup-lead';
     lead.textContent = 'La référence est marquée « valid » dans le registre consulté. Vous pouvez générer le certificat de vérification ci-dessous.';
+    const visual = document.createElement('div');
+    visual.style.cssText = 'display:grid;grid-template-columns:1fr 112px;gap:16px;align-items:center;margin:16px 0;padding:14px;border:1px solid #d9e2ec;border-radius:12px;background:#fff';
+    const logoUrl = d.institution_logo_url || d.issuer_logo_url || d.logo_url || '';
+    const photoUrl = d.photo_url || d.student_photo_url || '';
+    const logo = document.createElement('div');
+    logo.style.cssText = 'min-height:88px;display:flex;align-items:center;justify-content:center;border:1px dashed #aab5c2;border-radius:8px;padding:10px;text-align:center;color:#657386;font-size:12px';
+    logo.innerHTML = logoUrl ? '<img src="' + escapeHtml(logoUrl) + '" alt="Logo de l’établissement émetteur" style="max-width:100%;max-height:82px;object-fit:contain">' : 'LOGO OFFICIEL DE L’ÉTABLISSEMENT';
+    const photo = document.createElement('div');
+    photo.style.cssText = 'width:104px;height:120px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px dashed #aab5c2;border-radius:8px;background:#f7f9fc;text-align:center;color:#657386;font-size:11px';
+    photo.innerHTML = photoUrl ? '<img src="' + escapeHtml(photoUrl) + '" alt="Photo de l’étudiant" style="width:100%;height:100%;object-fit:cover">' : 'PHOTO DE L’ÉTUDIANT';
+    visual.append(logo,photo);
+    const declaration = document.createElement('p');
+    declaration.style.cssText = 'margin:14px 0;text-align:center;font-family:Georgia,serif;font-size:16px;color:#20344c';
+    declaration.textContent = 'Je soussigné(e), ' + (ISSUERS[val('diploma-issuer')]?.signatory || 'représentant(e) habilité(e) de ' + (d.institution || 'l’établissement émetteur')) + ', certifie l’authenticité du diplôme ci-dessous.';
     const dl = document.createElement('dl');
     [['Établissement', d.institution],['Titulaire', d.holder_name],['Formation', d.program],['Année', d.issue_year],['Référence', d.serial_number]].forEach(([label,value]) => {
       if (value === null || value === undefined || value === '') return;
@@ -105,7 +119,7 @@
       catch { copy.textContent='Copie non disponible'; }
     });
     actions.append(pdf,copy);
-    result.append(heading,lead,dl,note,actions);
+    result.append(heading,lead,visual,declaration,dl,note,actions);
   }
 
   function printCertificate(d, issuerCode) {
@@ -114,17 +128,19 @@
     verifyUrl.searchParams.set('issuer', issuerCode);
     verifyUrl.searchParams.set('serial', d.serial_number || '');
     const qr = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=5&data=' + encodeURIComponent(verifyUrl.href);
+    const issuerLogo = d.institution_logo_url || d.issuer_logo_url || d.logo_url || '';
+    const studentPhoto = d.photo_url || d.student_photo_url || '';
     const field = (label, value) => '<div class="field"><span>'+label+'</span><strong>'+(value ? escapeHtml(value) : '—')+'</strong></div>';
     const win = window.open('', '_blank');
     if (!win) { show('Autorisez les fenêtres contextuelles pour générer le certificat.', 'error'); return; }
     win.document.open();
     win.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Certificate of Authenticity — ${escapeHtml(d.serial_number)}</title>
 <style>
-@page{size:A4 landscape;margin:10mm}*{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#17263b;font-family:Georgia,'Times New Roman',serif}.sheet{position:relative;width:277mm;min-height:190mm;margin:12px auto;padding:11mm 13mm;border:2px solid #b58a42;background:#fff;outline:1px solid #b58a42;outline-offset:-7px}.top{display:grid;grid-template-columns:34mm 1fr 34mm;align-items:center;gap:8mm}.logo{height:29mm;border:1px dashed #9aa5b2;display:flex;align-items:center;justify-content:center;text-align:center;padding:4mm;font:10px Arial;color:#687587}.student-photo{width:30mm;height:36mm;border:1px dashed #9aa5b2;display:flex;align-items:center;justify-content:center;text-align:center;padding:2mm;font:9px Arial;color:#687587;background:#fafbfd;overflow:hidden}.student-photo img{width:100%;height:100%;object-fit:cover}.brand{text-align:center}.brand h1{font-size:23px;letter-spacing:2px;margin:0;color:#18324e}.brand p{margin:4px 0;font:11px Arial;letter-spacing:1px}.rule{height:2px;background:#b58a42;margin:7mm 0 5mm}.heading{text-align:center}.heading h2{font-size:25px;margin:0 0 2mm;color:#18324e}.heading p{font:12px Arial;letter-spacing:1.5px;margin:0}.intro{text-align:center;font-size:13px;margin:6mm 0 3mm}.holder{text-align:center;font-size:25px;font-weight:bold;color:#8a6429;margin:2mm 0 6mm}.fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm 8mm}.field{border-bottom:1px solid #cbd2dc;padding:2mm 0;min-height:13mm}.field span{display:block;font:10px Arial;text-transform:uppercase;color:#667386;letter-spacing:.5px;margin-bottom:2mm}.field strong{font-size:13px}.bottom{display:grid;grid-template-columns:1fr 34mm 1fr;align-items:end;gap:8mm;margin-top:8mm}.sign{text-align:center;border-top:1px solid #788596;padding-top:2mm;font:11px Arial}.sign strong{display:block;font: bold 12px Georgia;margin-bottom:1mm}.qr{text-align:center;font:9px Arial}.qr img{width:28mm;height:28mm;display:block;margin:auto}.seal{height:23mm;border:1px dashed #9aa5b2;text-align:center;padding:7mm 2mm;font:10px Arial;color:#687587}.foot{text-align:center;font:9px Arial;color:#657286;margin-top:5mm}@media print{body{background:white}.sheet{margin:0;box-shadow:none}button{display:none}}
+@page{size:A4 landscape;margin:7mm}*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#17263b;font-family:Georgia,'Times New Roman',serif}.sheet{position:relative;width:100%;height:196mm;max-height:196mm;overflow:hidden;margin:0 auto;padding:7mm 10mm;border:2px solid #b58a42;background:#fff;outline:1px solid #b58a42;outline-offset:-7px}.top{display:grid;grid-template-columns:32mm 1fr 30mm;align-items:center;gap:6mm}.logo{height:25mm;border:1px dashed #9aa5b2;display:flex;align-items:center;justify-content:center;text-align:center;padding:4mm;font:10px Arial;color:#687587}.student-photo{width:27mm;height:30mm;border:1px dashed #9aa5b2;display:flex;align-items:center;justify-content:center;text-align:center;padding:2mm;font:9px Arial;color:#687587;background:#fafbfd;overflow:hidden}.student-photo img{width:100%;height:100%;object-fit:cover}.brand{text-align:center}.brand h1{font-size:23px;letter-spacing:2px;margin:0;color:#18324e}.brand p{margin:4px 0;font:11px Arial;letter-spacing:1px}.rule{height:2px;background:#b58a42;margin:4mm 0 3mm}.heading{text-align:center}.heading h2{font-size:25px;margin:0 0 2mm;color:#18324e}.heading p{font:12px Arial;letter-spacing:1.5px;margin:0}.intro{text-align:center;font-size:11px;margin:2mm 0 1mm}.holder{text-align:center;font-size:21px;font-weight:bold;color:#8a6429;margin:2mm 0 6mm}.fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2mm 6mm}.field{border-bottom:1px solid #cbd2dc;padding:1mm 0;min-height:10mm}.field span{display:block;font:10px Arial;text-transform:uppercase;color:#667386;letter-spacing:.5px;margin-bottom:2mm}.field strong{font-size:13px}.bottom{display:grid;grid-template-columns:1fr 30mm 1fr;align-items:end;gap:6mm;margin-top:4mm}.sign{text-align:center;border-top:1px solid #788596;padding-top:2mm;font:11px Arial}.sign strong{display:block;font: bold 12px Georgia;margin-bottom:1mm}.qr{text-align:center;font:9px Arial}.qr img{width:22mm;height:22mm;display:block;margin:auto}.seal{height:17mm;border:1px dashed #9aa5b2;text-align:center;padding:7mm 2mm;font:10px Arial;color:#687587}.foot{text-align:center;font:8px Arial;color:#657286;margin-top:2mm}@media print{html,body{width:297mm;height:210mm;background:#fff}.sheet{width:100%;height:196mm;max-height:196mm;margin:0;padding:7mm 10mm;box-shadow:none;break-inside:avoid;page-break-inside:avoid}button{display:none}}
 </style></head><body><main class="sheet">
-<div class="top"><div class="logo">EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL DE L’ÉTABLISSEMENT</div><div class="brand"><h1>${escapeHtml(issuer.name)}</h1><p>CERTIFICATE OF AUTHENTICITY · CERTIFICAT D’AUTHENTICITÉ</p></div><div class="student-photo">${d.photo_url ? '<img src="' + escapeHtml(d.photo_url) + '" alt="Photo du titulaire">' : 'PHOTO DE L’ÉTUDIANT<br>À INSÉRER'}</div></div>
+<div class="top"><div class="logo">${issuerLogo ? '<img src="' + escapeHtml(issuerLogo) + '" alt="Logo officiel de l’établissement" style="max-width:100%;max-height:100%;object-fit:contain">' : 'EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL DE L’ÉTABLISSEMENT'}</div><div class="brand"><h1>${escapeHtml(issuer.name)}</h1><p>CERTIFICATE OF AUTHENTICITY · CERTIFICAT D’AUTHENTICITÉ</p></div><div class="student-photo">${studentPhoto ? '<img src="' + escapeHtml(studentPhoto) + '" alt="Photo du titulaire">' : 'PHOTO DE L’ÉTUDIANT<br>À INSÉRER'}</div></div>
 <div class="rule"></div><div class="heading"><h2>CERTIFICAT D’AUTHENTICITÉ</h2><p>CERTIFICATE OF AUTHENTICITY</p></div>
-<p class="intro">Il est attesté que / This is to certify that</p><div class="holder">${escapeHtml(d.holder_name || 'NOM DU TITULAIRE')}</div>
+<p class="intro">Je soussigné(e), ${escapeHtml(issuer.signatory || 'représentant(e) habilité(e) de ' + issuer.name)}, certifie l’authenticité du présent diplôme.<br>I, the undersigned, hereby certify the authenticity of this diploma.</p><p class="intro">Il est attesté que / This is to certify that</p><div class="holder">${escapeHtml(d.holder_name || 'NOM DU TITULAIRE')}</div>
 <div class="fields">
 ${field('Diplôme / Award',d.program)}
 ${field('Référence / Serial number',d.serial_number)}
