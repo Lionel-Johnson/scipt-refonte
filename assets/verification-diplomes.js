@@ -95,7 +95,7 @@
     visual.append(logo,photo);
     const declaration = document.createElement('p');
     declaration.style.cssText = 'margin:14px 0;text-align:center;font-family:Georgia,serif;font-size:16px;color:#20344c';
-    declaration.textContent = 'Je soussigné(e), ' + (ISSUERS[val('diploma-issuer')]?.signatory || 'représentant(e) habilité(e) de ' + (d.institution || 'l’établissement émetteur')) + ', certifie l’authenticité du diplôme ci-dessous.';
+    declaration.innerHTML = '<strong style="display:block;margin-bottom:5px;font-family:Arial,sans-serif;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:#9a702d">JE SOUSSIGNÉ(E)</strong>' + escapeHtml(ISSUERS[val('diploma-issuer')]?.signatory || 'représentant(e) habilité(e) de ' + (d.institution || 'l’établissement émetteur')) + ', certifie l’authenticité du diplôme ci-dessous.';
     const dl = document.createElement('dl');
     [['Établissement', d.institution],['Titulaire', d.holder_name],['Formation', d.program],['Année', d.issue_year],['Référence', d.serial_number]].forEach(([label,value]) => {
       if (value === null || value === undefined || value === '') return;
