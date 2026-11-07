@@ -115,7 +115,7 @@
     verifyUrl.searchParams.set('serial', d.serial_number || '');
     const qr = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=5&data=' + encodeURIComponent(verifyUrl.href);
     const field = (label, value) => '<div class="field"><span>'+label+'</span><strong>'+(value ? escapeHtml(value) : '—')+'</strong></div>';
-    const win = window.open('', '_blank', 'noopener,noreferrer');
+    const win = window.open('', '_blank');
     if (!win) { show('Autorisez les fenêtres contextuelles pour générer le certificat.', 'error'); return; }
     win.document.open();
     win.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Certificate of Authenticity — ${escapeHtml(d.serial_number)}</title>
