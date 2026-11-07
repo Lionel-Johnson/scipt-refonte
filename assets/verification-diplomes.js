@@ -53,6 +53,17 @@
     result.append(heading, p);
   }
 
+  const ISSUERS = {
+    GENIUS: { name: 'GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY', signatory: 'NGOMA MAVBUTO, PhD', titleFr: 'Directeur académique', titleEn: 'Academic Director' },
+    BCC: { name: 'BLESSED COSMOPOLITAN COLLEGE UK', signatory: 'ADRIAN ESTES, PhD', titleFr: 'Responsable académique', titleEn: 'Academic Program' },
+    MJB: { name: 'MJB MANAGEMENT & INTEGRATED SERVICES', signatory: 'THOMAS SAMSON, PhD', titleFr: 'Registraire académique', titleEn: 'Academic Registrar' },
+    SCIPT_GABON: { name: 'SCIPT INTERNATIONAL', signatory: 'Dr Arland Narcisse ELLA', titleFr: 'Directeur du SCIPT INTERNATIONAL', titleEn: 'Director of SCIPT INTERNATIONAL' }
+  };
+
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
   function showDiploma(d) {
     result.replaceChildren();
     result.hidden = false;
@@ -65,49 +76,72 @@
     mark.setAttribute('aria-hidden', 'true');
     mark.textContent = '✓';
     const title = document.createElement('h3');
-    title.textContent = 'Document retrouvé';
+    title.textContent = 'Diplôme confirmé dans le registre';
     heading.append(mark, title);
 
     const lead = document.createElement('p');
     lead.className = 'lookup-lead';
-    lead.textContent = 'Cette référence figure dans le registre de l’établissement sélectionné.';
-
+    lead.textContent = 'La référence est marquée « valid » dans le registre consulté. Vous pouvez générer le certificat de vérification ci-dessous.';
     const dl = document.createElement('dl');
-    [
-      ['Établissement', d.institution],
-      ['Titulaire', d.holder_name],
-      ['Formation', d.program],
-      ['Année de délivrance', d.issue_year],
-      ['Référence', d.serial_number]
-    ].forEach(([label, value]) => {
+    [['Établissement', d.institution],['Titulaire', d.holder_name],['Formation', d.program],['Année', d.issue_year],['Référence', d.serial_number]].forEach(([label,value]) => {
       if (value === null || value === undefined || value === '') return;
-      const dt = document.createElement('dt');
-      const dd = document.createElement('dd');
-      dt.textContent = label;
-      dd.textContent = String(value);
-      dl.append(dt, dd);
+      const dt=document.createElement('dt'); dt.textContent=label;
+      const dd=document.createElement('dd'); dd.textContent=String(value);
+      dl.append(dt,dd);
     });
 
-    const note = document.createElement('p');
-    note.className = 'lookup-note';
-    note.textContent = 'Résultat de consultation du registre : cette réponse confirme uniquement la présence de la référence et des informations affichées dans la base consultée. Pour une authentification officielle du document, une attestation ou un duplicata, contactez le service des examens et certifications.';
-
-    const actions = document.createElement('div');
-    actions.className = 'lookup-actions';
-    const copy = document.createElement('button');
-    copy.type = 'button';
-    copy.className = 'lookup-copy';
-    copy.textContent = 'Copier la référence';
+    const note=document.createElement('p');
+    note.className='lookup-note';
+    note.textContent='Le certificat reprend uniquement les informations présentes et confirmées dans le registre. Les autres champs restent à compléter par l’établissement émetteur. Le logo officiel est volontairement réservé en attendant sa réception.';
+    const actions=document.createElement('div');
+    actions.className='lookup-actions';
+    const pdf=document.createElement('button');
+    pdf.type='button'; pdf.className='lookup-copy'; pdf.textContent='Générer le certificat / PDF';
+    pdf.addEventListener('click', () => printCertificate(d, val('diploma-issuer')));
+    const copy=document.createElement('button');
+    copy.type='button'; copy.className='lookup-copy'; copy.textContent='Copier la référence';
     copy.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(String(d.serial_number ?? ''));
-        copy.textContent = 'Référence copiée ✓';
-      } catch {
-        copy.textContent = 'Copie non disponible';
-      }
+      try { await navigator.clipboard.writeText(String(d.serial_number ?? '')); copy.textContent='Référence copiée ✓'; }
+      catch { copy.textContent='Copie non disponible'; }
     });
-    actions.append(copy);
-    result.append(heading, lead, dl, note, actions);
+    actions.append(pdf,copy);
+    result.append(heading,lead,dl,note,actions);
+  }
+
+  function printCertificate(d, issuerCode) {
+    const issuer = ISSUERS[issuerCode] || { name: d.institution || 'Établissement émetteur', signatory: '', titleFr: '', titleEn: '' };
+    const verifyUrl = new URL('verification-diplomes.html', window.location.href);
+    verifyUrl.searchParams.set('issuer', issuerCode);
+    verifyUrl.searchParams.set('serial', d.serial_number || '');
+    const qr = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=5&data=' + encodeURIComponent(verifyUrl.href);
+    const field = (label, value) => '<div class="field"><span>'+label+'</span><strong>'+(value ? escapeHtml(value) : '—')+'</strong></div>';
+    const win = window.open('', '_blank', 'noopener,noreferrer');
+    if (!win) { show('Autorisez les fenêtres contextuelles pour générer le certificat.', 'error'); return; }
+    win.document.open();
+    win.document.write(`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Certificate of Authenticity — ${escapeHtml(d.serial_number)}</title>
+<style>
+@page{size:A4 landscape;margin:10mm}*{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#17263b;font-family:Georgia,'Times New Roman',serif}.sheet{position:relative;width:277mm;min-height:190mm;margin:12px auto;padding:11mm 13mm;border:2px solid #b58a42;background:#fff;outline:1px solid #b58a42;outline-offset:-7px}.top{display:grid;grid-template-columns:34mm 1fr 34mm;align-items:center;gap:8mm}.logo{height:29mm;border:1px dashed #9aa5b2;display:flex;align-items:center;justify-content:center;text-align:center;padding:4mm;font:10px Arial;color:#687587}.brand{text-align:center}.brand h1{font-size:23px;letter-spacing:2px;margin:0;color:#18324e}.brand p{margin:4px 0;font:11px Arial;letter-spacing:1px}.rule{height:2px;background:#b58a42;margin:7mm 0 5mm}.heading{text-align:center}.heading h2{font-size:25px;margin:0 0 2mm;color:#18324e}.heading p{font:12px Arial;letter-spacing:1.5px;margin:0}.intro{text-align:center;font-size:13px;margin:6mm 0 3mm}.holder{text-align:center;font-size:25px;font-weight:bold;color:#8a6429;margin:2mm 0 6mm}.fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm 8mm}.field{border-bottom:1px solid #cbd2dc;padding:2mm 0;min-height:13mm}.field span{display:block;font:10px Arial;text-transform:uppercase;color:#667386;letter-spacing:.5px;margin-bottom:2mm}.field strong{font-size:13px}.bottom{display:grid;grid-template-columns:1fr 34mm 1fr;align-items:end;gap:8mm;margin-top:8mm}.sign{text-align:center;border-top:1px solid #788596;padding-top:2mm;font:11px Arial}.sign strong{display:block;font: bold 12px Georgia;margin-bottom:1mm}.qr{text-align:center;font:9px Arial}.qr img{width:28mm;height:28mm;display:block;margin:auto}.seal{height:23mm;border:1px dashed #9aa5b2;text-align:center;padding:7mm 2mm;font:10px Arial;color:#687587}.foot{text-align:center;font:9px Arial;color:#657286;margin-top:5mm}@media print{body{background:white}.sheet{margin:0;box-shadow:none}button{display:none}}
+</style></head><body><main class="sheet">
+<div class="top"><div class="logo">EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL DE L’ÉMETTEUR</div><div class="brand"><h1>${escapeHtml(issuer.name)}</h1><p>CERTIFICATE OF AUTHENTICITY · CERTIFICAT D’AUTHENTICITÉ</p></div><div class="seal">CACHET OFFICIEL<br>À APPOSER</div></div>
+<div class="rule"></div><div class="heading"><h2>CERTIFICAT D’AUTHENTICITÉ</h2><p>CERTIFICATE OF AUTHENTICITY</p></div>
+<p class="intro">Il est attesté que / This is to certify that</p><div class="holder">${escapeHtml(d.holder_name || 'NOM DU TITULAIRE')}</div>
+<div class="fields">
+${field('Diplôme / Award',d.program)}
+${field('Référence / Serial number',d.serial_number)}
+${field('Année de délivrance / Year',d.issue_year)}
+${field('Établissement / Institution',d.institution || issuer.name)}
+${field('Date de naissance / Date of birth',d.date_of_birth)}
+${field('Lieu de naissance / Place of birth',d.birth_place)}
+${field('Nationalité / Nationality',d.nationality)}
+${field('Durée des études / Study duration',d.study_duration)}
+${field('Matricule étudiant / Student ID',d.student_id_number)}
+${field('Date de délivrance / Issue date',d.certificate_issue_date)}
+</div>
+<div class="bottom"><div class="sign"><strong>${escapeHtml(issuer.signatory)}</strong>${escapeHtml(issuer.titleFr)}<br>${escapeHtml(issuer.titleEn)}<br>Signature</div><div class="qr"><img src="${qr}" alt="QR code de vérification">SCAN TO VERIFY<br>SCANNER POUR VÉRIFIER</div><div class="sign"><strong>Signature & cachet</strong>Signature and official stamp</div></div>
+<div class="foot">Document généré à partir du registre numérique de l’établissement. Les champs non renseignés sont laissés vierges et doivent être complétés par l’émetteur.<br>Generated from the institution’s digital register. Blank fields must be completed by the issuing institution.</div>
+<div style="text-align:center;margin-top:5mm"><button onclick="window.print()">Imprimer / Enregistrer en PDF</button></div>
+</main><script>window.addEventListener('load',()=>setTimeout(()=>window.print(),500));</script></body></html>`);
+    win.document.close();
   }
 
   form.addEventListener('submit', async e => {
