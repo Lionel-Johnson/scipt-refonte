@@ -17,25 +17,33 @@
       name: "GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY",
       signatory: "NGOMA MAVBUTO, PhD",
       titleFr: "Directeur académique",
-      titleEn: "Academic Director"
+      titleEn: "Academic Director",
+      logo: "assets/logos/logo_genius.png",
+      signature: "assets/logos/signature_genius.png"
     },
     BCC: {
       name: "BLESSED COSMOPOLITAN COLLEGE UK",
       signatory: "ADRIAN ESTES, PhD",
       titleFr: "Responsable académique",
-      titleEn: "Academic Program"
+      titleEn: "Academic Program",
+      logo: "assets/logos/log_bcc.png",
+      signature: "assets/logos/signature_bcc.png"
     },
     MJB: {
       name: "MJB MANAGEMENT & INTEGRATED SERVICES",
       signatory: "THOMAS SAMSON, PhD",
       titleFr: "Registraire académique",
-      titleEn: "Academic Registrar"
+      titleEn: "Academic Registrar",
+      logo: "assets/logos/logo_mjb.png",
+      signature: ""
     },
     SCIPT_GABON: {
       name: "SCIPT INTERNATIONAL",
       signatory: "Dr Arland Narcisse ELLA",
       titleFr: "Directeur du SCIPT INTERNATIONAL",
-      titleEn: "Director of SCIPT INTERNATIONAL"
+      titleEn: "Director of SCIPT INTERNATIONAL",
+      logo: "",
+      signature: ""
     }
   };
 
@@ -218,6 +226,26 @@
     return String(value);
   }
 
+  function absoluteAsset(path) {
+    return path ? new URL(path, window.location.href).href : "";
+  }
+
+  function photoForCertificate(url) {
+    if (!url) return "";
+    const match = String(url).match(/[?&]id=([^&]+)/);
+    if (/drive\.google\.com/i.test(url) && match) {
+      return "https://drive.google.com/thumbnail?id=" +
+        encodeURIComponent(match[1]) + "&sz=w1000";
+    }
+    return url;
+  }
+
+  function formatDate(value) {
+    if (!value) return "";
+    const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    return match ? `${match[3]}/${match[2]}/${match[1]}` : String(value);
+  }
+
   /*
    * NORMALISATION DES DONNÉES
    * BCC / GENIUS : place_of_birth ou birth_place
@@ -344,11 +372,14 @@
       "https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=5&data=" +
       encodeURIComponent(verifyUrl.href);
 
-    const issuerLogo =
-      d.institution_logo_url || d.issuer_logo_url || d.logo_url || "";
+    const issuerLogo = absoluteAsset(
+      d.institution_logo_url || d.issuer_logo_url || d.logo_url || issuer.logo
+    );
 
-    const studentPhoto =
-      d.photo_url || d.student_photo_url || "";
+    const signatureImage = absoluteAsset(issuer.signature);
+    const studentPhoto = photoForCertificate(
+      d.photo_url || d.student_photo_url || ""
+    );
 
     const field = (label, value) =>
       `<div class="field">
@@ -440,6 +471,15 @@ html,body {
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+.signature-image {
+  display:block;
+  width:auto;
+  max-width:48mm;
+  height:15mm;
+  object-fit:contain;
+  margin:0 auto 1mm;
 }
 
 .brand { text-align:center; }
@@ -641,16 +681,19 @@ html,body {
     ${field("Référence / Serial number", d.serial_number)}
     ${field("Année de délivrance / Year", d.issue_year)}
     ${field("Établissement / Institution", d.institution || issuer.name)}
-    ${field("Date de naissance / Date of birth", d.date_of_birth)}
+    ${field("Date de naissance / Date of birth", formatDate(d.date_of_birth))}
     ${field("Lieu de naissance / Place of birth", d.birth_place)}
     ${field("Nationalité / Nationality", d.nationality)}
     ${field("Durée des études / Study duration", d.study_duration)}
     ${field("Matricule étudiant / Student ID", d.student_id_number)}
-    ${field("Date de délivrance / Issue date", d.certificate_issue_date)}
+    ${field("Date de délivrance / Issue date", formatDate(d.certificate_issue_date))}
   </div>
 
   <div class="bottom">
     <div class="sign">
+      ${signatureImage
+        ? `<img class="signature-image" src="${escapeHtml(signatureImage)}" alt="Signature officielle">`
+        : ""}
       <strong>${escapeHtml(issuer.signatory)}</strong>
       ${escapeHtml(issuer.titleFr)}<br>
       ${escapeHtml(issuer.titleEn)}<br>
@@ -682,9 +725,40 @@ html,body {
 </main>
 
 <script>
-window.addEventListener("load", () => {
-  setTimeout(() => window.print(), 700);
-});
+(function () {
+  const photo = document.querySelector(".student-photo img");
+  if (photo) {
+    const original = photo.getAttribute("src");
+    photo.referrerPolicy = "no-referrer";
+    photo.onerror = function () {
+      if (this.dataset.fallbackTried) {
+        this.parentElement.textContent = "PHOTO NON DISPONIBLE";
+        return;
+      }
+      this.dataset.fallbackTried = "1";
+      this.src = original.replace(
+        /^https:\/\/drive\.google\.com\/thumbnail\?id=([^&]+).*$/,
+        "https://drive.google.com/uc?export=view&id=$1"
+      );
+    };
+  }
+
+  window.addEventListener("load", async () => {
+    const images = Array.from(document.images);
+    const loaded = Promise.all(images.map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.addEventListener("load", resolve, { once: true });
+        img.addEventListener("error", resolve, { once: true });
+      });
+    }));
+    await Promise.race([
+      loaded,
+      new Promise(resolve => setTimeout(resolve, 8000))
+    ]);
+    window.print();
+  });
+})();
 <\/script>
 
 </body>
