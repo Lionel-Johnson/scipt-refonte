@@ -279,7 +279,7 @@
       ["Titulaire", d.holder_name],
       ["Date de naissance", fmtDate(d.date_of_birth)],
       ["Lieu de naissance", d.birth_place || d.place_of_birth],
-      ["Nationalité", d.nationality],
+      ["Nationalité / Nationality", d.nationality_fr && d.nationality_en ? `${d.nationality_fr} / ${d.nationality_en}` : d.nationality_fr || d.nationality_en || d.nationality],
       ["Matricule étudiant", d.student_id_number || d.student_id],
       ["Date de délivrance", fmtDate(d.certificate_issue_date || d.issue_date)],
       ["Formation", d.program],
