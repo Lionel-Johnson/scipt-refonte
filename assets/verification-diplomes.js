@@ -408,7 +408,7 @@
 <title>Certificate of Authenticity — ${escapeHtml(d.serial_number)}</title>
 
 <style>
-@page { size:A4 landscape; margin:7mm; }
+@page { size:A4 landscape; margin:5mm; }
 
 * { box-sizing:border-box; }
 
@@ -485,12 +485,14 @@ html,body {
 
 .sheet {
   position:relative;
+  display:flex;
+  flex-direction:column;
   width:100%;
-  height:196mm;
-  max-height:196mm;
+  height:200mm;
+  max-height:200mm;
   overflow:hidden;
   margin:0 auto;
-  padding:7mm 10mm;
+  padding:6mm 9mm;
   border:2px solid #b58a42;
   background:#fff;
   outline:1px solid #b58a42;
@@ -550,8 +552,10 @@ html,body {
 .brand { text-align:center; }
 
 .brand h1 {
-  font-size:23px;
-  letter-spacing:2px;
+  font-size:clamp(14px,1.55vw,21px);
+  line-height:1.12;
+  overflow-wrap:anywhere;
+  letter-spacing:1px;
   margin:0;
   color:#18324e;
 }
@@ -571,7 +575,8 @@ html,body {
 .heading { text-align:center; }
 
 .heading h2 {
-  font-size:25px;
+  font-size:clamp(19px,2vw,24px);
+  line-height:1.12;
   margin:0 0 2mm;
   color:#18324e;
 }
@@ -590,7 +595,9 @@ html,body {
 
 .holder {
   text-align:center;
-  font-size:21px;
+  font-size:clamp(15px,1.8vw,20px);
+  line-height:1.12;
+  overflow-wrap:anywhere;
   font-weight:bold;
   color:#8a6429;
   margin:2mm 0 6mm;
@@ -605,8 +612,16 @@ html,body {
 .field {
   border-bottom:1px solid #cbd2dc;
   padding:1mm 0;
-  min-height:10mm;
+  min-height:9mm;
   overflow-wrap:anywhere;
+  min-width:0;
+}
+.field strong {
+  display:block;
+  font-size:11px;
+  line-height:1.15;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 .field span {
@@ -622,6 +637,7 @@ html,body {
 
 .bottom {
   display:grid;
+  flex:0 0 auto;
   grid-template-columns:1fr 30mm 1fr;
   align-items:end;
   gap:6mm;
@@ -663,6 +679,7 @@ html,body {
 }
 
 .foot {
+  flex:0 0 auto;
   text-align:center;
   font:8px Arial;
   color:#657286;
@@ -678,10 +695,10 @@ html,body {
 
   .sheet {
     width:100%;
-    height:196mm;
-    max-height:196mm;
+    height:200mm;
+    max-height:200mm;
     margin:0;
-    padding:7mm 10mm;
+    padding:6mm 9mm;
     box-shadow:none;
     break-inside:avoid;
     page-break-inside:avoid;
