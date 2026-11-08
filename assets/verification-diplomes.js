@@ -235,6 +235,12 @@
     return m ? `${m[3]}/${m[2]}/${m[1]}` : v;
   }
 
+  function nationalityDisplay(d) {
+    const fr = displayValue(d.nationality_fr);
+    const en = displayValue(d.nationality_en);
+    return fr && en ? `${fr} / ${en}` : fr || en || displayValue(d.nationality);
+  }
+
   function normalizeDiploma(d) {
     return {
       ...d,
@@ -279,7 +285,7 @@
       ["Titulaire", d.holder_name],
       ["Date de naissance", fmtDate(d.date_of_birth)],
       ["Lieu de naissance", d.birth_place || d.place_of_birth],
-      ["Nationalité / Nationality", d.nationality_fr && d.nationality_en ? `${d.nationality_fr} / ${d.nationality_en}` : d.nationality_fr || d.nationality_en || d.nationality],
+      ["Nationalité / Nationality", nationalityDisplay(d)],
       ["Matricule étudiant", d.student_id_number || d.student_id],
       ["Date de délivrance", fmtDate(d.certificate_issue_date || d.issue_date)],
       ["Formation", d.program],
@@ -460,7 +466,7 @@
           institution: dv(d.institution),
           dob: dv(fmtDate(d.date_of_birth)),
           pob: dv(d.birth_place || d.place_of_birth),
-          nat: dv(d.nationality),
+          nat: dv(nationalityDisplay(d)),
           duration: dv(d.study_duration),
           sid: dv(d.student_id_number || d.student_id),
           issued: dv(fmtDate(d.certificate_issue_date || d.issue_date))
@@ -764,7 +770,7 @@ html,body {
     ${field("Établissement / Institution", d.institution || issuer.name)}
     ${field("Date de naissance / Date of birth", fmtDate(d.date_of_birth))}
     ${field("Lieu de naissance / Place of birth", d.birth_place)}
-    ${field("Nationalité / Nationality", d.nationality)}
+    ${field("Nationalité / Nationality", nationalityDisplay(d))}
     ${field("Durée des études / Study duration", d.study_duration)}
     ${field("Matricule étudiant / Student ID", d.student_id_number)}
     ${field("Date de délivrance / Issue date", fmtDate(d.certificate_issue_date))}
