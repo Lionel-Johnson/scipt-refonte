@@ -58,6 +58,14 @@ Deno.serve(async (req) => {
       }
       return rows;
     },
+    async listAliases(issuer) {
+      const { data, error } = await db
+        .from("diploma_serial_aliases")
+        .select("alias_serial,canonical_serial")
+        .eq("issuer_code", issuer);
+      if (error) throw new Error(error.message);
+      return data ?? [];
+    },
     async getById(table, id) {
       const { data, error } = await db
         .from(table)
