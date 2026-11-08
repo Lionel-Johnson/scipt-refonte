@@ -1,4 +1,3 @@
-
 (() => {
   "use strict";
 
@@ -18,7 +17,7 @@
       signatory: "NGOMA MAVBUTO, PhD",
       titleFr: "Directeur académique",
       titleEn: "Academic Director",
-      logo: "assets/logos/logo_genius.png",
+      logo: "assets/logos/logo_genius.PNG",
       signature: "assets/logos/signature_genius.png"
     },
     BCC: {
@@ -26,7 +25,7 @@
       signatory: "ADRIAN ESTES, PhD",
       titleFr: "Responsable académique",
       titleEn: "Academic Program",
-      logo: "assets/logos/log_bcc.png",
+      logo: "assets/logos/logo_bcc.PNG",
       signature: "assets/logos/signature_bcc.png"
     },
     MJB: {
@@ -34,16 +33,14 @@
       signatory: "THOMAS SAMSON, PhD",
       titleFr: "Registraire académique",
       titleEn: "Academic Registrar",
-      logo: "assets/logos/logo_mjb.png",
-      signature: "assets/logos/signature_mjb.png"
+      logo: "assets/logos/logo_mjb.PNG",
+      signature: ""
     },
     SCIPT_GABON: {
       name: "SCIPT INTERNATIONAL",
       signatory: "Dr Arland Narcisse ELLA",
       titleFr: "Directeur du SCIPT INTERNATIONAL",
-      titleEn: "Director of SCIPT INTERNATIONAL",
-      logo: "assets/logos/logo_scipt.png",
-      signature: "assets/logos/signature_scipt.png"
+      titleEn: "Director of SCIPT INTERNATIONAL"
     }
   };
 
@@ -226,31 +223,17 @@
     return String(value);
   }
 
-  function absoluteAsset(path) {
-    return path ? new URL(path, window.location.href).href : "";
-  }
-
-  function photoForCertificate(url) {
-    if (!url) return "";
-    const match = String(url).match(/[?&]id=([^&]+)/);
-    if (/drive\.google\.com/i.test(url) && match) {
-      return "https://drive.google.com/thumbnail?id=" +
-        encodeURIComponent(match[1]) + "&sz=w1000";
-    }
-    return url;
-  }
-
-  function formatDate(value) {
-    if (!value) return "";
-    const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})/);
-    return match ? `${match[3]}/${match[2]}/${match[1]}` : String(value);
-  }
-
   /*
    * NORMALISATION DES DONNÉES
    * BCC / GENIUS : place_of_birth ou birth_place
    * SCIPT GABON : birth_place
    */
+  // 1990-02-05 -> 05/02/1990 (les autres valeurs sont conservées telles quelles)
+  function fmtDate(v) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || ""));
+    return m ? `${m[3]}/${m[2]}/${m[1]}` : v;
+  }
+
   function normalizeDiploma(d) {
     return {
       ...d,
@@ -260,9 +243,7 @@
       study_duration: d.study_duration || "",
       student_id_number: d.student_id_number || d.student_id || "",
       certificate_issue_date:
-        d.certificate_issue_date || d.issue_date || "",
-      nationality:
-        d.nationality || d.nationalite || d["nationalité"] || d.nationality_name || ""
+        d.certificate_issue_date || d.issue_date || ""
     };
   }
 
@@ -295,9 +276,11 @@
     const fields = [
       ["Établissement", d.institution],
       ["Titulaire", d.holder_name],
-      ["Date de naissance", d.date_of_birth],
-      ["Lieu de naissance", d.birth_place],
+      ["Date de naissance", fmtDate(d.date_of_birth)],
+      ["Lieu de naissance", d.birth_place || d.place_of_birth],
       ["Nationalité", d.nationality],
+      ["Matricule étudiant", d.student_id_number || d.student_id],
+      ["Date de délivrance", fmtDate(d.certificate_issue_date || d.issue_date)],
       ["Formation", d.program],
       ["Durée des études", d.study_duration],
       ["Année", d.issue_year],
@@ -305,13 +288,14 @@
     ];
 
     fields.forEach(([label, value]) => {
-      if (value === null || value === undefined || value === "") return;
+      const shown =
+        value === null || value === undefined || value === "" ? "—" : value;
 
       const dt = document.createElement("dt");
       dt.textContent = label;
 
       const dd = document.createElement("dd");
-      dd.textContent = String(value);
+      dd.textContent = String(shown);
 
       dl.append(dt, dd);
     });
@@ -353,37 +337,85 @@
     result.append(heading, lead, dl, note, actions);
   }
 
+  // Script exécuté dans la fenêtre du certificat.
+  const POPUP_SCRIPT = [
+    'function imgFail(img, html) {',
+    '  var alt = img.dataset && img.dataset.alt;',
+    '  if (alt && img.src !== alt) { img.dataset.alt = ""; img.src = alt; return; }',
+    '  img.parentNode.innerHTML = \'<div class="ph">\' + html + \'</div>\';',
+    '}',
+    'function fit() {',
+    '  var w = 283 / 25.4 * 96 + 8;',
+    '  var z = Math.min(1, window.innerWidth / w);',
+    '  document.documentElement.style.setProperty("--z", z);',
+    '}',
+    'fit(); window.addEventListener("resize", fit);',
+    'function whenImagesReady(done) {',
+    '  var imgs = Array.prototype.slice.call(document.images);',
+    '  var pending = imgs.filter(function (i) { return !i.complete; }).length;',
+    '  var finished = false;',
+    '  function end() { if (!finished) { finished = true; done(); } }',
+    '  if (!pending) return end();',
+    '  imgs.forEach(function (i) {',
+    '    if (i.complete) return;',
+    '    var fn = function () { if (--pending <= 0) end(); };',
+    '    i.addEventListener("load", fn); i.addEventListener("error", fn);',
+    '  });',
+    '  setTimeout(end, 8000);',
+    '}',
+    'window.addEventListener("load", function () {',
+    '  whenImagesReady(function () { setTimeout(function () { window.print(); }, 300); });',
+    '});'
+  ].join("\n");
+
   function printCertificate(rawDiploma, issuerCode) {
     const d = normalizeDiploma(rawDiploma);
 
-    const issuer = ISSUERS[issuerCode] || {
+    const CFG = window.SCIPT_CERT_CONFIG || {};
+    const cfgIssuer = (CFG.issuers || {})[issuerCode] || {};
+    const issuer = Object.assign({}, ISSUERS[issuerCode] || {
       name: d.institution || "Établissement émetteur",
       signatory: "",
       titleFr: "",
       titleEn: ""
-    };
+    }, cfgIssuer);
 
     const verifyUrl = new URL(
-      "verification-diplomes.html",
+      CFG.verifyBase || "verification-diplomes.html",
       window.location.href
     );
 
     verifyUrl.searchParams.set("issuer", issuerCode);
     verifyUrl.searchParams.set("serial", d.serial_number || "");
 
-    const qr =
-      "https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=5&data=" +
-      encodeURIComponent(verifyUrl.href);
+    // QR généré localement (assets/qr-local.js) ; le service externe n'est
+    // qu'un secours si ce fichier n'est pas chargé.
+    const qr = window.SciptQR
+      ? window.SciptQR.svg(verifyUrl.href)
+      : "https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=5&data=" +
+        encodeURIComponent(verifyUrl.href);
 
-    const issuerLogo = absoluteAsset(
-      d.institution_logo_url || d.issuer_logo_url || d.logo_url || issuer.logo
-    );
+    // La fenêtre du certificat est ouverte en about:blank : les chemins
+    // relatifs ne fonctionnent pas, il faut des URL absolues.
+    const absUrl = (p) => {
+      if (!p) return "";
+      try { return new URL(p, window.location.href).href; } catch (e) { return ""; }
+    };
 
-    const signatureImage = absoluteAsset(issuer.signature);
-    const themeClass = ({ BCC: "theme-bcc", GENIUS: "theme-genius", MJB: "theme-mjb", SCIPT_GABON: "theme-scipt" })[issuerCode] || "theme-scipt";
-    const studentPhoto = photoForCertificate(
-      d.photo_url || d.student_photo_url || ""
-    );
+    const issuerLogo = absUrl(issuer.logo);
+    const issuerSignature = absUrl(issuer.signature);
+
+    // Liens Google Drive : version « miniature », plus fiable à l'affichage.
+    const driveId = (u) => {
+      const m = /drive\.google\.com\/(?:uc\?[^#]*?id=|file\/d\/|open\?id=|thumbnail\?id=)([\w-]+)/.exec(u);
+      return m ? m[1] : "";
+    };
+    const rawPhoto = String(d.photo_url || d.student_photo_url || "").trim();
+    const photoId = driveId(rawPhoto);
+    const studentPhoto = photoId
+      ? "https://drive.google.com/thumbnail?id=" + photoId + "&sz=w600"
+      : rawPhoto;
+    const photoFallback = photoId ? rawPhoto : "";
 
     const field = (label, value) =>
       `<div class="field">
@@ -403,6 +435,40 @@
 
     win.document.open();
 
+    const tpl = (window.SCIPT_CERT_TEMPLATES || {})[issuer.template];
+
+    if (tpl && typeof tpl.render === "function") {
+      const dv = (v) => displayValue(v) || "—";
+      win.document.write(tpl.render({
+        issuer,
+        d,
+        esc: escapeHtml,
+        script: POPUP_SCRIPT,
+        urls: {
+          logo: issuerLogo,
+          signature: issuerSignature,
+          photo: studentPhoto,
+          photoFallback,
+          qr
+        },
+        vals: {
+          holder: displayValue(d.holder_name) || "",
+          program: dv(d.program),
+          serial: dv(d.serial_number),
+          year: dv(d.issue_year),
+          institution: dv(d.institution),
+          dob: dv(fmtDate(d.date_of_birth)),
+          pob: dv(d.birth_place || d.place_of_birth),
+          nat: dv(d.nationality),
+          duration: dv(d.study_duration),
+          sid: dv(d.student_id_number || d.student_id),
+          issued: dv(fmtDate(d.certificate_issue_date || d.issue_date))
+        }
+      }));
+      win.document.close();
+      return;
+    }
+
     win.document.write(`<!doctype html>
 <html lang="fr">
 <head>
@@ -411,7 +477,7 @@
 <title>Certificate of Authenticity — ${escapeHtml(d.serial_number)}</title>
 
 <style>
-@page { size:A4 landscape; margin:5mm; }
+@page { size:A4 landscape; margin:7mm; }
 
 * { box-sizing:border-box; }
 
@@ -423,79 +489,14 @@ html,body {
   font-family:Georgia,'Times New Roman',serif;
 }
 
-/* Modèles distincts par identité d'établissement */
-.sheet { isolation:isolate; }
-.sheet::before {
-  content:""; position:absolute; inset:3mm; z-index:-1; pointer-events:none;
-}
-.sheet::after {
-  content:""; position:absolute; left:0; right:0; top:0; height:3mm; z-index:-1;
-}
-.sheet.theme-bcc {
-  --brand:#17365d; --accent:#c49a45; --soft:#eef2f7; --ink:#17263b;
-  border:2.2mm solid var(--brand); outline:1px solid var(--accent);
-  outline-offset:-4mm;
-}
-.sheet.theme-bcc::before { border:1px solid var(--accent); }
-.sheet.theme-bcc::after { background:linear-gradient(90deg,var(--brand) 0 72%,var(--accent) 72%); }
-.sheet.theme-bcc .brand h1,.sheet.theme-bcc .heading h2,.sheet.theme-bcc .holder { color:var(--brand); }
-.sheet.theme-bcc .rule { background:linear-gradient(90deg,var(--brand),var(--accent),var(--brand)); height:1.2mm; }
-.sheet.theme-bcc .field { border-bottom:1px solid #b9c5d4; }
-.sheet.theme-bcc .field span { color:var(--brand); }
-.sheet.theme-bcc .logo,.sheet.theme-bcc .seal { background:var(--soft); border:1px solid var(--accent); }
-
-.sheet.theme-genius {
-  --brand:#075b78; --accent:#39a6a0; --soft:#eaf6f5; --ink:#16313d;
-  border:1.5mm solid var(--brand);
-}
-.sheet.theme-genius::before { border:1px solid var(--accent); border-radius:2mm; }
-.sheet.theme-genius::after { height:5mm; background:linear-gradient(90deg,#075b78,#168b91,#70c5b7); }
-.sheet.theme-genius .brand h1,.sheet.theme-genius .heading h2,.sheet.theme-genius .holder { color:var(--brand); }
-.sheet.theme-genius .brand h1 { letter-spacing:1px; }
-.sheet.theme-genius .rule { height:1mm; background:var(--accent); }
-.sheet.theme-genius .field { border-bottom:1px solid #a9cfcc; }
-.sheet.theme-genius .field span { color:var(--brand); }
-.sheet.theme-genius .logo,.sheet.theme-genius .seal { background:var(--soft); border:1px solid var(--accent); }
-
-.sheet.theme-mjb {
-  --brand:#54253b; --accent:#b58a55; --soft:#f6eff2; --ink:#30212a;
-  border:2mm double var(--brand);
-}
-.sheet.theme-mjb::before { border:1px solid var(--accent); }
-.sheet.theme-mjb::after { height:2mm; background:var(--accent); }
-.sheet.theme-mjb .brand h1,.sheet.theme-mjb .heading h2,.sheet.theme-mjb .holder { color:var(--brand); }
-.sheet.theme-mjb .brand h1,.sheet.theme-mjb .heading h2 { font-family:Georgia,'Times New Roman',serif; }
-.sheet.theme-mjb .rule { height:1mm; background:linear-gradient(90deg,transparent,var(--accent),transparent); }
-.sheet.theme-mjb .field { border-bottom:1px solid #d8c3cc; }
-.sheet.theme-mjb .field span { color:var(--brand); }
-.sheet.theme-mjb .logo,.sheet.theme-mjb .seal { background:var(--soft); border:1px solid var(--accent); }
-
-.sheet.theme-scipt {
-  --brand:#174b3d; --accent:#a58b50; --soft:#edf4ef; --ink:#1b3028;
-  border:2mm solid var(--brand);
-}
-.sheet.theme-scipt::before { border:1px solid var(--accent); }
-.sheet.theme-scipt::after { height:3mm; background:linear-gradient(90deg,var(--brand) 0 65%,#789b75 65% 82%,var(--accent) 82%); }
-.sheet.theme-scipt .brand h1,.sheet.theme-scipt .heading h2,.sheet.theme-scipt .holder { color:var(--brand); }
-.sheet.theme-scipt .brand h1 { letter-spacing:1px; }
-.sheet.theme-scipt .rule { height:1.2mm; background:linear-gradient(90deg,var(--brand),#789b75,var(--accent)); }
-.sheet.theme-scipt .field { border-bottom:1px solid #b7cbbd; }
-.sheet.theme-scipt .field span { color:var(--brand); }
-.sheet.theme-scipt .logo,.sheet.theme-scipt .seal { background:var(--soft); border:1px solid var(--accent); }
-
-.sheet.theme-bcc .sign,.sheet.theme-genius .sign,.sheet.theme-mjb .sign,.sheet.theme-scipt .sign { border-top:1px solid var(--accent); }
-.sheet.theme-bcc .student-photo,.sheet.theme-genius .student-photo,.sheet.theme-mjb .student-photo,.sheet.theme-scipt .student-photo { border:1px solid var(--accent); }
-
 .sheet {
   position:relative;
-  display:flex;
-  flex-direction:column;
   width:100%;
-  height:200mm;
-  max-height:200mm;
+  height:196mm;
+  max-height:196mm;
   overflow:hidden;
   margin:0 auto;
-  padding:6mm 9mm;
+  padding:7mm 10mm;
   border:2px solid #b58a42;
   background:#fff;
   outline:1px solid #b58a42;
@@ -504,19 +505,19 @@ html,body {
 
 .top {
   display:grid;
-  grid-template-columns:42mm 1fr 30mm;
+  grid-template-columns:32mm 1fr 30mm;
   align-items:center;
   gap:6mm;
 }
 
 .logo {
-  height:34mm;
+  height:25mm;
   border:1px dashed #9aa5b2;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:1mm;
+  padding:4mm;
   font:10px Arial;
   color:#687587;
 }
@@ -542,23 +543,11 @@ html,body {
   object-fit:cover;
 }
 
-.signature-image {
-  display:block;
-  width:auto;
-  max-width:58mm;
-  height:20mm;
-  object-fit:contain;
-  margin:0 auto 1mm;
-  image-rendering:auto;
-}
-
 .brand { text-align:center; }
 
 .brand h1 {
-  font-size:clamp(14px,1.55vw,21px);
-  line-height:1.12;
-  overflow-wrap:anywhere;
-  letter-spacing:1px;
+  font-size:23px;
+  letter-spacing:2px;
   margin:0;
   color:#18324e;
 }
@@ -578,8 +567,7 @@ html,body {
 .heading { text-align:center; }
 
 .heading h2 {
-  font-size:clamp(19px,2vw,24px);
-  line-height:1.12;
+  font-size:25px;
   margin:0 0 2mm;
   color:#18324e;
 }
@@ -598,9 +586,7 @@ html,body {
 
 .holder {
   text-align:center;
-  font-size:clamp(15px,1.8vw,20px);
-  line-height:1.12;
-  overflow-wrap:anywhere;
+  font-size:21px;
   font-weight:bold;
   color:#8a6429;
   margin:2mm 0 6mm;
@@ -615,16 +601,8 @@ html,body {
 .field {
   border-bottom:1px solid #cbd2dc;
   padding:1mm 0;
-  min-height:9mm;
+  min-height:10mm;
   overflow-wrap:anywhere;
-  min-width:0;
-}
-.field strong {
-  display:block;
-  font-size:11px;
-  line-height:1.15;
-  overflow-wrap:anywhere;
-  word-break:break-word;
 }
 
 .field span {
@@ -640,7 +618,6 @@ html,body {
 
 .bottom {
   display:grid;
-  flex:0 0 auto;
   grid-template-columns:1fr 30mm 1fr;
   align-items:end;
   gap:6mm;
@@ -658,6 +635,21 @@ html,body {
   display:block;
   font:bold 12px Georgia;
   margin-bottom:1mm;
+}
+
+.signcol { display:flex; flex-direction:column; }
+
+.sigbox {
+  height:12mm;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.sigbox img {
+  max-height:12mm;
+  max-width:100%;
+  object-fit:contain;
 }
 
 .qr {
@@ -682,7 +674,6 @@ html,body {
 }
 
 .foot {
-  flex:0 0 auto;
   text-align:center;
   font:8px Arial;
   color:#657286;
@@ -691,17 +682,17 @@ html,body {
 
 @media print {
   html,body {
-    width:297mm;
-    height:210mm;
+    width:auto;
+    height:auto;
     background:#fff;
   }
 
   .sheet {
     width:100%;
-    height:200mm;
-    max-height:200mm;
+    height:196mm;
+    max-height:196mm;
     margin:0;
-    padding:6mm 9mm;
+    padding:7mm 10mm;
     box-shadow:none;
     break-inside:avoid;
     page-break-inside:avoid;
@@ -713,7 +704,7 @@ html,body {
 </head>
 
 <body>
-<main class="sheet ${themeClass}">
+<main class="sheet">
 
   <div class="top">
     <div class="logo">
@@ -721,7 +712,8 @@ html,body {
         issuerLogo
           ? `<img src="${escapeHtml(issuerLogo)}"
               alt="Logo officiel"
-              style="max-width:100%;max-height:100%;object-fit:contain">`
+              style="max-width:100%;max-height:100%;object-fit:contain"
+              onerror="imgFail(this,'EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL')">`
           : "EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL DE L’ÉTABLISSEMENT"
       }
     </div>
@@ -734,8 +726,11 @@ html,body {
     <div class="student-photo">
       ${
         studentPhoto
-          ? `<img src="${escapeHtml(studentPhoto)}" alt="Photo du titulaire">`
-          : "PHOTO DE L’ÉTUDIANT<br>À INSÉRER"
+          ? `<img src="${escapeHtml(studentPhoto)}" alt="Photo du titulaire"
+              referrerpolicy="no-referrer"
+              data-alt="${escapeHtml(photoFallback)}"
+              onerror="imgFail(this,'PHOTO NON DISPONIBLE<br>PHOTO NOT AVAILABLE')">`
+          : "PHOTO NON DISPONIBLE<br>PHOTO NOT AVAILABLE"
       }
     </div>
   </div>
@@ -766,23 +761,28 @@ html,body {
     ${field("Référence / Serial number", d.serial_number)}
     ${field("Année de délivrance / Year", d.issue_year)}
     ${field("Établissement / Institution", d.institution || issuer.name)}
-    ${field("Date de naissance / Date of birth", formatDate(d.date_of_birth))}
+    ${field("Date de naissance / Date of birth", fmtDate(d.date_of_birth))}
     ${field("Lieu de naissance / Place of birth", d.birth_place)}
     ${field("Nationalité / Nationality", d.nationality)}
     ${field("Durée des études / Study duration", d.study_duration)}
     ${field("Matricule étudiant / Student ID", d.student_id_number)}
-    ${field("Date de délivrance / Issue date", formatDate(d.certificate_issue_date))}
+    ${field("Date de délivrance / Issue date", fmtDate(d.certificate_issue_date))}
   </div>
 
   <div class="bottom">
+    <div class="signcol">
+    <div class="sigbox">${
+      issuerSignature
+        ? `<img src="${escapeHtml(issuerSignature)}" alt="Signature"
+            onerror="this.remove()">`
+        : ""
+    }</div>
     <div class="sign">
-      ${signatureImage
-        ? `<img class="signature-image" src="${escapeHtml(signatureImage)}" alt="Signature officielle">`
-        : ""}
       <strong>${escapeHtml(issuer.signatory)}</strong>
       ${escapeHtml(issuer.titleFr)}<br>
       ${escapeHtml(issuer.titleEn)}<br>
       Signature
+    </div>
     </div>
 
     <div class="qr">
@@ -809,42 +809,7 @@ html,body {
 
 </main>
 
-<script>
-(function () {
-  const photo = document.querySelector(".student-photo img");
-  if (photo) {
-    const original = photo.getAttribute("src");
-    photo.referrerPolicy = "no-referrer";
-    photo.onerror = function () {
-      if (this.dataset.fallbackTried) {
-        this.parentElement.textContent = "PHOTO NON DISPONIBLE";
-        return;
-      }
-      this.dataset.fallbackTried = "1";
-      this.src = original.replace(
-        /^https:\/\/drive\.google\.com\/thumbnail\?id=([^&]+).*$/,
-        "https://drive.google.com/uc?export=view&id=$1"
-      );
-    };
-  }
-
-  window.addEventListener("load", async () => {
-    const images = Array.from(document.images);
-    const loaded = Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        img.addEventListener("load", resolve, { once: true });
-        img.addEventListener("error", resolve, { once: true });
-      });
-    }));
-    await Promise.race([
-      loaded,
-      new Promise(resolve => setTimeout(resolve, 8000))
-    ]);
-    window.print();
-  });
-})();
-<\/script>
+<script>${POPUP_SCRIPT}<\/script>
 
 </body>
 </html>`);
@@ -921,6 +886,22 @@ html,body {
       submit.textContent = "Vérifier le diplôme →";
     }
   });
+
+  (function autoVerifyFromUrl() {
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const iss = (q.get("issuer") || "").toUpperCase();
+      const ser = q.get("serial") || "";
+      const sel = document.getElementById("diploma-issuer");
+      const inp = document.getElementById("diploma-number");
+      if (!iss || !ser || !sel || !inp) return;
+      if (![...sel.options].some((o) => o.value === iss)) return;
+      sel.value = iss;
+      inp.value = ser;
+      if (form.requestSubmit) form.requestSubmit();
+      else form.dispatchEvent(new Event("submit", { cancelable: true }));
+    } catch (e) { /* sans effet : le formulaire reste utilisable à la main */ }
+  })();
 
   document
     .getElementById("diploma-manual-request")
