@@ -377,6 +377,7 @@
     );
 
     const signatureImage = absoluteAsset(issuer.signature);
+    const themeClass = ({ BCC: "theme-bcc", GENIUS: "theme-genius", MJB: "theme-mjb", SCIPT_GABON: "theme-scipt" })[issuerCode] || "theme-scipt";
     const studentPhoto = photoForCertificate(
       d.photo_url || d.student_photo_url || ""
     );
@@ -629,7 +630,7 @@ html,body {
 </head>
 
 <body>
-<main class="sheet theme-${escapeHtml(String(issuerCode || "").toLowerCase())}">
+<main class="sheet ${themeClass}">
 
   <div class="top">
     <div class="logo">
