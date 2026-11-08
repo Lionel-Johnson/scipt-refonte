@@ -17,7 +17,7 @@ window.SCIPT_CERT_CONFIG = {
     BCC: {
       name: "BLESSED COSMOPOLITAN COLLEGE UK",
       template: "bcc",
-      logo: "assets/logos/logo_bcc.PNG",
+      logo: "assets/logos/logo_bcc.png",
       signature: "assets/logos/signature_bcc.png",
       signatory: "ADRIAN ESTES, PhD",
       titleFr: "Responsable académique",
@@ -35,7 +35,7 @@ window.SCIPT_CERT_CONFIG = {
     GENIUS: {
       name: "GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY",
       template: "genius",
-      logo: "assets/logos/logo_genius.PNG",
+      logo: "assets/logos/logo_genius.png",
       signature: "assets/logos/signature_genius.png",
       signatory: "NGOMA MAVBUTO, PhD",
       titleFr: "Directeur académique",
@@ -53,7 +53,7 @@ window.SCIPT_CERT_CONFIG = {
     MJB: {
       name: "MJB MANAGEMENT & INTEGRATED SERVICES",
       template: "mjb",
-      logo: "assets/logos/logo_mjb.PNG",
+      logo: "assets/logos/logo_mjb.png",
       signature: "",
       signatory: "THOMAS SAMSON, PhD",
       titleFr: "Registraire académique",
