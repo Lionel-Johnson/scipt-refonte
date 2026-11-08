@@ -518,13 +518,14 @@ html,body {
 
 .top {
   display:grid;
-  grid-template-columns:38mm 1fr 35mm;
+  grid-template-columns:48mm 1fr 35mm;
   align-items:center;
   gap:6mm;
 }
 
 .logo {
-  height:30mm;
+  height:40mm;
+  width:48mm;
   border:1px dashed #9aa5b2;
   display:flex;
   align-items:center;
@@ -725,7 +726,7 @@ html,body {
         issuerLogo
           ? `<img src="${escapeHtml(issuerLogo)}"
               alt="Logo officiel"
-              style="max-width:100%;max-height:100%;object-fit:contain"
+              style="width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;padding:1mm"
               onerror="imgFail(this,'EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL')">`
           : "EMPLACEMENT RÉSERVÉ<br>LOGO OFFICIEL DE L’ÉTABLISSEMENT"
       }
