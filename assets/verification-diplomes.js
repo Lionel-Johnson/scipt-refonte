@@ -35,7 +35,7 @@
       titleFr: "Registraire académique",
       titleEn: "Academic Registrar",
       logo: "assets/logos/logo_mjb.png",
-      signature: ""
+      signature: "assets/logos/signature_mjb.png"
     },
     SCIPT_GABON: {
       name: "SCIPT INTERNATIONAL",
@@ -435,19 +435,19 @@ html,body {
 
 .top {
   display:grid;
-  grid-template-columns:32mm 1fr 30mm;
+  grid-template-columns:42mm 1fr 30mm;
   align-items:center;
   gap:6mm;
 }
 
 .logo {
-  height:25mm;
+  height:34mm;
   border:1px dashed #9aa5b2;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:4mm;
+  padding:1mm;
   font:10px Arial;
   color:#687587;
 }
@@ -476,10 +476,11 @@ html,body {
 .signature-image {
   display:block;
   width:auto;
-  max-width:48mm;
-  height:15mm;
+  max-width:58mm;
+  height:20mm;
   object-fit:contain;
   margin:0 auto 1mm;
+  image-rendering:auto;
 }
 
 .brand { text-align:center; }
