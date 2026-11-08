@@ -42,8 +42,8 @@
       signatory: "Dr Arland Narcisse ELLA",
       titleFr: "Directeur du SCIPT INTERNATIONAL",
       titleEn: "Director of SCIPT INTERNATIONAL",
-      logo: "",
-      signature: ""
+      logo: "assets/logos/logo_scipt.png",
+      signature: "assets/logos/signature_scipt.png"
     }
   };
 
