@@ -260,7 +260,9 @@
       study_duration: d.study_duration || "",
       student_id_number: d.student_id_number || d.student_id || "",
       certificate_issue_date:
-        d.certificate_issue_date || d.issue_date || ""
+        d.certificate_issue_date || d.issue_date || "",
+      nationality:
+        d.nationality || d.nationalite || d["nationalité"] || d.nationality_name || ""
     };
   }
 
@@ -295,6 +297,7 @@
       ["Titulaire", d.holder_name],
       ["Date de naissance", d.date_of_birth],
       ["Lieu de naissance", d.birth_place],
+      ["Nationalité", d.nationality],
       ["Formation", d.program],
       ["Durée des études", d.study_duration],
       ["Année", d.issue_year],
