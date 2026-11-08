@@ -14,6 +14,7 @@
 
   const ISSUERS = {
     GENIUS: {
+      template: "GENIUS",
       name: "GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY",
       signatory: "NGOMA MAVBUTO, PhD",
       titleFr: "Directeur académique",
@@ -22,6 +23,7 @@
       signature: "assets/logos/signature_genius.png"
     },
     BCC: {
+      template: "BCC",
       name: "BLESSED COSMOPOLITAN COLLEGE UK",
       signatory: "ADRIAN ESTES, PhD",
       titleFr: "Responsable académique",
@@ -30,6 +32,7 @@
       signature: "assets/logos/signature_bcc.png"
     },
     MJB: {
+      template: "MJB",
       name: "MJB MANAGEMENT & INTEGRATED SERVICES",
       signatory: "THOMAS SAMSON, PhD",
       titleFr: "Registraire académique",
@@ -38,6 +41,7 @@
       signature: ""
     },
     SCIPT_GABON: {
+      template: "SCIPT_GABON",
       name: "SCIPT INTERNATIONAL",
       signatory: "Dr Arland Narcisse ELLA",
       titleFr: "Directeur du SCIPT INTERNATIONAL",
