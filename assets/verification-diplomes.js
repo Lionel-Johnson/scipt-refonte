@@ -12,44 +12,9 @@
   const val = id =>
     (document.getElementById(id)?.value || "").trim();
 
-  const ISSUERS = {
-    GENIUS: {
-      template: "GENIUS",
-      name: "GENIUS COLLEGE OF HEALTH SCIENCES, BUSINESS AND TECHNOLOGY",
-      signatory: "NGOMA MAVBUTO, PhD",
-      titleFr: "Directeur académique",
-      titleEn: "Academic Director",
-      logo: "assets/logos/logo_genius.png",
-      signature: "assets/logos/signature_genius.png"
-    },
-    BCC: {
-      template: "BCC",
-      name: "BLESSED COSMOPOLITAN COLLEGE UK",
-      signatory: "ADRIAN ESTES, PhD",
-      titleFr: "Responsable académique",
-      titleEn: "Academic Program",
-      logo: "assets/logos/logo_bcc.png",
-      signature: "assets/logos/signature_bcc.png"
-    },
-    MJB: {
-      template: "MJB",
-      name: "MJB MANAGEMENT & INTEGRATED SERVICES",
-      signatory: "THOMAS SAMSON, PhD",
-      titleFr: "Registraire académique",
-      titleEn: "Academic Registrar",
-      logo: "assets/logos/logo_mjb.png",
-      signature: ""
-    },
-    SCIPT_GABON: {
-      template: "SCIPT_GABON",
-      name: "SCIPT INTERNATIONAL",
-      signatory: "Dr Arland Narcisse ELLA",
-      titleFr: "Directeur du SCIPT INTERNATIONAL",
-      titleEn: "Director of SCIPT INTERNATIONAL",
-      logo: "assets/logos/logo_scipt.png",
-      signature: "assets/logos/signature_scipt.png"
-    }
-  };
+  // Les logos, signatures et modèles proviennent d'une seule configuration.
+  // Les identifiants de modèles sont en minuscules : bcc, genius, mjb, scipt.
+
 
   const style = document.createElement("style");
 
@@ -386,7 +351,7 @@
 
     const CFG = window.SCIPT_CERT_CONFIG || {};
     const cfgIssuer = (CFG.issuers || {})[issuerCode] || {};
-    const issuer = Object.assign({}, ISSUERS[issuerCode] || {
+    const issuer = Object.assign({}, {
       name: d.institution || "Établissement émetteur",
       signatory: "",
       titleFr: "",
