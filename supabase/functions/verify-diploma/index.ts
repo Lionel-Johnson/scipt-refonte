@@ -85,7 +85,7 @@ Deno.serve(async req => {
       date_of_birth: firstValue(row.date_of_birth),
       place_of_birth: firstValue(row.place_of_birth, row.birth_place),
       study_duration: firstValue(row.study_duration),
-      nationality: firstValue(row.nationality, row.nationalite),
+      nationality: firstValue(row.nationality, row.nationalite, row["nationalité"], row.nationality_name),
       student_id: firstValue(row.student_id, row.student_id_number),
       issue_date: firstValue(row.issue_date, row.certificate_issue_date, row.date_delivrance),
       photo_url: firstValue(row.photo_url, row.student_photo_url),
