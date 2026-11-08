@@ -514,13 +514,13 @@ html,body {
 
 .top {
   display:grid;
-  grid-template-columns:32mm 1fr 30mm;
+  grid-template-columns:38mm 1fr 35mm;
   align-items:center;
   gap:6mm;
 }
 
 .logo {
-  height:25mm;
+  height:30mm;
   border:1px dashed #9aa5b2;
   display:flex;
   align-items:center;
@@ -532,8 +532,8 @@ html,body {
 }
 
 .student-photo {
-  width:27mm;
-  height:30mm;
+  width:32mm;
+  height:36mm;
   border:1px dashed #9aa5b2;
   display:flex;
   align-items:center;
@@ -627,7 +627,7 @@ html,body {
 
 .bottom {
   display:grid;
-  grid-template-columns:1fr 30mm 1fr;
+  grid-template-columns:1fr 35mm 1fr;
   align-items:end;
   gap:6mm;
   margin-top:4mm;
