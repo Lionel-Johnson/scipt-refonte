@@ -18,7 +18,7 @@
       signatory: "NGOMA MAVBUTO, PhD",
       titleFr: "Directeur académique",
       titleEn: "Academic Director",
-      logo: "assets/logos/logo_genius.PNG",
+      logo: "assets/logos/logo_genius.png",
       signature: "assets/logos/signature_genius.png"
     },
     BCC: {
@@ -26,7 +26,7 @@
       signatory: "ADRIAN ESTES, PhD",
       titleFr: "Responsable académique",
       titleEn: "Academic Program",
-      logo: "assets/logos/logo_bcc.PNG",
+      logo: "assets/logos/logo_bcc.png",
       signature: "assets/logos/signature_bcc.png"
     },
     MJB: {
@@ -34,14 +34,16 @@
       signatory: "THOMAS SAMSON, PhD",
       titleFr: "Registraire académique",
       titleEn: "Academic Registrar",
-      logo: "assets/logos/logo_mjb.PNG",
+      logo: "assets/logos/logo_mjb.png",
       signature: ""
     },
     SCIPT_GABON: {
       name: "SCIPT INTERNATIONAL",
       signatory: "Dr Arland Narcisse ELLA",
       titleFr: "Directeur du SCIPT INTERNATIONAL",
-      titleEn: "Director of SCIPT INTERNATIONAL"
+      titleEn: "Director of SCIPT INTERNATIONAL",
+      logo: "assets/logos/logo_scipt.png",
+      signature: "assets/logos/signature_scipt.png"
     }
   };
 
