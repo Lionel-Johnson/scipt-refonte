@@ -629,7 +629,7 @@ html,body {
 </head>
 
 <body>
-<main class="sheet">
+<main class="sheet theme-${escapeHtml(String(issuerCode || "").toLowerCase())}">
 
   <div class="top">
     <div class="logo">
