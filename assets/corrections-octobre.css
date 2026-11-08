@@ -19,10 +19,10 @@
 .scipt-blog-discover{padding-top:56px}.scipt-blog-article textarea{width:100%;min-height:140px}.scipt-blog-article label{display:block;margin:20px 0}.scipt-blog-article input[type=file]{display:block;margin-top:12px}
 
 
-/* TopHeader — quatre badges uniques, avec un gabarit identique sur toutes les pages. */
+/* TopHeader — cinq badges distincts, gabarit uniforme sur toutes les pages. */
 .approved-header .approved-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.navbar-certifications{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:0 1 54%;width:min(100%,620px);min-width:0}
-.navbar-certifications .badge-tile{display:block;flex:1 1 0;width:25%;min-width:0;height:clamp(58px,6.3vw,76px);max-height:76px;box-sizing:border-box;object-fit:contain}
+.navbar-certifications{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:0 1 54%;width:min(100%,680px);min-width:0}
+.navbar-certifications .badge-tile{display:block;flex:1 1 0;width:20%;min-width:0;height:clamp(58px,6.3vw,76px);max-height:76px;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:contain}
 .navbar-certifications .badge-national,
 .navbar-certifications .badge-iso9001,
 .navbar-certifications .badge-international,
@@ -31,10 +31,9 @@
 .navbar-certifications .badge-iso9001{background-position:33.333% 50%}
 .navbar-certifications .badge-international{background-position:66.667% 50%}
 .navbar-certifications .badge-emploi{background-position:100% 50%}
-/* Le badge ISO 21001 en doublon est retiré ; ISO 9001 reste affiché. */
-.navbar-certifications .badge-iso21001{display:none!important}
+.navbar-certifications .badge-iso21001{background-image:url("certifications/iso210012018.png");background-size:contain;background-position:center;background-repeat:no-repeat}
 @media(max-width:767px){
  .approved-header .approved-header-inner{flex-wrap:wrap;justify-content:center}
- .navbar-certifications{flex:0 0 100%;width:100%;max-width:620px;margin:8px auto 0;gap:6px}
+ .navbar-certifications{flex:0 0 100%;width:100%;max-width:680px;margin:8px auto 0;gap:6px}
  .navbar-certifications .badge-tile{height:clamp(48px,12vw,64px);max-height:64px}
 }
