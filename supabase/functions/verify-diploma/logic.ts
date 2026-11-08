@@ -2,6 +2,7 @@ export type Row = Record<string, unknown>;
 
 export interface Repo {
   listIndex(table: string): Promise<Row[]>;
+  listAliases(issuer: string): Promise<Row[]>;
   getById(table: string, id: unknown): Promise<Row | null>;
 }
 
@@ -27,14 +28,30 @@ export type Lookup =
   | { kind: "one"; row: Row }
   | { kind: "ambiguous" };
 
-export function findMatches(index: Row[], serial: unknown): Lookup {
+export function findMatches(index: Row[], serial: unknown, aliases: Row[] = []): Lookup {
   const key = serialKey(serial);
-  const hits = index.filter(row =>
+  // Une référence officielle exacte reste toujours prioritaire sur un alias.
+  const exact = index.filter(row =>
     serialKey(row.serial_number) === key && isValidStatus(row.status)
   );
-  if (hits.length === 0) return { kind: "none" };
-  if (hits.length > 1) return { kind: "ambiguous" };
-  return { kind: "one", row: hits[0] };
+  if (exact.length === 1) return { kind: "one", row: exact[0] };
+  if (exact.length > 1) return { kind: "ambiguous" };
+
+  const aliasTargets = [...new Set(
+    aliases
+      .filter(alias => serialKey(alias.alias_serial) === key)
+      .map(alias => serialKey(alias.canonical_serial))
+      .filter(Boolean)
+  )];
+  if (aliasTargets.length === 0) return { kind: "none" };
+  if (aliasTargets.length > 1) return { kind: "ambiguous" };
+
+  const resolved = index.filter(row =>
+    serialKey(row.serial_number) === aliasTargets[0] && isValidStatus(row.status)
+  );
+  if (resolved.length === 0) return { kind: "none" };
+  if (resolved.length > 1) return { kind: "ambiguous" };
+  return { kind: "one", row: resolved[0] };
 }
 
 const NATIONALITIES: Record<string, { fr: string; fem: string; en: string }> = {
@@ -132,7 +149,8 @@ export async function verify(repo: Repo, body: unknown): Promise<{ status: numbe
 
     const table = TABLES[issuer];
     const index = await repo.listIndex(table);
-    const match = findMatches(index, serial);
+    const aliases = issuer === "BCC" ? await repo.listAliases(issuer) : [];
+    const match = findMatches(index, serial, aliases);
     if (match.kind === "none") return { status: 200, body: { found: false } };
     if (match.kind === "ambiguous") {
       return {
