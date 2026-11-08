@@ -44,9 +44,9 @@
       html,body{margin:0;padding:0;background:#fff;color:#182333;font-family:Georgia,'Times New Roman',serif}
       .sheet{position:relative;width:283mm;height:196mm;overflow:hidden;padding:11mm 13mm;background:#fff}
       .content{position:relative;height:100%}
-      .identity{display:grid;grid-template-columns:35mm 1fr 30mm;gap:7mm;align-items:center;min-height:34mm}
-      .logo-box,.photo-box{height:30mm;display:grid;place-items:center;position:relative;overflow:hidden;font:8px Arial;color:#888}
-      .logo-img{max-width:100%;max-height:100%;object-fit:contain;position:absolute;inset:0;margin:auto}
+      .identity{display:grid;grid-template-columns:46mm 1fr 30mm;gap:7mm;align-items:center;min-height:42mm}
+      .logo-box{height:40mm;width:46mm;display:grid;place-items:center;position:relative;overflow:hidden;font:8px Arial;color:#888}.photo-box{height:30mm;width:30mm;display:grid;place-items:center;position:relative;overflow:hidden;font:8px Arial;color:#888}
+      .logo-img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;position:absolute;inset:0;margin:auto;padding:1mm}
       .photo-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
       .institution{text-align:center}.institution h1{font-size:17px;letter-spacing:1px;margin:2mm 0}.eyebrow,.sub,.kicker{font:9px Arial;letter-spacing:1.5px}
       .award{text-align:center;margin:7mm 0 5mm}.award h2{font-size:27px;letter-spacing:2px;margin:2mm 0}.recipient{font-size:25px;font-weight:bold;margin:3mm 0}.award p{font:11px Arial;margin:0}
