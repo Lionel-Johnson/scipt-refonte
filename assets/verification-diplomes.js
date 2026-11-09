@@ -390,20 +390,12 @@
     };
     const rawPhoto = String(d.photo_url || d.student_photo_url || "").trim();
     const photoId = driveId(rawPhoto);
-    // Identifiants de photos actuellement partagés entre plusieurs titulaires.
-    // Précaution temporaire : ne pas afficher de photo non attribuée de façon sûre.
-    // Les liens restent intacts dans Supabase, en attente de validation du client.
-    const photosEnVerification = new Set([
-      "1vP8NE9-_zabezFhpAkOW2PSYbDwL8ovS",
-      "1BWIiWZbqSgam8mSSEqttm7p6JQ3s3rhq",
-      "1Kw3TQ9Xm6oBlYvYqymucoz7MTBefEA6_",
-      "1cQ1XQMsqR_O68AvFvKjjWMh1jNI9K3rZ"
-    ]);
-    const photoNonConfirmee = photoId && photosEnVerification.has(photoId);
-    const studentPhoto = photoNonConfirmee ? "" : photoId
+    // Affichage des liens photo exactement tels qu'enregistres dans les sources.
+    // Un lien vers un montage peut afficher le document entier, pas un portrait individuel.
+    const studentPhoto = photoId
       ? "https://drive.google.com/thumbnail?id=" + photoId + "&sz=w600"
       : rawPhoto;
-    const photoFallback = photoNonConfirmee ? "" : photoId ? rawPhoto : "";
+    const photoFallback = photoId ? rawPhoto : "";
 
     const field = (label, value) =>
       `<div class="field">
