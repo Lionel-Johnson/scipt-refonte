@@ -8,6 +8,7 @@ if ($show_performance) {
     ob_start(); scipt_render_performance_dashboard(); $account = ob_get_clean();
 } else {
     $account = do_shortcode('[scipt_connexion]');
+    if (is_user_logged_in()) $account .= do_shortcode('[scipt_espace_pedagogique]');
     if (current_user_can('manage_options')) $account = '<p class="scipt-account-admin-link"><a class="scipt-login-button" href="' . esc_url(add_query_arg('scipt_performances', '1')) . '">Pilotage pédagogique →</a></p>' . $account;
 }
 ?><!doctype html>

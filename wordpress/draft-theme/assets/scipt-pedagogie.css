@@ -1,0 +1,22 @@
+/* SCIPT — tableaux de bord pédagogiques (prévisualisation) */
+.scipt-peda{max-width:1160px;margin:28px auto 48px;padding:clamp(20px,3vw,36px);background:#f7f9fd;border-radius:24px;border:1px solid #d5dfec;color:#142b47}
+.scipt-peda h2,.scipt-peda h3{color:#10294d}
+.scipt-peda-eyebrow{display:block;color:#866420;font-size:.76rem;font-weight:800;letter-spacing:.09em;margin-bottom:10px}
+.scipt-peda-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.scipt-peda-metric{background:#fff;border:1px solid #d9e4ee;border-radius:16px;padding:19px 16px;box-shadow:0 6px 18px #132b4812}
+.scipt-peda-metric strong{display:block;font-size:2rem;color:#103669;line-height:1.2}
+.scipt-peda-metric span{color:#4b5b72;font-size:.92rem}
+.scipt-peda-note{font-size:.9rem;color:#536178;margin:12px 0}
+.scipt-peda-actions{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.scipt-peda-link,.scipt-peda-submit button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 13px;border-radius:11px;background:#103d78;color:#fff!important;text-decoration:none!important;font-weight:650;border:0;cursor:pointer}
+.scipt-peda-link:hover,.scipt-peda-link:focus-visible,.scipt-peda-submit button:hover,.scipt-peda-submit button:focus-visible{background:#b5121b;color:#fff}
+.scipt-peda-panel{border:1px solid #d9e4ee;border-radius:19px;background:#fff;margin:20px 0;padding:20px}
+.scipt-peda-panel h3{font-size:1.2rem;margin-bottom:16px}
+.scipt-peda-entry{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e9edf3}
+.scipt-peda-entry:last-child{border-bottom:0}
+.scipt-peda-entry>div:first-child{flex:1 1 240px;min-width:0}
+.scipt-peda-entry strong{display:block;overflow-wrap:anywhere}
+.scipt-peda-entry span{display:block;color:#5b6779;font-size:.82rem}
+.scipt-peda-submit{margin:0}
+.scipt-peda-confirm{color:#126535}.scipt-peda-error{color:#a21d30}
+@media(max-width:640px){.scipt-peda{padding:17px}.scipt-peda-entry{align-items:stretch;flex-direction:column}.scipt-peda-actions>*{width:100%}}
