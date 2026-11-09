@@ -100,7 +100,11 @@ body { background:#e8ebef; }
 
     const seal = `<div class="seal">CACHET OFFICIEL<br>OFFICIAL STAMP</div>`;
 
-    const note = `<div class="note">Document généré à partir du registre numérique de l’établissement. Les champs non renseignés sont laissés vierges et doivent être complétés par l’établissement émetteur.<br>Generated from the institution’s digital register. Unfilled fields are left blank and must be completed by the issuing institution.</div>`;
+    // Lien fiable vers le document source lorsque Google Drive ne fournit pas de miniature.
+    const photoSource = U.photoSource
+      ? `<br><a href="${E(U.photoSource)}" target="_blank" rel="noopener noreferrer">Consulter le document photo fourni / View source photo document</a>`
+      : "";
+    const note = `<div class="note">Document généré à partir du registre numérique de l’établissement. Les champs non renseignés sont laissés vierges et doivent être complétés par l’établissement émetteur.<br>Generated from the institution’s digital register. Unfilled fields are left blank and must be completed by the issuing institution.${photoSource}</div>`;
 
     // Texte de certification (le titre n'est pas répété s'il contient déjà le nom).
     const inFr = I.titleFr.indexOf(I.name) >= 0 ? "" : " de " + I.name;
