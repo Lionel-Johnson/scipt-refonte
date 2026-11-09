@@ -312,7 +312,48 @@
     });
 
     actions.append(pdf, copy);
-    result.append(heading, lead, dl, note, actions);
+
+    // Montrer le document photo sur la fiche publique et proposer son lien source.
+    // Les fichiers Google Drive peuvent etre des montages ou des PDF, non des portraits.
+    const photoUrl = String(d.photo_url || d.student_photo_url || "").trim();
+    let photoLink = "";
+    try {
+      const parsed = new URL(photoUrl);
+      if (parsed.protocol === "https:" && (
+        parsed.hostname === "drive.google.com" ||
+        parsed.hostname === "docs.google.com" ||
+        parsed.hostname.endsWith(".supabase.co")
+      )) photoLink = parsed.href;
+    } catch (e) { /* lien absent ou non exploitable */ }
+
+    if (photoLink) {
+      const photoWrap = document.createElement("div");
+      photoWrap.className = "lookup-photo";
+      photoWrap.style.cssText = "margin:1rem 0;display:flex;align-items:center;gap:1rem;flex-wrap:wrap";
+      const driveMatch = photoLink.match(/[?&]id=([\\w-]+)/) ||
+        photoLink.match(/\\/file\\/d\\/([\\w-]+)/);
+      if (driveMatch) {
+        const preview = document.createElement("img");
+        preview.src = "https://drive.google.com/thumbnail?id=" + encodeURIComponent(driveMatch[1]) + "&sz=w320";
+        preview.alt = "Aperçu du document photographique fourni";
+        preview.loading = "lazy";
+        preview.referrerPolicy = "no-referrer";
+        preview.style.cssText = "width:105px;height:125px;object-fit:contain;border:1px solid #d9e2ec;border-radius:8px;background:#fff";
+        preview.onerror = () => preview.remove();
+        photoWrap.append(preview);
+      }
+      const photoAnchor = document.createElement("a");
+      photoAnchor.href = photoLink;
+      photoAnchor.target = "_blank";
+      photoAnchor.rel = "noopener noreferrer";
+      photoAnchor.className = "lookup-copy";
+      photoAnchor.textContent = "Consulter le document photo fourni";
+      photoAnchor.style.textDecoration = "none";
+      photoWrap.append(photoAnchor);
+      result.append(heading, lead, dl, note, photoWrap, actions);
+    } else {
+      result.append(heading, lead, dl, note, actions);
+    }
   }
 
   // Script exécuté dans la fenêtre du certificat.
