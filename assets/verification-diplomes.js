@@ -470,6 +470,7 @@
           signature: issuerSignature,
           photo: studentPhoto,
           photoFallback,
+          photoSource: /^https:\/\/(drive\.google\.com|docs\.google\.com)\//.test(rawPhoto) ? rawPhoto : "",
           qr
         },
         vals: {
