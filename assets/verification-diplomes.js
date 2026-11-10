@@ -330,8 +330,8 @@
       const photoWrap = document.createElement("div");
       photoWrap.className = "lookup-photo";
       photoWrap.style.cssText = "margin:1rem 0;display:flex;align-items:center;gap:1rem;flex-wrap:wrap";
-      const driveMatch = photoLink.match(/[?&]id=([\\w-]+)/) ||
-        photoLink.match(/\\/file\\/d\\/([\\w-]+)/);
+      const driveMatch = photoLink.match(/[?&]id=([\w-]+)/) ||
+        photoLink.match(/\/file\/d\/([\w-]+)/);
       if (driveMatch) {
         const preview = document.createElement("img");
         preview.src = "https://drive.google.com/thumbnail?id=" + encodeURIComponent(driveMatch[1]) + "&sz=w320";
