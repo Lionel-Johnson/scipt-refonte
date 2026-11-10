@@ -24,7 +24,7 @@ Les tables conservent RLS. La clé `service_role` reste exclusivement côté ser
 
 ## Suivi du 10 novembre 2026
 
-- Référence `101065`, établissement `GENIUS` : ajoutée au registre privé ; photo volontairement vide.
+- Référence `101065`, établissement `GENIUS` : ajoutée au registre privé ; photo fournie par l’administration le 10 novembre 2026 et associée à la fiche.
 - Références `00101202` et `00101221`, établissement `SCIPT_GABON` : ajoutées au registre privé après correction de la seconde référence par l’administration ; photos volontairement vides. Les zéros initiaux sont conservés.
 
 ## Accès
