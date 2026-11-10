@@ -1,16 +1,33 @@
 # Vérification sécurisée des diplômes
-La page GitHub Pages utilise une Edge Function Supabase pour consulter des registres privés.
-- Genius College / Blessed Cosmopolitan College UK : table `partner_diplomas`.
-- SCIPT INTERNATIONAL — Gabon : table `scipt_gabon_diplomas`.
-Les tables ont RLS activé et aucune lecture n'est accordée à anon/authenticated. La clé service_role reste exclusivement dans les secrets de la fonction.
-## Installation
-1. Créer un projet Supabase dédié.
-2. Exécuter la migration `supabase/migrations/202611040001_private_diploma_registers.sql`.
-3. Déployer `supabase/functions/verify-diploma/index.ts` sous le nom `verify-diploma`.
-4. Configurer les secrets SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY côté Supabase.
-5. Renseigner l'URL du projet et la clé anon publique dans `assets/diploma-verification-config.js`.
-6. Importer uniquement les données vérifiées et autorisées dans chaque table séparément.
-## Données sources
-Le document `code GENIUS.docx` et ses fiches ne sont pas dans ce dépôt. Aucun dossier fictif n'est créé. Il faudra réimporter les données du document original dans le registre privé Genius/BCC. Les diplômes SCIPT Gabon seront importés séparément.
-## À compléter
-PDF officiel, photo éventuelle, gestion administrative sécurisée, journal d'audit et import contrôlé nécessitent le document source et les règles de validation de l'établissement.
+
+Les pages GitHub Pages et WordPress consultent le même registre privé Supabase au moyen de l’Edge Function `verify-diploma` (projet `bhudlcvksspivxqqyaxs`). Les fiches personnelles restent dans Supabase : aucun export nominatif n’est nécessaire dans ce dépôt public.
+
+## Registres actifs
+
+| Code envoyé au service | Table privée |
+| --- | --- |
+| `GENIUS` | `genius_diplomas` |
+| `BCC` | `bcc_diplomas` |
+| `MJB` | `mjb_diplomas` |
+| `SCIPT_GABON` | `scipt_gabon_diplomas` |
+
+Les tables conservent RLS. La clé `service_role` reste exclusivement côté serveur. `assets/diploma-verification-config.js` contient uniquement l’URL du projet et sa clé publique.
+
+## Ajout et contrôle
+
+1. Vérifier que la référence est unique dans le registre de l’établissement ; conserver les zéros initiaux.
+2. Ajouter uniquement les données vérifiées et autorisées, avec les dates au format ISO `YYYY-MM-DD`.
+3. Un dossier disponible pour consultation porte le statut `valid`.
+4. Conserver `photo_url` à `NULL` lorsqu’aucune photo n’a été fournie.
+5. Tester `POST /functions/v1/verify-diploma` avec `issuer` et `serial_number`, puis contrôler la fiche renvoyée.
+6. Une nouvelle fiche Supabase est consultable par les deux sites sans copier ses données personnelles dans GitHub ni redéployer le service.
+
+## Suivi du 10 novembre 2026
+
+- Référence `101065`, établissement `GENIUS` : ajoutée au registre privé ; photo volontairement vide.
+- Deux dossiers `SCIPT_GABON` fournis avec la même référence `00101202` : ajout suspendu jusqu’à confirmation de références distinctes. Aucun dossier existant n’est remplacé et aucun numéro n’est inventé.
+
+## Accès
+
+- WordPress : https://sciptinternational.com/verification-diplomes/
+- GitHub Pages : https://lionel-johnson.github.io/scipt-refonte/verification-diplomes.html
