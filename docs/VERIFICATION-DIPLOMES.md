@@ -27,6 +27,8 @@ Les tables conservent RLS. La clé `service_role` reste exclusivement côté ser
 - Référence `101065`, établissement `GENIUS` : ajoutée au registre privé ; photo fournie par l’administration le 10 novembre 2026 et associée à la fiche.
 - Références `00101202` et `00101221`, établissement `SCIPT_GABON` : ajoutées au registre privé après correction de la seconde référence par l’administration ; photos volontairement vides. Les zéros initiaux sont conservés.
 
+- Référence `101066`, établissement `SCIPT_GABON` : ajoutée avec l’année 2026 confirmée par l’administration, études 2024–2026 et délivrance au 11 novembre 2026. La photo fournie est identique à celle de la fiche GENIUS `101065` ; le même fichier image est réutilisé.
+
 ## Accès
 
 - WordPress : https://sciptinternational.com/verification-diplomes/
