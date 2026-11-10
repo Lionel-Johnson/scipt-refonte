@@ -25,7 +25,7 @@ Les tables conservent RLS. La clé `service_role` reste exclusivement côté ser
 ## Suivi du 10 novembre 2026
 
 - Référence `101065`, établissement `GENIUS` : ajoutée au registre privé ; photo volontairement vide.
-- Deux dossiers `SCIPT_GABON` fournis avec la même référence `00101202` : ajout suspendu jusqu’à confirmation de références distinctes. Aucun dossier existant n’est remplacé et aucun numéro n’est inventé.
+- Références `00101202` et `00101221`, établissement `SCIPT_GABON` : ajoutées au registre privé après correction de la seconde référence par l’administration ; photos volontairement vides. Les zéros initiaux sont conservés.
 
 ## Accès
 
