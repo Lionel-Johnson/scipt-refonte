@@ -31,6 +31,24 @@
       const links=[...nav.querySelectorAll(':scope > li.nav-item')];
       const contact=links.find(li=>li.querySelector('a[href*="contact.html"],a[href*="page_id=7512"]'));
       const login=links.find(li=>li.querySelector('a.scipt-login-button,a[href*="connexion.html"],a[href*="/mon-compte/"]'));
+
+      // Accès visible aux annonces et à l'agenda, commun aux menus ordinateur/mobile.
+      let announcements=links.find(li=>li.querySelector('a[href*="annonces=1"]'));
+      if(!announcements){
+        announcements=document.createElement('li');
+        announcements.className='nav-item scipt-annonces-nav-item';
+        const link=document.createElement('a');
+        link.className='nav-link scipt-annonces-nav-link';
+        link.href='https://sciptinternational.com/?annonces=1';
+        link.innerHTML='<i class="fa-regular fa-calendar-days" aria-hidden="true"></i><span>Annonces &amp; Agenda</span>';
+        announcements.append(link);
+      }
+      const position=contact||login;
+      if(position&&position!==announcements){
+        if(position.previousElementSibling!==announcements)position.before(announcements);
+      }else if(!announcements.parentElement){
+        nav.append(announcements);
+      }
       if(contact&&login&&contact!==login&&contact.nextElementSibling!==login)contact.after(login);
     });
   }
